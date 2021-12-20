@@ -1,0 +1,14 @@
+set grid
+set angles radians
+
+set xlabel 'U [V]'
+set ylabel 'P_p'
+
+
+
+f(x)= p1*(sin(pi*b*0.0015*x**2/0.0014**2 + f0/2))**2
+
+
+fit f(x) 'kerr_podatki.txt' using 1:2 via p1, b, f0
+
+plot f(x) lt 7 lc rgb '#e56b5d' notitle, 'kerr_podatki.txt' using 1:2:($1*0.05) with xerrorbars lt 7 lc rgb '#000004' title 'P_p(U)', 'kerr_podatki.txt' using 1:2:($2*0.05) with yerrorbars lt 7 lc rgb '#000004' notitle

@@ -1,0 +1,5 @@
+#Hitrost zvoka v predmetu 
+#Razdalja[mm], čas[\mu s]
+0.245	0.0092
+0.91	0.0312
+1.	0.0348

@@ -1,0 +1,11 @@
+#Valovna[nm]	kot
+436	169.416
+546	173.5833
+577	174.25
+579	174.333
+#Za umeritev bomo uporabljali le najmočnejše črte. Za Hg so to:
+#Barva	Tablična λ [ nm]
+#Modrovijolična	436
+#Zelena	546
+#Rumena	577
+#Rumena	579

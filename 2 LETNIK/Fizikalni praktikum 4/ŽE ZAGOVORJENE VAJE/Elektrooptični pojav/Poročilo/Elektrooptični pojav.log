@@ -1,0 +1,551 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.11)  13 APR 2020 18:21
+entering extended mode
+**"./Elektroopti훾ni pojav.tex"
+("Elektroopti훾ni pojav.tex"
+LaTeX2e <2020-02-02> patch level 1
+L3 programming layer <2020-02-08>
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\artic
+le.cls"
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\size1
+1.clo"
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\input
+enc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/geometry\g
+eometry.sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\k
+eyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/iftex\if
+vtex.sty"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/iftex\if
+tex.sty"
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count175
+\Gm@cntv=\count176
+\c@Gm@tempcnt=\count177
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks17
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/geometry\g
+eometry.cfg"))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+smath.sty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+stext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+sgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen143
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+sbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen144
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+sopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count178
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count179
+\leftroot@=\count180
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count181
+\DOTSCASE@=\count182
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen145
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count183
+\c@MaxMatrixCols=\count184
+\dotsspace@=\muskip16
+\c@parentequation=\count185
+\dspbrk@lvl=\count186
+\tag@help=\toks19
+\row@=\count187
+\column@=\count188
+\maxfields@=\count189
+\andhelp@=\toks20
+\eqnshift@=\dimen146
+\alignsep@=\dimen147
+\tagshift@=\dimen148
+\tagwidth@=\dimen149
+\totwidth@=\dimen150
+\lineht@=\dimen151
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amscls\ams
+thm.sty"
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks28
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsfonts\a
+mssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsfonts\a
+msfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/babel\ba
+bel.sty"
+Package: babel 2020/02/03 3.39 The Babel package
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/babel\sw
+itch.def"
+File: switch.def 2020/02/03 3.39 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/arabi\bblo
+pts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/babel-slov
+enian\slovene.ldf"
+Language: slovene 2005/03/31 v1.2m Slovene support from the babel system
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/babel\ba
+bel.def"
+File: babel.def 2020/02/03 3.39 Babel common definitions
+\babel@savecnt=\count190
+\U@D=\dimen152
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/babel\tx
+tbabel.def")
+\bbl@readstream=\read2
+\bbl@dirlevel=\count191
+)
+Package babel Info: Making " an active character on input line 79.
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\c
+olor.sty"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics-c
+fg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics-d
+ef\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\g
+raphicx.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\g
+raphics.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\t
+rig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics-c
+fg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen153
+\Gin@req@width=\dimen154
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/mathtools\
+mathtools.sty"
+Package: mathtools 2020/01/17 v1.23 mathematical typesetting tools
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/tools\calc
+.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count192
+\calc@Bcount=\count193
+\calc@Adimen=\dimen155
+\calc@Bdimen=\dimen156
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count194
+\calc@Cskip=\skip57
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/mathtools\
+mhsetup.sty"
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count195
+\l_MT_multwidth_dim=\dimen157
+\origjot=\skip58
+\l_MT_shortvdotswithinadjustabove_dim=\dimen158
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen159
+\l_MT_above_intertext_sep=\dimen160
+\l_MT_below_intertext_sep=\dimen161
+\l_MT_above_shortintertext_sep=\dimen162
+\l_MT_below_shortintertext_sep=\dimen163
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/commath\co
+mmath.sty"
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\ifthe
+n.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/ragged2e\r
+agged2e.sty"
+Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/ms\everyse
+l.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip59
+\RaggedLeftLeftskip=\skip60
+\RaggedRightLeftskip=\skip61
+\CenteringRightskip=\skip62
+\RaggedLeftRightskip=\skip63
+\RaggedRightRightskip=\skip64
+\CenteringParfillskip=\skip65
+\RaggedLeftParfillskip=\skip66
+\RaggedRightParfillskip=\skip67
+\JustifyingParfillskip=\skip68
+\CenteringParindent=\skip69
+\RaggedLeftParindent=\skip70
+\RaggedRightParindent=\skip71
+\JustifyingParindent=\skip72
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\fonte
+nc.sty"
+Package: fontenc 2020/01/25 v2.0m Standard LaTeX package
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/ulem\ulem.
+sty"
+\UL@box=\box47
+\UL@hyphenbox=\box48
+\UL@skip=\skip73
+\UL@hook=\toks29
+\UL@height=\dimen164
+\UL@pe=\count196
+\UL@pixel=\dimen165
+\ULC@box=\box49
+Package: ulem 2019/11/18
+\ULdepth=\dimen166
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/esvect\esv
+ect.sty"
+Package: esvect 
+\symesvector=\mathgroup6
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/float\floa
+t.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count197
+\float@exts=\toks30
+\float@box=\box50
+\@float@everytoks=\toks31
+\@floatcapt=\box51
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/calrsfs\ca
+lrsfs.sty"
+\symrsfscript=\mathgroup7
+)
+\c@theorem=\count198
+\c@corollary=\count199
+\c@definition=\count266
+
+
+Package amsthm Warning: Unknown theoremstyle `example' on input line 35.
+
+
+Package amsthm Warning: Unknown theoremstyle `izrek' on input line 37.
+
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/l3backend\
+l3backend-pdfmode.def"
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count267
+\l__pdf_internal_box=\box52
+) ("Elektroopti훾ni pojav.aux")
+\openout1 = `"Elektroopti훾ni pojav.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/context/base/mki
+i\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count268
+\scratchdimen=\dimen167
+\scratchbox=\box53
+\nofMPsegments=\count269
+\nofMParguments=\count270
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count271
+\MPscratchDim=\dimen168
+\MPnumerator=\count272
+\makeMPintoPDFobject=\count273
+\everyMPtoPDFconversion=\toks33
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/epstopdf-p
+kg\epstopdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+) ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 40.
+ [1
+
+{C:/Users/Uporabnik/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 88.
+
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsfonts\u
+msa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
+
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsfonts\u
+msb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 
+88.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/esvect\ues
+vect.fd"
+File: uesvect.fd 
+)
+LaTeX Font Info:    Trying to load font information for OMS+rsfs on input line 
+88.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/calrsfs\om
+srsfs.fd")
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 88.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 88.
+
+Missing character: There is no � in font cmr10!
+<Tok_훾as,dioda.png, id=7, 462.528pt x 346.896pt>
+File: Tok_훾as,dioda.png Graphic file (type png)
+<use Tok_훾as,dioda.png>
+Package pdftex.def Info: Tok_훾as,dioda.png  used on input line 99.
+(pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+<Izkoristek_kot,1_polarizator.png, id=18, 462.528pt x 346.896pt>
+File: Izkoristek_kot,1_polarizator.png Graphic file (type png)
+<use Izkoristek_kot,1_polarizator.png>
+Package pdftex.def Info: Izkoristek_kot,1_polarizator.png  used on input line 1
+26.
+(pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
+[3 <./Tok_훾as,dioda.png>]
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 130.
+
+Missing character: There is no � in font cmr10!
+<Izkoristek_kot,2_polarizator.png, id=26, 462.528pt x 346.896pt>
+File: Izkoristek_kot,2_polarizator.png Graphic file (type png)
+<use Izkoristek_kot,2_polarizator.png>
+Package pdftex.def Info: Izkoristek_kot,2_polarizator.png  used on input line 1
+47.
+(pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
+[4 <./Izkoristek_kot,1_polarizator.png>]
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 151.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 151.
+
+Missing character: There is no � in font cmr10!
+<Izkoristek_kot,Kerrova celica.png, id=31, 642.4pt x 385.44pt>
+File: Izkoristek_kot,Kerrova celica.png Graphic file (type png)
+<use Izkoristek_kot,Kerrova celica.png>
+Package pdftex.def Info: Izkoristek_kot,Kerrova celica.png  used on input line 
+176.
+(pdftex.def)             Requested size: 341.43306pt x 204.86447pt.
+[5 <./Izkoristek_kot,2_polarizator.png>] [6 <./Izkoristek_kot,Kerrova celica.pn
+g>]
+<Izkoristek_kot,elipsa.png, id=40, 462.528pt x 346.896pt>
+File: Izkoristek_kot,elipsa.png Graphic file (type png)
+<use Izkoristek_kot,elipsa.png>
+Package pdftex.def Info: Izkoristek_kot,elipsa.png  used on input line 200.
+(pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
+<Elipsa.png, id=41, 462.528pt x 346.896pt>
+File: Elipsa.png Graphic file (type png)
+<use Elipsa.png>
+Package pdftex.def Info: Elipsa.png  used on input line 209.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+[7 <./Izkoristek_kot,elipsa.png> <./Elipsa.png>]
+<Debelina.png, id=49, 304.13625pt x 156.585pt>
+File: Debelina.png Graphic file (type png)
+<use Debelina.png>
+Package pdftex.def Info: Debelina.png  used on input line 225.
+(pdftex.def)             Requested size: 426.79134pt x 219.74074pt.
+ [8 <./Debelina.png>]
+("Elektroopti훾ni pojav.aux") ) 
+Here is how much of TeX's memory you used:
+ 4809 strings out of 481527
+ 69654 string characters out of 2908530
+ 322503 words of memory out of 3000000
+ 19955 multiletter control sequences out of 15000+200000
+ 543591 words of font info for 57 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,7n,34p,746b,232s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Uporabnik/AppData/Local/Programs/MiKTe
+X 2.9.(1)/fonts/enc/dvips/cm-super/cm-super-t1.enc}{C:/Users/Uporabnik/AppData/
+Local/Programs/MiKTeX 2.9.(1)/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Use
+rs/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/public/amsfonts/
+cm/cmex10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/M
+iKTeX 2.9.(1)/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Uporabnik/AppD
+ata/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
+Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/
+MiKTeX 2.9.(1)/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Uporabnik/App
+Data/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/public/cm-super/sfbx1095.pfb><C:
+/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/public/cm-su
+per/sfbx1200.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/font
+s/type1/public/cm-super/sfbx1440.pfb><C:/Users/Uporabnik/AppData/Local/Programs
+/MiKTeX 2.9.(1)/fonts/type1/public/cm-super/sfrm1095.pfb><C:/Users/Uporabnik/Ap
+pData/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/public/cm-super/sfrm2488.pfb>
+Output written on "Elektroopti훾ni pojav.pdf" (8 pages, 344301 bytes).
+PDF statistics:
+ 94 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

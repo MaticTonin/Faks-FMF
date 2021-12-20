@@ -1,0 +1,743 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+\usepackage[slovene]{babel}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+\usepackage[normalem]{ulem}
+\usepackage{amsthm}
+\usepackage{esvect}
+\usepackage{float}
+\usepackage{calrsfs}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\newcommand{\Ga}{\mathcal{G}}
+\mathtoolsset{showonlyrefs} 
+
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+
+\newtheorem{theorem}{Trditev}[section]
+\newtheorem{corollary}{Posledica}[section]
+\newtheorem{lemma}[section]{Lema}
+\theoremstyle{definition}
+\newtheorem{definition}{Definicija}[section]
+\theoremstyle{example}
+\newtheorem{example}[section]{Primer}
+\theoremstyle{izrek}
+\newtheorem{izrek}[section]{Izrek}
+
+\begin{document}
+\begin{center}
+\thispagestyle{empty}
+\parskip=14pt%
+\vspace*{3\parskip}%
+\begin{Huge} Vrtavka \end{Huge}
+
+By
+
+Matic Tonin
+
+ID No. (28181098)
+
+Mentor 
+
+(Rok Dolenec)
+
+\rule{7cm}{0.4pt}
+
+Pod okvirom:
+
+FAKULTETE ZA FIZIKO IN MATEMATIKO, LJUBLJANA
+
+1. 4. 2020
+
+\end{center}
+\pagebreak
+\section{Naloga}
+Izmeri precesijsko ($\omega_{pr}$) in nutacijsko kotno hitrost ($\omega_N$) v odvisnosti od kotne hitrosti ($\omega_z$) vrtavke. Izvedi meritev pri vsaj treh frekvencah $\nu_z = \omega_z/(2\pi)$. Na primer pri približno
+600, 500 in 400 obratov na minuto (kratica rpm – angl. rotations per minute).
+Gornjo meritev izvedi pri naslednjih nastavitvah vrtavke:
+
+\begin{enumerate}
+	\item vrtavka z utežjo blizu krogle
+	\item utež na sredini palice
+	\item utež na koncu palice (pusti si prostor za oprijem)
+\end{enumerate}
+
+Meritve z različnimi nastavitvami vrtavke izvedi pri podobnih frekvencah $\nu_z$ kot prej,
+da so rezultati lažje primerljivi. Izmerjene vrednosti $\omega_{pr}$ in $\omega_N$ primerjaj z izračunanimi
+iz (\ref{precesija}) in (\ref{nutacija}) in naredi tabelo.
+
+
+Kljub temu, da meritve sam nisem izvajal, bom v poročilu navedel, kakšen bi moral biti postopek dela in kako smo dobili določene mertve. \\
+\bigskip
+
+\section{Postopek dela} 
+
+Najprej smo si morali izbrati, pri 3 različne frekvence, ki jih bomo uporabljali skozi meritev, pi različnih položajih uteži in pri različnih vrtenjih. (sicer to ni potrebno, ampak nam olajša kasnejše obdelovanje podatkov in primerjavo).
+Sam bom razdelil to nalogo na tri poglavja, kot so navedena v poglavju naloga. Pri vsakem delu pa je bil postopek isti (npr blizu ali na sredini krogle).
+\begin{enumerate}
+\item Za meritev precesije smo morali najprej postaviti kroglo na našo "zračno blazino", ki ji je pomagala, da se je vrtela s konstantno frekvenco. Nato smo, ko se je vrtavka nekaj časa vrtela in tako vzpostavila neko konstantno hitrost, prižgali stroboskop, da bi izmerili njeno hitrost vrtenja. V navodili točno piše, kako to storimo in kako nastavimo stroboskop za najboljšo meritev. Za konec smo morali le še z svinčnikom in ravnilom izmakniti vrtavko za nek kot in izmerili čas precesije. To meritev smo nato ponovili za različne hitrosti vrtenja vrtavke in različne kote nagiba vrtavke. 
+\item Za meritev nutacije pa smo potrebovali vrtavko, ko se je ta vrtela, rahlo poriniti s svinčnikom in nato opazovati njeno gibanje in meriti, kolikšen je čas nutacije.
+\end{enumerate}
+
+\pagebreak
+\section{Meritve in rezultati}
+\subsection{Podatki o vrtavki}
+
+V samem poročilu o vrtavki so nam navedli določene podatke, ki jih bom zaradi lažje kasnejše obdelave dodal v svoje poročilo.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Predmet & masa [g] & premer [mm] & debelina ali dolžina [mm] \\
+		\hline
+		\hline
+		Krogla & $m_k$ = 512 & $2r_k$ = 50.7 & / \\
+		\hline
+		Plošcica & $m_o$ = 19 & $2r_o$ = 58 & $h_o$ = 1\\
+		\hline
+		Palica & $m_p$ = 23 & $2r_p$ = 6.3 & $h_p$ = 89.8\\
+		\hline
+		Utež & $m_u$ = 19 & $2r_u$ = 19.3 & $h_u$ = 25.2 \\
+		\hline
+		\end{tabular}
+		\caption{Podatki o naših predmetih, masa ter dolžina}
+		\label{tab:FirstTable}
+\end{table}
+
+\begin{large}\textbf{Opozorilo}\end{large}\\
+\medskip
+Meritve smo, zaradi izrednih razmer, dobili kar od asistentov in sicer:
+
+\subsubsection{Utež ob krogli}
+
+\begin{table}[h]
+	
+	\centering
+	\begin{tabular}{|c|c c|}
+		
+		\hline
+		frekvenca vrtenja [rpm] & \multicolumn{2}{|c|}{čas precesije [s]} \\
+		 & 1. kot & 2. kot \\
+		\hline
+		\hline
+		1386 &	4,7 &	5\\
+		\hline
+		1415 &	5,2 &	4,9\\
+		\hline
+		1475 &	5,2	&   5,4\\
+		\hline
+		1518 &	4,8	&	5,1\\
+		\hline
+		1550 &	5,3	&	5\\
+		\hline
+		1570 &	5,2	&	5,3\\
+		\hline
+		
+	\end{tabular}
+	\caption{Utež ob krogli - precesija}
+\end{table}
+
+\begin{table}[h]
+	
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		frekvenca vrtenja [rpm] & frekvenca nutacije [rpm]\\
+		\hline
+		\hline
+		830	&	363\\
+		\hline
+		996	& 	391\\
+		\hline
+		1393 &	644\\
+		\hline
+	
+		
+	\end{tabular}
+	\caption{Utež ob krogli - nutacija}
+	
+\end{table}
+
+Ker pa so frekvence vrtenja podane v [rpm], jih moramo pretvoriti v [1/s], kar nam pomaga zveza med tem dvema količinama in sicer:
+
+$$60 \text{rpm}=\frac{2\pi}{s}$$
+
+Tako lahko vse naše frekvence v obratih na minuto spremenimo v kotne frekvence. \\
+
+Da pa bi izmerili, kolikšna je hitrost precesije in nutacije, pa si pomagamo z zvezo, o frekvencah in sicer:
+
+$$\omega_{pr,n}=\frac{2\pi}{t}$$
+
+\pagebreak
+Če sedaj z navedenimi formulami izračunamo, kolikšna je precesija in nulacija, dobimo: \\
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{pr1}$\: & $\omega_{pr2}$\: \\
+		\hline
+		\hline
+		145,1 &	1,3 &	1,3 \\
+		\hline
+		148,1 &	1,2 &	1,3 \\
+		\hline
+		154,4 &	1,2 &	1,2 \\
+		\hline
+		158,9 &	1,3 &	1,2 \\
+		\hline
+		162,2 &	1,2 &	1,3 \\
+		\hline
+		164,3 &	1,2 &	1,2 \\
+		\hline
+		
+		
+	\end{tabular}
+\caption{Precesija - utež ob krogli}
+\end{table}
+
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{N}$ \\
+		\hline
+		\hline
+		86,9 &	38,0 \\  
+		\hline
+		104,2 &	40,9 \\  
+		\hline
+		145,8 &	67,4  \\ 
+		\hline
+		
+		
+	\end{tabular}
+\caption{Nutacija - utež ob krogli}
+\end{table}
+\pagebreak
+
+\subsubsection{Utež 1.5cm od krogle}
+Isti postopek za vse ponovimo tudi pri utežeh na različnih lokacijah, zato bom tu zgolj navedel, kakšne so vrednosti in kakšne so meritve: \\
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c c|}
+		\hline
+		frekvenca vrtenja [rpm] & \multicolumn{2}{|c|}{čas precesije [s]} \\
+		& 1. kot & 2. kot \\
+		\hline
+		\hline
+		1073 &	3,4 &	3,6\\
+		\hline
+		1140 &	3,7 &	3,5\\
+		\hline
+		1191 &	3,7 &	3,5\\
+		\hline
+		1211 &	3,8 &	3,6\\
+		\hline
+	\end{tabular}
+	\caption{Utež 1.5cm od krogle - precesija}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		frekvenca vrtenja [rpm] & frekvenca nutacije [rpm]\\
+		\hline
+		\hline
+		1220 &	631\\
+		\hline
+		1467 &	709\\
+		\hline
+		938	& 	480\\
+		\hline
+	\end{tabular}
+	\caption{Utež 1.5cm od krogle - nutacija}
+\end{table}
+Za rezultate pa dobimo kar: \\
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{pr1}$\: & $\omega_{pr2}$\\
+		\hline
+		\hline
+		112,3 &	1,8 &	1,7 \\
+		\hline
+		119,3 &	1,7 &	1,8 \\
+		\hline
+		124,7 &	1,7 &	1,8 \\
+		\hline
+		126,8 &	1,7 &	1,7 \\
+		\hline
+	\end{tabular}
+	\caption{Precesija - utež 1.5cm od krogle}
+\end{table}
+
+\begin{table}[hbt!]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{N}$ \\
+		\hline
+		\hline
+		127,7 &	66,0 \\
+		\hline
+		153,5 &	74,2 \\
+		\hline
+		98,2 &	50,2 \\
+		\hline
+	\end{tabular}
+	\caption{Nutacija - utež 1.5cm od krogle}
+\end{table}
+
+
+\pagebreak
+
+\subsubsection{Utež oddaljena 2.5 cm od krogle}
+Isti postopek za vse ponovimo tudi pri utežeh na različnih lokacijah, zato bom tu zgolj navedel, kakšne so vrednosti in kakšne so meritve: \\
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c c|}
+		\hline
+		frekvenca vrtenja [rpm] & \multicolumn{2}{|c|}{čas precesije [s]} \\
+		& 1. kot & 2. kot \\
+		\hline
+		\hline
+		1100 &	2,9 &	3,1\\
+		\hline
+		1224 &	3,5 &	3,7\\
+		\hline
+		1270 &	3,7 &	3,6\\
+		\hline
+		1465 &	4 &		4,2\\
+		\hline
+	\end{tabular}
+	\caption{Utež 2.5cm od krogle - precesija}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		frekvenca vrtenja [rpm] & frekvenca nutacije [rpm]\\
+		\hline
+		\hline
+		880 &	439\\
+		\hline
+		985 &	496\\
+		\hline
+		1107 &	567\\
+		\hline
+		
+		
+	\end{tabular}
+	\caption{Utež 2.5cm od krogle - nutacija}
+\end{table}
+
+Za rezultate pa dobimo kar: \\
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{pr1}$\: & $\omega_{pr2}$\\
+		\hline
+		\hline
+		115,1 &	2,2 &	2,0 \\
+		\hline
+		128,1 &	1,8 &	1,7 \\
+		\hline
+		132,9 &	1,7 &	1,7 \\
+		\hline
+		153,3 &	1,6 &	1,5 \\
+		\hline
+		
+		
+	\end{tabular}
+	\caption{Precesija - utež 2.5cm od krogle}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{N}$ \\
+		\hline
+		\hline
+		92,1 &	45,9 \\
+		\hline
+		103,1 &	51,9 \\
+		\hline
+		115,9 &	59,3 \\
+		\hline
+	\end{tabular}
+	\caption{Nutacija - utež 2.5cm od krogle}
+\end{table}
+	
+S tem smo izmerili vse potrebne reči, sedaj pa potrebujemo to primerjati z dejanskimi vrednosti.
+Pred tem, pa nas čaka še obravnava vztrajnostnih momentov za naše opazovano telo.
+
+\pagebreak
+\section{Izračuni}
+\subsection{Izračuni vztrajnostnih momentov}
+Določeni vztrajnostni momenti so nam že znani, saj smo se jih učili na Klasični fiziki in so tudi zapisani v navodilih za vajo, zato jih lahko tu zgolj navedemo za ponovitev. \\
+
+Vztrajnostni moment krogle:
+
+\begin{equation}
+	J_{krogla} = \frac{2}{5}mr^2	
+	\notag
+\end{equation}
+
+Vztrajnostni moment valja skozi os z (simetrijska os):
+
+\begin{equation}
+J_{valj,\: z} = \frac{1}{2}mr^2	
+\notag
+\end{equation}
+
+
+Vztrajnostni moment valja skozi osi x in y (osi pravokotni na simetrijsko os):
+
+\begin{equation}
+J_{valj,\: x} = J_{valj,\: y} = m(\frac{r^2}{4} + \frac{h^2}{12})	
+\notag
+\end{equation}
+
+Če gremo nato računati vztrajnostne momente naših teles vsakega posebej, preden jih sestavimo skupaj v vrtavko, dobimo: 
+
+\begin{align*}
+	& J_{krogla} = \frac{2}{5}m_kr^2_k = (1316\pm1)\: g\cdot cm^2\\
+	& J_{plo\check{s}\check{c}ica,\: z} = \frac{1}{2}m_or^2_o = (80\pm7)\: g\cdot cm^2\\
+	& J_{palica,\: z} = \frac{1}{2}m_pr^2_p = (1.1\pm0.1)\: g\cdot cm^2\\
+	& J_{ute\check{z},\: z} = \frac{1}{2}m_ur^2_u = (9\pm0.5)\: g\cdot cm^2\\
+	& J_{plo\check{s}\check{c}ica,\: x} = m_o(\frac{r^2_o}{4} + \frac{h^2_o}{12}) = (42\pm0.3)\: g\cdot cm^2\\\
+	& J_{palica,\: x} = m_p(\frac{r^2_p}{4} + \frac{h^2_p}{12}) = (160\pm7)\: g\cdot cm^2\\
+	& J_{ute\check{z},\: x} = m_u(\frac{r^2_u}{4} + \frac{h^2_u}{12}) = (14\pm0.8)\: g\cdot cm^2\		
+\end{align*}
+
+Ker bomo po naši palici sedaj premikali utež, nas zanima, kako se bo z premikanjem naše uteži spreminjalo težišče. Za izračun težišča si lahko pomagamo s formulo.
+
+$$l = \frac{\sum_{i}m_i\cdot h_i}{\sum_{i}m_i}$$
+
+Kjer so i indeksi vseh teles, ki nastopajo v našem sistemu. Za vrtavko bo veljalo, da je: 
+
+	$$l =  \frac{m_o\cdot \left(r_k + \frac{h_o}{2}\right) + m_p\cdot \left(r_k + h_o + \frac{h_p}{2}\right) + m_u\cdot L}{m_k + m_o + m_p + m_u}\\
+	=  0.3717cm + 0.033\cdot L$$
+
+Kjer je L drsnik, ki nam pove, kako nizko ali visoko smo postavili utež, oziroma oddaljenost uteži od središča krogle. Ta bo za vsako lokacijo drugačen. 
+
+\pagebreak
+Za našo nalogo izračuna hitrosti precesije in nulacije nam bosta koristili formuli iz uvoda in sicer: 
+
+$$
+\omega_{\mathrm{N}}=\frac{J_{33}}{J_{11}} \omega_{z} \qquad \omega_{\mathrm{pr}}=\frac{m g l}{J_{33} \omega_{z}}
+$$
+
+Posledično vidimo, da bomo potrebovali izračunati $J_{33}$ in $J_{11}$. Kaj pa sploh sta te dva vztrajnostna momenta?\\
+To sta vztrajnostna momenta, ki sta odvisna od tega, okoli katere osi se vrtavka vrti. Saj vrtavko lahko vrtimo na različne načine, okoli x, y ali z osi. \\
+\medskip
+
+Tako lahko za vsako os izračunamo, kolikšen je, ampak v našem primeru potrebujemo zgolj $J_{33}$ in $J_{11}$.
+
+Pred izračunom pa bom definiral še naslednje pojme (kakšnega smo spoznali že prej, a jih bom zaradi preglednosti ponovno napisal):
+\begin{enumerate}
+\item M - skupna masa
+\item l - oddaljenost težišča od središča krogle
+\item L - oddaljenost uteži od središča krogle
+\end{enumerate}
+
+Sedaj pa izračunajmo oba vztrajnostna momenta:
+\begin{enumerate}
+
+\item Vztrajnostni moment $J_{11}$: 
+\begin{center}
+	$J_{11} =  J_{krogla} + J_{plo\check{s}\check{c}ica,\: x} + J_{palica,\: x} + J_{ute\check{z},\: x} + m_o\cdot \left(r_k+\frac{h_o}{2}\right)^2 + m_p\cdot \left(r_k + h_o + \frac{h_p}{2}\right)^2 + m_u\cdot L^2$ \\
+	\medskip
+	Rezultat tega izračuna je: \underline{$J_{11}=2727g\cdot cm^2 + 19g\cdot L^2$}
+\end{center}
+
+\item Vztrajnostni moment $J_{33}$:
+\begin{center}
+$J_{33} = J_{krogla} + J_{plo\check{s}\check{c}ica,\: z} + J_{palica,\: z} + J_{ute\check{z},\: z}$\\
+\medskip
+Rezultat tega izračuna je: \underline{$J_{33}=1406 g\cdot cm^2$}
+\end{center}
+\end{enumerate}
+
+S temi vsemi podatki pa lahko izračunamo tudi predvidene kotne hitrosti za naše dva pojava.
+
+\subsection{Izračuni predvidenih kotnih hitrosti}
+Za to lahko uporabimo že prej navedene formule, ki so: 
+$$
+\omega_{\mathrm{N}}=\frac{J_{33}}{J_{11}} \omega_{z} \qquad \omega_{\mathrm{pr}}=\frac{m g l}{J_{33} \omega_{z}}
+$$
+In tako izračunamo vrednosti in jih primerjamo z izmerjenimi. \\
+
+\pagebreak
+\subsubsection{Utež ob krogli}
+Potrebne manjkajoče podatke izračunamo z $L = r_k + h_0 + \frac{h_u}{2} = 3.895 cm$.
+
+\begin{align*}
+	& J_{11} = 3015g\cdot cm^2\\ 
+	& l = 0.50 cm\\
+	& mgl = 280\: 900\frac{g\cdot cm^2}{s^2}
+\end{align*}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{pr1}$\: & $\omega_{pr2}$\: & $\omega_{pr,calc}$\: (izračunana)\\
+		\hline
+		\hline
+		145,1 &	1,3 &	1,3 &	1,38\\
+		\hline
+		148,1 &	1,2 &	1,3 &	1,35\\
+		\hline
+		154,4 &	1,2 &	1,2 &	1,29\\
+		\hline
+		158,9 &	1,3 &	1,2 &	1,26\\
+		\hline
+		162,2 &	1,2 &	1,3 &	1,23\\
+		\hline
+		164,3 &	1,2 &	1,2 &	1,22\\
+		\hline
+		
+		
+	\end{tabular}
+\caption{Precesija - utež ob krogli}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{N}$ & $\omega_{N,calc}$\: (izračunana)\\
+		\hline
+		\hline
+		86,9 &	38,0 &	 40,5\\  
+		\hline
+		104,2 &	40,9 &	 48,6\\  
+		\hline
+		145,8 &	67,4 &	 68,0 \\ 
+		\hline
+		
+		
+	\end{tabular}
+\caption{Nutacija - utež ob krogli}
+\end{table}
+Komentar tabele: \\
+\begin{enumerate}
+\item Precesija: \\
+V tabeli za precesijo imamo v prvem stolpcu navedeno  kotno hitrost vrtavke, ki smo jo izmerili, drugi in tretji stolpec nam prikazujeta kotne hitrosti precesije, ki smo jih izračunali v poglajvu meritve (postopek podatkov je zapisan tam), zadnji stolpec pa nam prikazuje izračunane vrednosti iz naših vztrajnostnih momentov v odvisnosti od začetne kotne hitrosti vrtavke $\omega_z$.
+\item Nutacija: \\
+V tabeli za nutacijo imamo v prvem stolpcu navedeno kotno hitrost vrtavke, ki smo jo izmerili, drugi stolpec nam prikazuje kotno hitrost nutacije, ki smo jo izračunali v poglavju meritve (postopek podatkov je zapisan tam),zadnji stolpec pa nam prikazuje izračunane vrednosti iz naših vztrajnostnih momentov v odvisnosti od začetne kotne hitrosti vrtavke $\omega_z$.
+\end{enumerate}
+
+
+\pagebreak
+\subsubsection{Utež 1.5cm oddaljena od krogle}
+
+\begin{align*}
+& J_{11} = 3259g\cdot cm^2\\ 
+& l = 0.55 cm\\
+& mgl = 306\: 800\frac{g\cdot cm^2}{s^2}
+\end{align*}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{pr1}$\: & $\omega_{pr2}$\: & $\omega_{pr,calc}$\: (izračunana)\\
+		\hline
+		\hline
+		112,3 &	1,8 &	1,7 &	1,94\\
+		\hline
+		119,3 &	1,7 &	1,8 &	1,83\\
+		\hline
+		124,7 &	1,7 &	1,8 &	1,75\\
+		\hline
+		126,8 &	1,7 &	1,7 &	1,72\\
+		\hline
+		
+		
+	\end{tabular}
+	\caption{Precesija - utež 1.5cm od krogle}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{N}$ & $\omega_{N,calc}$\: (izračunana)\\
+		\hline
+		\hline
+		127,7 &	66,0 &	55,1\\
+		\hline
+		153,5 &	74,2 &	66,2\\
+		\hline
+		98,2 &	50,2 &	42,4\\
+		\hline
+		
+		
+	\end{tabular}
+	\caption{Nutacija - utež 1.5cm od krogle}
+\end{table}
+
+\vspace{2mm}
+Komentar: podatek oddaljenosti 1.5cm, sem privzel, da je to razdalja med sredino uteži in kroglo.\\
+
+Komentar tabele: 
+\begin{enumerate}
+\item Precesija: \\
+V tabeli za precesijo imamo v prvem stolpcu navedeno  kotno hitrost vrtavke, ki smo jo izmerili, drugi in tretji stolpec nam prikazujeta kotne hitrosti precesije, ki smo jih izračunali v poglajvu meritve (postopek podatkov je zapisan tam), zadnji stolpec pa nam prikazuje izračunane vrednosti iz naših vztrajnostnih momentov v odvisnosti od začetne kotne hitrosti vrtavke $\omega_z$.
+\item Nutacija: \\
+V tabeli za nutacijo imamo v prvem stolpcu navedeno kotno hitrost vrtavke, ki smo jo izmerili, drugi stolpec nam prikazuje kotno hitrost nutacije, ki smo jo izračunali v poglavju meritve (postopek podatkov je zapisan tam),zadnji stolpec pa nam prikazuje izračunane vrednosti iz naših vztrajnostnih momentov v odvisnosti od začetne kotne hitrosti vrtavke $\omega_z$.
+\end{enumerate}
+
+\newpage
+\subsubsection{Utež 2.5cm oddaljena od krogle}
+
+\begin{align*}
+& J_{11} = 3479g\cdot cm^2\\ 
+& l = 0.58 cm\\
+& mgl = 325\: 400\frac{g\cdot cm^2}{s^2}
+\end{align*}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{pr1}$\: & $\omega_{pr2}$\: & $\omega_{pr,calc}$\: (izračunana)\\
+		\hline
+		\hline
+		115,1 &	2,2 &	2,0 &	2,01\\
+		\hline
+		128,1 &	1,8 &	1,7 &	1,81\\
+		\hline
+		132,9 &	1,7 &	1,7 &	1,74\\
+		\hline
+		153,3 &	1,6 &	1,5 &	1,51\\
+		\hline
+		
+		
+	\end{tabular}
+	\caption{Precesija - utež 2.5cm od krogle}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{N}$ & $\omega_{N,calc}$\: (izračunana)\\
+		\hline
+		\hline
+		92,1 &	45,9 &	37,2\\
+		\hline
+		103,1 &	51,9 &	41,7\\
+		\hline
+		115,9 &	59,3 &	46,8\\
+		\hline
+		
+		
+	\end{tabular}
+	\caption{Nutacija - utež 2.5cm od krogle}
+\end{table}
+\vspace{2mm}
+Komentar: podatek oddaljenosti 2.5cm, sem privzel, da je to razdalja med sredino uteži in kroglo.\\
+
+Komentar tabele:
+\begin{enumerate}
+\item Precesija: \\
+V tabeli za precesijo imamo v prvem stolpcu navedeno  kotno hitrost vrtavke, ki smo jo izmerili, drugi in tretji stolpec nam prikazujeta kotne hitrosti precesije, ki smo jih izračunali v poglajvu meritve (postopek podatkov je zapisan tam), zadnji stolpec pa nam prikazuje izračunane vrednosti iz naših vztrajnostnih momentov v odvisnosti od začetne kotne hitrosti vrtavke $\omega_z$.
+\item Nutacija: \\
+V tabeli za nutacijo imamo v prvem stolpcu navedeno kotno hitrost vrtavke, ki smo jo izmerili, drugi stolpec nam prikazuje kotno hitrost nutacije, ki smo jo izračunali v poglavju meritve (postopek podatkov je zapisan tam),zadnji stolpec pa nam prikazuje izračunane vrednosti iz naših vztrajnostnih momentov v odvisnosti od začetne kotne hitrosti vrtavke $\omega_z$.
+\end{enumerate}
+
+\pagebreak
+\section{Napaka}
+Pri primerjavi izračunov in meritev vidimo, da pride do določenih odstopanj. Sam sklepam, da se napaka predvsem pojavi zaradi približka naše hitre vrtavke, ki smo ga ustvarili v enačbi: 
+\begin{equation}
+	\label{skrajna kota}
+	\cos\theta_0 - \cos\theta_1 \approx \frac{J_{11}}{J_{33}}\frac{2mgl}{J_{33}\omega^2_z}\sin^2\theta_0
+\end{equation}
+Saj vidimo, da bodo za manjše hitrosti vrtenja, večja odstopanja od naše meritve. To se dobro vidi pri večini meritve precesije, saj se z večanjem hitrosti vrtenja vrtavke manjša odstopanje meritve od naše dejanske vrednosti. Primer:
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		$\omega_z$ & $\omega_{pr1}$\: & $\omega_{pr2}$\: & $\omega_{pr,calc}$\: (izračunana)\\
+		\hline
+		\hline
+		145,1 &	1,3 &	1,3 &	1,38\\
+		\hline
+		148,1 &	1,2 &	1,3 &	1,35\\
+		\hline
+		154,4 &	1,2 &	1,2 &	1,29\\
+		\hline
+		158,9 &	1,3 &	1,2 &	1,26\\
+		\hline
+		162,2 &	1,2 &	1,3 &	1,23\\
+		\hline
+		164,3 &	1,2 &	1,2 &	1,22\\
+		\hline
+		
+		
+	\end{tabular}
+\caption{Precesija - utež ob krogli, primer da se napaka z večanjem hitrosti vrtenja, manjša}
+\end{table}
+Na žalost isti princip ne moremo reči za nutacijo, kjer pa ta približek ni tako očiten. Je pa rahlo viden. Predvsem iz tega razloga, da z oddaljenostjo uteži od središča krogle, se napaka veča, oziroma so odstopanja večja. Kot primer lahko vzamemo nutacije za največje hitrosti pri vseh odmikih in jih damo v tabelo.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\rule{0pt}{3ex}   
+		Odmik uteži & 0 & 1.5 & 2.5\\
+		\hline
+		\hline
+		$\omega_z$ & 145,8  & 153,5 & 115,9\\
+		\hline
+		$\omega_{N}$ & 67,4 & 74,2 & 59,3  \\
+		\hline
+		$\omega_{N,calc}$\: (izračunana) & 68,0 & 66,2 & 46,8 \\
+		\hline
+		$\Delta \omega_N$ & -0,6 & 8 & 13,5 \\
+		\hline
+	\end{tabular}
+	\caption{Nutacija, primerjava vrednosti za različne odmike.}
+\end{table}
+\vspace{2mm}
+	
+\end{document}
+
+

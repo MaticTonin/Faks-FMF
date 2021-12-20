@@ -1,0 +1,4 @@
+Primem za vrtavko in jo rocno zasučem. Pri tem imam nekoliko srečee,
+da se imam skoraj izključno precesijo. Sinhroniziram stroboskop z frekvenco
+rotacije okoli glavne osi in preko kratkega udarca z ravnilom po glavni osi
+induciram opazljivo nutacijo.

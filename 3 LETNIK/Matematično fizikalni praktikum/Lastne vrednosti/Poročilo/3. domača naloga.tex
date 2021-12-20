@@ -1,0 +1,240 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\documentclass[slovene,11pt,a4paper]{article}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png}
+
+
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[margin=2cm,bottom=3cm,foot=1.5cm]{geometry}
+\usepackage{fullpage}
+\usepackage{a4wide}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5ex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+
+\def\phi{\varphi}
+\def\eps{\varepsilon}
+\def\theta{\vartheta}
+
+\newcommand{\thisyear}{2020/21}
+
+\renewcommand{\Re}{\mathop{\rm Re}\nolimits}
+\renewcommand{\Im}{\mathop{\rm Im}\nolimits}
+\newcommand{\Tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\diag}{\mathop{\rm diag}\nolimits}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ddd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\lag}{\mathcal{L}\!}
+\newcommand{\ham}{\mathcal{H}\!}
+\newcommand{\four}[1]{\mathcal{F}\!\left(#1\right)}
+\newcommand{\bigO}[1]{\mathcal{O}\!\left(#1\right)}
+\newcommand{\sh}{\mathop{\rm sinh}\nolimits}
+\newcommand{\ch}{\mathop{\rm cosh}\nolimits}
+\renewcommand{\th}{\mathop{\rm tanh}\nolimits}
+\newcommand{\erf}{\mathop{\rm erf}\nolimits}
+\newcommand{\erfc}{\mathop{\rm erfc}\nolimits}
+\newcommand{\sinc}{\mathop{\rm sinc}\nolimits}
+\newcommand{\rect}{\mathop{\rm rect}\nolimits}
+\newcommand{\ee}[1]{\cdot 10^{#1}}
+\newcommand{\inv}[1]{\left(#1\right)^{-1}}
+\newcommand{\invf}[1]{\frac{1}{#1}}
+\newcommand{\sqr}[1]{\left(#1\right)^2}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\thalf}{\tfrac{1}{2}}
+\newcommand{\pd}{\partial}
+\newcommand{\Dd}[3][{}]{\frac{\ddd^{#1} #2}{\ddd #3^{#1}}}
+\newcommand{\Pd}[3][{}]{\frac{\pd^{#1} #2}{\pd #3^{#1}}}
+\newcommand{\avg}[1]{\left\langle#1\right\rangle}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\braket}[2]{\left\langle #1 \vert#2 \right\rangle}
+\newcommand{\obraket}[3]{\left\langle #1 \vert #2 \vert #3 \right \rangle}
+\newcommand{\hex}[1]{\texttt{0x#1}}
+
+\renewcommand{\iint}{\mathop{\int\mkern-13mu\int}}
+\renewcommand{\iiint}{\mathop{\int\mkern-13mu\int\mkern-13mu\int}}
+\newcommand{\oiint}{\mathop{{\int\mkern-15mu\int}\mkern-21mu\raisebox{0.3ex}{$\bigcirc$}}}
+
+\newcommand{\wunderbrace}[2]{\vphantom{#1}\smash{\underbrace{#1}_{#2}}}
+
+\renewcommand{\vec}[1]{\overset{\smash{\hbox{\raise -0.42ex\hbox{$\scriptscriptstyle\rightharpoonup$}}}}{#1}}
+\newcommand{\bec}[1]{\mathbf{#1}}
+
+
+
+
+\newcommand{\Ai}{\mathrm{Ai}}
+\newcommand{\Bi}{\mathrm{Bi}}
+\newcommand{\bi}[1]{\hbox{\boldmath{$#1$}}}
+\newcommand{\bm}[1]{\hbox{\underline{$#1$}}}
+
+\title{1. Izračun Airyjevih funkcij}
+\author{Matic Tonin - 28181098 }
+\date{Oktober 2020}
+
+\begin{document}
+
+\begin{center}
+\thispagestyle{empty}
+\parskip=14pt%
+\vspace*{3\parskip}%
+\begin{Huge}Lastne vrednosti in lastni vektorji \end{Huge}
+
+
+3. Domača naloga v sklopu predmeta \\
+Matematično fizikalni praktikum
+
+Avtor:
+
+Matic Tonin
+
+Vpisna številka: 28181098
+
+Mentor 
+
+(Profesor: Borut Paul Kerševan )
+
+\rule{7cm}{0.4pt}
+
+Pod okvirom:
+
+FAKULTETE ZA FIZIKO IN MATEMATIKO, LJUBLJANA
+
+Akademsko leto 2020/2021
+
+\end{center}
+\pagebreak
+
+
+\newpage
+
+\section{Uvod}
+
+\section{Postopek}
+\subsection{Izdelava matrike H}
+Iz uvoda vemo, da je naša matrika H zgrajena iz dveh delov $H_0$ in $\lambda q^4$ kot:
+\begin{equation*}
+H = H_0 + \lambda q^4 
+\end{equation*}
+Za izdelavo matrike $H_0$ smo uporabili dejstvo, da je matrika diagonalna in velja $\delta_{ij}(i + 1/2)$. Za izdelavo matrike $\lambda q^4$ pa smo lahko uporabili več različnih pristopov.
+\begin{enumerate}
+    \item \textbf{Izračunamo vrednost $q$} \\
+    Če se odločimo za izračun $q$ si lahko pomagamo z matričnim elementom 
+    \begin{equation*}\langle i | q | j \rangle={1\over 2} \sqrt{i+j+1}\,\, \delta_{|i-j|,1} \>
+    \end{equation*}
+    in nato izračunamo $q^4$ kot matrični produkt štirih takih matrik.
+    \item \textbf{Izračunamo vrednost $q^2$} \\
+    Ob izračunu $q^2$ pa si pomagamo z elementom:
+    \begin{equation*}
+    \langle i|q^2|j\rangle = {1\over 2} \biggl[{\sqrt{j(j-1)}} \, \delta_{i,j-2}
+     + {(2j+1)} \, \delta_{i,j}
+    + {\sqrt{(j+1)(j+2)}} \, \delta_{i,j+2} \biggr]
+    \end{equation*}
+    Z dobljeno matriko $q^2$ pa jo nato pomnožimo samo s seboj, da dobimo $q^4$.
+    \item \textbf{Izračunamo vrednost $q^4$} \\
+    Zadnja možnost pa je, da izračunamo kar matrični element $q^4$ po formuli:
+    \begin{eqnarray*}
+    \langle i|q^4|j\rangle
+    = {1\over 2^4}\sqrt{2^i \, i!\over 2^{j} \, j! } \, \biggl[ \,
+     &\,& \delta_{i,j+4} + 4\left(2j+3\right) \delta_{i,j+2}
+                      + 12 \left(2j^2+2j+1\right) \, \delta_{i,j} \\[3pt]
+    &+& 16j \left(2j^2-3j+1\right) \, \delta_{i,j-2}
+     + 16j\left(j^3-6j^2+11j-6\right) \, \delta_{i,j-4} \biggr] \>,
+    \end{eqnarray*}
+    in tako avtomatsko dobimo matriko $q^4$
+\end{enumerate}
+Nato seštejemo matriko $H_0$ in $\lambda q^4$ in dobimo simetrično matriko $H$.
+\subsection{Izračun lastnih vrednosti matrike H}
+Imamo matriko $H$, ki ji želimo izračunati lastne vrednosti in lastne vektroje. To lahko storimo na več načinov, ki jih bom opisal, v naslednjih podpoglavjih, naredil pa jih bom zgolj nekaj, v odvisnosti od časa, ki ga bom porabil za izdelavo postopka.
+\subsection{Housholderjeva redukcija:}
+Ideja redukcije je, da je $(v_1,\lambda_1)$ lastni par za matriko A. Vemo, da za splošno matriko $A$ in $P$ velja, da če je matrika $P$ nesingularna, potem imata matriki $A$ in $PAP^{-1}$ enake lastne vrednosti. \\
+Torej če bomo našli tako matriko P, ki nam bo A zreducirala na diagonalno matriko, bomo v resnici našli lastne vrednosti matrike A. To lahko storimo tako, da vzamemo, da velja: 
+\begin{equation}
+    P\cdot v=k \cdot e_1
+\end{equation}
+torej da ustvarimo tako zrcaljenje vektorja $v_1$, da nam ostane le enotski vektor, pomnožen s skalarjem k.
+Da bo to držalo, mora biti naša matrika P oblike:
+\begin{equation*}
+    P= I- \frac{2}{\omega^T \omega} \cdot \omega \ometa^T
+\end{equation*}
+kjer je $\omega$ oblike: 
+\begin{center}
+\begin{equation*}
+\omega=
+\begin{bmatrix}
+ v_1 + \mathrm{sign}(v_1)\codt \| v\|_2  \\
+v_2 \\
+...\\
+v_n\\
+\end{bmatrix}
+\end{equation*}
+\end{center}
+kjer sta $\| v\|_2$ norma vektorja v in $\mathrm{sign}(v_1)$ predznak elementa $v_1$. \\
+\midskip
+Če bomo tako matrik sedaj uporabili na naši matriki A, kjer bomo želeli spremeniti le prvi stolpec v enotski vektor, bomo dobili obliko.
+\begin{equation*}
+PAP^{-1}= 
+\begin{bmatrix}
+ \lambda_1 & B^T \\
+ V_0 & \tilde{A} \\ 
+\end{bmatrix}
+\qquad V_0 =\begin{bmatrix}
+ 0 \\
+ ... \\
+ 0_{n-1} \\
+\end{bmatrix}
+\quad \tilde{A}^{(n-1) \times (n-1)}
+\quad B^{T}^{(n-1) \times 1}
+\end{equation*}
+Kjer je $\lambda_1$ v resnici naša prva lastna vrednost. Če sedaj ponovimo postopek na matriki $\tilde{A}$, bomo na koncu dobili zgornje trikotno matriko, iz katere pa lahko razberemo, kolikšne so lastne vrednosti in lastni vektorji.
+
+\subsection{Givensove rotacije}
+Če imamo matriko A, na kateri ponovno želimo ustvariti, da je prvi stolpec enak enotskemu vektorju, pomnoženemu s skalarjem k (ki je v resnici, ko izvedemo celoten postopek enak $\lambda_i$), moramo matiko A pomnožiti z primerno rotacijsko matriko R, ki nam spremeni določen element, ki si ga izberemo v 0, ostale pa v poljubne vrednosti. Matrika R bo oblike (primer, ko želimo na i, j mestu 0:
+\begin{equation*}
+R=\begin{bmatrix}
+ 0 & 0 & ... & 0 \\
+ 0 & 0 & ... & 0 \\
+ ... & ... &  R_{i,j} & ... \\
+  0 & 0 & ... & 0 \\
+\end{bmatrix}
+\qquad
+    R_{i,j}^T=\begin{bmatrix}
+     \cos(\phi_{i,j})& \sin(\phi_{i,j}) \\
+     -\sin(\phi_{i,j}) & \cos(\phi_{i,j})
+    \end{bmatrix}
+\end{equation*}
+Manjka nam zgolj še izračun $\phi_{i,j}$ za vsako rotacijo posamezno.
+Če si narišemo skico: \\
+\begin{center}
+\begin{tikzpicture}
+  \draw[<->] (-3,0)--(3,0) node[right]{$x$};
+  \draw[<->] (0,-3)--(0,3) node[above]{$y$};
+  \draw[line width=2pt,blue,-stealth] (0,0)--(2,2) node[anchor=south west]{$a$}
+  \draw[line width=2pt,red,-stealth] (0,0)--(2,2) node[anchor=south west]{$a$}
+\end{tikzpicture}
+\end{center}
+
+\begin{thebibliography}{99}
+\setlength{\itemsep}{.2\itemsep}\setlength{\parsep}{.5\parsep}
+\bibitem{1_vallee} O.~Vall\'ee, M. Soares,
+  {\sl Airy functions and applications to physics},
+  Imperial College Press, London 2004.
+\bibitem{1_szego} G.~Szeg\"o, {\sl Orthogonal polynomials},
+  AMS, Providence 1939.
+\bibitem{1_landauQM} L.~D.~Landau, E.~M.~Lifshitz, {\sl Course in
+  theoretical physics, Vol.~3: Quantum mechanics},
+  $3^\mathrm{rd}$ edition, Pergamon Press, Oxford 1991.
+\bibitem{1_abram} M.~Abramowitz, I.~A.~Stegun, {\sl Handbook of mathematical
+  functions}, $10^\mathrm{th}$ edition, Dover Publications, Mineola 1972.
+\end{thebibliography}
+%\end{spacing}
+\end{document}

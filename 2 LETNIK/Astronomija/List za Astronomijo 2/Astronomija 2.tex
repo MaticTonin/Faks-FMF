@@ -1,0 +1,369 @@
+\documentclass[12pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{icomma}
+
+\pdfinfo{
+  /Title (Uporabne formule iz klasične mehanike za fizike)
+  /Author (Urban Duh)
+  /Subject (Klasična mehanika)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1 cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\avg}[1]{\langle#1\rangle}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\rv}{\vec{r}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\av}{\vec{a}}
+\newcommand{\F}{\vec{F}}
+\newcommand{\uunderline}[1]{\underline{\underline{#1}}}
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{Galaksija}
+\subsection{Začetna masna funkcija}
+Je funkcija, ki nam pove, kolikšen del zvezd nastane iz neke porazdelitve mase zvezd (Salpeterjev zakon):
+
+$$\frac{dN}{dM}=cM^{-\alpha}=\rho(M)$$
+kjer je N št zvezd, M, njihova masa, $\alpha$ nek faktor (2.35), c pa konstanta normalizacije.
+
+
+Reševanje takih nalog:
+Večinsko integriramo, da dobimo vrednosti, ki jih želimo, konstanto $c$ pa dobimo kot
+$M_{skupna}=N \cdot M=c \int_{spodnja}^{zgornja} \rho(M) M dM$
+\subsection{Trki med zvezdami}
+Za trke med zvezdami potrebujemo nekaj ocen in sicer
+\texttt{Povprečna gostota zvezd na volumsko enoto:} 
+$$\overline{n}=\frac{N}{V}$$
+\texttt{Povprečna razdalja med zvezdami:}\\
+$$\overline{d}=\overline{n}^{-\frac{1}{3}}$$
+\texttt{Sipalni presek:}
+$$\sigma=\pi r^2$$
+kjer je r razdalja, da trčita.
+\texttt{Povprečna pot:}
+$$l=\frac{1}{\overline{n}\sigma}$$
+\texttt{Čas med trkoma:}
+$$\tau=\frac{l}{v}$$
+
+
+Reševanje takih nalog:
+Zapišemo energije $W_k=W_g$ in si izpišemo željene zveze.\\
+Ne pozabi, da je:
+$$p=nkT \quad \frac{3}{2}kT=\frac{1}{2}m<v ^2>$$
+\subsection{Relativne hitrosti gibanja v galaksiji}
+Relativno hitrost gibanja glede na nas lahko zapišemo kot:
+$$v_r(l)=r_0\sin(l)\left(\frac{v}{r}-\frac{v_0}{r_0}\right)$$
+Kjer so $v_0, r_0$ podatki o hitrosti gibanja Sonca okoli središča in razdalji do središča. $l$ pa je galaktična koordinata.
+In sinusni izrek:
+$$\frac{d}{\sin(\theta)}=\frac{r_0}{\sin(l+\theta)}$$
+
+
+Reševanje takih nalog:
+Nariši si skico, da boš videl, kateri je kateri kot in nato zapiši sinusne izreke ter smeri hitrosti. 
+\subsection{Radialna odvisnost gostote temne snovi}
+Če pogledamo Newtonove zakone vidimo, da je hitrost gibanja zvezd v galaksiji enaka:
+$$v(r)=\sqrt{\frac{Gm(r)}{r}}$$
+Kjer je m(r) porazdelitev mase črne snovi.
+Vemo pa tudi, da je:
+$$\frac{dm}{dr}=4\pi r^2 \rho (r)$$
+\subsection{Oortove konstate}
+Nam povejo hitrosti gibanj zvezd, ki so v okolici Sonca ($r<<R_{\odot}$).
+$$v_r=Ar \sin(2l) \qquad v_t=Ar\cos(2l) +Br$$
+
+Kjer je A=14.8 km/s/kpc in B=-12.4 km/s/kpc.
+
+Velja pa tudi, da je:
+$$cos(\alpha)=\frac{r_\odot}{r}\sin(l)$$
+
+Splošne enačbe za hitrosti pa se glasijo:
+$$v_r=r_\odot \sin(l)(\omega-\omega_\odot)$$
+in 
+$$v_t=r_\odot \cos(l)(\omega-\omega_\odot)-\omega r$$
+\subsection{Gravitacijsko lečenje in Einsteinov radij}
+\texttt{V ravnini leče:}\\
+Einsteinov radij je definiran kot:
+$$\theta_E^2=\frac{4GM}{c^2}\frac{D_{LS}}{D_{OL}D_{OS}}$$
+kjer so D razdalje med Opazovalcem, Sliko in Lečo.
+\texttt{Ko ni v ravnini leče:} \\
+V primeru, ko nismo v ravnini leče, je:
+$$\theta_{1,2}=\frac{1}{2}[\beta \pm (\beta^2 +4\theta_E ^2)^{\frac{1}{2}}]$$
+\texttt{Povečava slike:}
+Definirana je kot:
+$$a_{\pm}=\frac{\theta{\pm}}{2\beta}\left(1\pm\frac{\beta}{(\beta^2+4 \theta_E^2)^{\frac{1}{2}}}\right)
+$$
+
+In še skupna povečava je:
+$$a_{tot}=a_+ - a_-=\frac{\mu^2+2}{\mu(\mu^2+4)^{\frac{1}{2}}}$$
+Kjer je $\mu=\frac{\beta}{\theta_E}$.
+Drugi izraz je uporaben v primeru, da se leča premika s časom, torej da se Einsteinov radij spreminja s časom, razdalja od nas do zvezde pa ostaja konst.
+Takrat dobimo, da je:
+$$\mu\left(\tau=\frac{vt}{d}\right)=\mu(0)\sqrt{\frac{1-\tau}{1+\tau}}$$
+\texttt{Primer:}\\
+Izmerili smo kot med zgornjo in spodnjo sliko, ki je v resnici kar $$\theta=\theta_+-\theta_-$$
+Iz tega lahko izvemo, koliko je $\beta$ in iz $\beta$ lahko dobimo, koliko sta $\theta_+, \theta_-$.
+Iz česar nato sledi, da je:
+
+$$\beta^2 =\theta^2-4\theta_E^2$$
+\\
+\texttt{Ocenitev verjetnosti gravitacijskega lečenja:}
+Verjetnost, da pride do lečenja zvezde lahko zapišemo kot:
+$$N=n \sigma d$$ 
+kjer je 
+$$n=\frac{M_{polje}}{M_{posamezno}} \frac{1}{V}$$ št. zvezd na volumsko enoto. $$\sigma=\pi (\theta_E D_{OL})^2$$ sipalni presek, d pa razdalja.
+
+\subsection{Povprečna površinska svetlost eliptičnih galaksij}
+Je definirana kot:
+$$<I>=\frac{L(r<r_e)}{\pi R_e^2}$$
+Da pa bi izvedeli, kolikšen je izsev eliptične galaksije na določenem radiju pa velja:
+$$L(r<r_e)=\int_{0}^{\infty*} I(r)2\pi r dr$$
+(*$\infty$ je zgolj zato, ker ne moremo določiti meje galaksije)
+Kjer je I(r) porazdelitev površinske svetlosti po radiju, definirana kot:
+
+$$I(r)=I_e 10^{-b\left(\left(\frac{r}{r_e}\right)^{\frac{1}{4}}-1\right)}=I_e e^{-\alpha\left(\left(\frac{r}{r_e}\right)^{\frac{1}{4}}-1\right)}$$
+
+Kjer sta $b=3.3307$ in $\alpha=7.66$. Zgolj neka normalizacijska faktorja, značilna za posamične galaksije.\\
+\textbf{V primeru, da je galaksija spiralna, je namesto na $\frac{1}{4}$ tam 1.}\\
+
+Za površinske svetlosti velja naslednja zveza z magnitudami na ločne sekudne ($\mu$):
+$$\mu_1 -\mu_2=-2.5 \log\frac{I_1}{I_2}=-2.5 \log \frac{\frac{j_1}{A_1}}{\frac{j_2}{A_2}}$$
+
+Kjer sta $A_1$ in $A_2$ površini galaksij.
+\subsection{Fiber Jakson relacija za disperzijo in izsev galaksije}
+Če vemo, kolikšna je disperzija galaksije $\sigma$, poznamo tudi relacijo, da je
+$$L \propto \sigma^4$$
+
+Disperzija pa nam pomaga tudi pri računanju mase, saj je:
+
+$$W_{kin}=\frac{1}{2}M_* 3\sigma^2$$
+Če uporabimo virialni teorem:
+$$2W_k=W_g$$ dobimo zvezo, da je:
+
+$$M_{galaxy}=\frac{3\sigma^2 R}{G}$$
+Kjer je R velikost galaksije.
+\texttt{Z upoštevanjem fundamentalne ravnine:}\\
+Relacija se v tem primeru spremeni v:
+$$L=\alpha \sigma^{\frac{8}{3}}<I_e>^{-\frac{3}{5}}$$
+Iz česar sledi, za primerjavo dveh galaksij 1 in 2, da je:
+
+$$\frac{L_1}{L_2}=\frac{\sigma_1}{\sigma_2}^{\frac{8}{3}}\left(\frac{L_1}{L_2}\left(\frac{R_e2}{Re_1}\right)^2\right)^{-\frac{3}{5}}$$
+\subsection{Gaussov teorem}
+Gaussov teorem pravi, da je:
+$$\frac{M_{galaxy}}{L_{galaxy}}=konst$$
+
+\subsection{Tully fisher relacija}
+Nam pove zvezo med vrtenjem galaksije in sevanjem v spektru. 
+$$v_{max}=\frac{\Delta \lambda}{\lambda_0}c$$
+Kjer je $2\Delta \lambda$ razmik zaradi med enim in drugim vrhom, $\lambda_0$ pa valovna dolžina, ki bi jo morala sevati galaksija, $v_{max}$ pa je razdalja od središča grafa do robov.
+
+\texttt{V primeru, da je galaksija nagnjena:}\\
+$$v_{max, dejanska}\sin(\phi)=v_{max, odcitana}$$
+Kjer je $v_{max, odcitana}$ tista, ki jo razberemo iz grafa, $\phi$ je pa nagib galaksije, ki ga lahko dobimo kot $\cos (\phi )=\frac{b}{a}$ torej mala z večjo polosjo galaksije.
+
+Tully Fisher relacija pa je:
+$$\frac{L}{3\cdot  10^{10}L_{\odot}}=\left(\frac{v_{max}}{200 \frac{km}{s}}\right)^{4}$$
+
+Za maso galaksije s pomočjo disperzije lahko uporabimo virialni teorem:
+$$M=\frac{v^2r}{G}$$
+Kjer je $v$ središčna hitrost in r velikost galaksije.
+
+\subsection{Hubblov zakon in rdeči premik}
+Hublov zakon nam poda relacijo o oddaljenosti predmeta in njegove hitrosti premikanja:
+
+$$H_0=\frac{v}{d}$$
+kjer je $H_0=70 \frac{km}{s}\cdot \frac{1}{Mpc}$
+
+Rdeči premik pa definiramo kot:
+$$z=\frac{v}{c}=\frac{\lambda_{obs}-\lambda_{lab}}{\lambda_{lab}}$$
+
+\subsection{Kvazarji}
+Imamo kvazar, ki seva s frekvenvo $\nu$ nek fluks $F_{\nu}$.
+Poznamo zanj relacijo, da je:
+
+$$F_\nu=\beta \nu ^{-\alpha}$$
+kjer je $\alpha$ konstanta spektralnega indeksa.
+Če vemo vrednost pri določeni frekvenci, lahko def pri katerikoli frekvenci:
+$$\frac{F_{\nu 1}}{F{_{\nu 2}}}=\left(\frac{\nu_1}{\nu_2}\right)^{-0.8}$$
+
+
+$$L=4 \pi d^2 \int_{\nu_{min}}^{\nu_{max}}F_{\nu}d\nu$$
+Če ima kvazar ovale okoli sebe, lahko izračunamo velikost mag polja ovalov.
+
+$$\frac{1}{2}E=w_b V$$
+kjer je E energija ovalov, faktor $\frac{1}{2}$ zaradi levega in desnega ovala, gostota megnetne energije je$w_b=\frac{B^2}{2\mu_0}$, $V$ pa je volumen ovalov.
+
+Če želimo izračunati faktor $\alpha$, je to v resnici naš naklon iz grafov.
+\subsection{Eddingtonov izsev}
+Eddingtonov izsev nam pove, da je izsev diska enak:
+$$L_{disk}=f_{edd}L_{edd}$$
+Kjer je $f_{edd}$ nek faktor. 
+Velja pa tudi, da je:
+$$L_{edd}=\eta c^2 \dot{m}=\frac{4\pi Gc}{\kappa}M$$
+In da je temperatura diska enaka:
+
+$$T_{disk}=\left(\frac{3 \dot{m}c^6}{8 \pi \sigma G^2 M^2}\right)^{\frac{1}{4}}$$
+Če preko zveze, da je:
+$$\eta c^2 \dot{M}=\frac{4\pi Gc}{\kappa}Mf_{edd}$$
+izrazimo $\dot{m}$ in ga vstavimo v zgornjo relacijo za disk, dobimo:
+$$T_{disk}=\left(\frac{3 f_{edd} c^5 }{2 \sigma G M \kappa \eta}\right)^{\frac{1}{4}}$$
+
+\subsection{Aktivna galaktična jedra}
+Če nas zanima masa aktivnih galaktičnih jeder, jo lahko dobimo na 2 načina:
+\begin{enumerate}
+\item Iz Eddingtonove limite: \\
+$$M_S=\frac{L\kappa}{4\pi G c}$$
+\item Iz Schwardschildovega radija: \\
+$$M_Z=\frac{Rc^2}{2G}$$
+
+Kjer Radij lahko dobimo iz periode utripanja kot $$\Delta t=\gamma \frac{l_2-l_1}{c}$$
+kjer je $\cos(\phi)=\frac{l_1+R}{l_2}$, $\phi$ je kotna velikost predmeta.
+\end{enumerate}
+
+V primeru, da je $v$ velik, velja:
+$$1+z=\sqrt{\frac{1-\beta}{1+\beta}}$$
+In $$\beta=\frac{(z+1)^2-1}{(z+1)^2+1}$$
+
+In Hubblov zakon, da je $$\beta=\frac{H_0 d}{c}$$
+kjer je d oddaljenost predmeta do nas.
+\subsection{Nadsvetlobno superluminalno gibanje}
+Dejanska hitrost gibanja vozlov v curku Aktivnega Galaktičnega jedra je opisana z enačbo:
+$$\beta =\frac{\beta_{nav}}{\sin(\theta)+\beta_{nav}\cos(\theta)}$$
+Kjer je $\beta_{nav}$ tista, ki jo vidimo, oz izmerimo. $\theta$ je kot med curkom in izvorom. 
+Hitrost bo maksimalna, ko bo:
+$$\frac{d\beta_{nav}}{d\theta}=0$$
+
+Če je gibanje žarkov 
+\subsection{Gravitacijsko lečenje kvazarja zaradi galaktičnega jedra}
+Kvazarju se zače spreminjati perioda svetlobe, ki pride do nas zaradi gravitacijskega lečenja. A pri tej periodi se zgodi še nek popravek lečenja bližnje mase:
+$$\delta t_{A} =\frac{4 GM}{c^3}\ln\left(\frac{4|z_1|z_2}{b}\right)=\frac{4 GM}{c^3}\ln\left(\frac{2\sqrt{z_{A1} z_{A2}}}{b}\right)$$
+kjer je $z_1$ oddaljenost prve slike od mase, $z_2$ oddaljenost druge slike od mase $b$ pa razdalja nas do objekta.
+Tako je splošen izraz enak:
+$$\Delta t=\frac{4 GM}{c^3}\left(\ln \left(\frac{2\sqrt{z_{A1} z_{A2}}}{b}\right)-\ln \left(\frac{2\sqrt{z_{B1} z_{B2}}}{b}\right)\right)$$
+(Na vajah smo dodali, da sta si $z_{A1} \approx z_{B1}$ in  $z_{A2} \approx z_{B2}$), da smo dobili spodnjo zvezo:
+
+$$\Delta t=\delta t_A-\delta t_B=\frac{4GM}{c^3}\ln(\frac{\Theta_B}{\Theta_A})$$
+kjer sta $\Theta_B$ in $\Theta_A$ velikost slike.
+
+\subsection{Rochejeva limita plimske motnje}
+Je limita najmanjše razdalje med zvezdo in črno luknjo, da ne pride do plimske motnje.
+$$r_R=2.4 \left(\frac{\rho_{BH}}{\rho_*}\right)^{\frac{1}{3}}R_S$$
+Kjer je $R_S$ Schwarzschildov radij,$\rho_{BH}$ gostota črne luknje $\rho_{*}$ pa gostota zvezde. 
+Če želimo iz tega vedeti maso črne luknje, velja:
+
+$$M_{BH}=\left(\frac{2.4^3 3 c^2}{32 \pi \rho_* G^3}\right)^{\frac{1}{2}}$$
+\subsection{Grupe galaksij}
+Za merjenje razdalje od ene do druge strani grupe, lahko, če je grupa sferna, uporabimo modul razdalje in logiko, da je:
+$$m_{zadi}-m_{spredi}=-5\log\left(\frac{d_z}{d_s}\right)$$
+kjer je $d_Z=d+R$ in $d_s=d-R$, kjer je $R$ oddaljenost središča grupe.
+\subsubsection{Masa grupe}
+Lahko jo izpeljemo iz virialnega teorema, da velja:
+
+$$M=\frac{5\sigma^2 R}{G}$$
+kjer je $\sigma$ disperzija hitrosti. 
+\subsection{Halo plina in njegova masa v galaksiji}
+Za maso haloja plina znotraj radija r velja enačba, da je:
+$$M(<r)=-\frac{k T(r) r}{G \bar{\mu} m_{p}}\left(\frac{d \ln \rho}{d \ln r}+\frac{d \ln T}{d \ln r}\right)$$
+ali 
+$$M(<r)=-\frac{k T(r) r}{G \bar{\mu} m_{p}}\left(\frac{r}{\rho}\frac{d\rho}{dr}+\frac{r}{T}\frac{dT}{dr}\right)$$
+kjer sta $\rho(r)$,$T(r)$ funkciji radija. 
+V primeru ko imamo vodik je izkoristek našega sistema $\bar{\mu}=1$.\\
+
+Maso same galaksije pa izračunamo preko:
+$$M(r)=\int \rho (r) dV$$
+\subsection{Širjenje vesolja}
+Če računamo za dogodke v starem vesolju nas zanimajo rdeči premiki. Če detektiramo spektralne črte, velja:
+$$\frac{\Delta \lambda}{\lambda_{LAB}}=z$$
+in velja še, da je
+$$\frac{d \lambda}{\lambda}=\frac{dv}{c}$$
+in da se Hubblova konstata spreminja kot:
+$$v=H r \quad dv=\frac{\dot{a}}{a}dr$$
+kjer je a, spreminjajoči radij vesolja.
+
+Tako velja:
+$$\frac{d \lambda}{\lambda}=\frac{da}{a}$$
+
+Splošno torej:
+$$1+z=\frac{\lambda_{OBS}}{\lambda_{LAB}}=\frac{a_{danes}}{a_{preteklost}}$$
+kjer je $a$ velikost vesolja. \\
+Ker se tudi v tem primeru predmeti širijo blizu svetlobne hitrosti, je:
+$$1+z=\sqrt{\frac{1-\beta}{1+\beta}}$$
+In $$\beta=\frac{(z+1)^2-1}{(z+1)^2+1}$$
+In Hubblov zakon, da je $$\beta=\frac{H_0 d}{c}$$
+kjer je d oddaljenost predmeta do nas.
+\subsection{Kozmološki model}
+Enačba kozmoškega modela se glasi:
+$$(\frac{\dot{a}}{a})^2=\frac{8\pi G}{3}\rho-\frac{kc^2}{a^2}+\frac{\Lambda c^2}{3}$$
+kjer je $k$ parameter ukrivljenosti, $\Lambda$ pa kozmološka konstanta.
+Imamo še eno enačbo in sicer:
+$$\frac{\ddot{a}}{a}=-\frac{4\pi G}{3c^2}(\rho c^3+3p)+\frac{\Lambda c^2}{3}$$
+kjer je $p$ enačba stanja.\\
+Poznamo pa tudi enačbo:
+
+$$\dot{\rho}+3\frac{\dot{a}}{a}\left(\rho+\frac{p}{c^2}\right)=0$$
+kjer je $p(\rho)$ ponovno enačba stanja.\\
+
+\subsubsection{Spreminjanje hubblove konstante}
+$$H=H_0(\frac{\Omega_m}{a^3}+\frac{\Omega_{rad}}{\dot{a}^4}+\frac{\Omega_k}{a^2}+\Omega_{\Lambda}\dot{a}^{3(\omega+1)})^{\frac{1}{2}}$$
+
+Dunja je mela na predavanjih, ko je $k=0$ in $\Delta>0$
+$$\frac{H^2}{H_0^2}=\frac{8\pi G}{3 H_0^2}\rho +\frac{\Delta c^2}{3H_0^2}$$
+Iz česar sledi, da je:
+$$\frac{H^2}{H_0^2}=\frac{\rho}{\rho_{c,0}}+\Delta_{\Delta}$$
+kjer sta $\rho_{c,0}=\frac{3H_0^2}{8 \pi G}$ in $\Delta{\Delta}=\frac{\Delta c^2}{3H_0^2}$ kar je parameter gostote za kozmološko konstanto. 
+
+\end{multicols}
+\end{document}

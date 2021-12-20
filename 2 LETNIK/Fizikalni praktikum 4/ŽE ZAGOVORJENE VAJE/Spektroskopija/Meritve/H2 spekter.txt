@@ -1,0 +1,10 @@
+#Valovna[nm]	kot
+434	169.416
+486	171.75
+656	175.833
+
+#Za umeritev bomo uporabljali slednje črte od  H2:
+
+#Barva	Tablična λ [ nm]
+#Svetlomodra	486
+#Rdeča	656

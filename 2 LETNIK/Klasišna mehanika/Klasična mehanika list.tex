@@ -1,0 +1,486 @@
+\documentclass[12pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{icomma}
+
+\pdfinfo{
+  /Title (Uporabne formule iz klasične mehanike za fizike)
+  /Author (Urban Duh)
+  /Subject (Klasična mehanika)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1 cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\avg}[1]{\langle#1\rangle}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\rv}{\vec{r}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\av}{\vec{a}}
+\newcommand{\F}{\vec{F}}
+\newcommand{\uunderline}[1]{\underline{\underline{#1}}}
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{Osnovni pojmi}
+Splošen zapis za katerekoli koordinate: \\
+$\vec e_\alpha = \frac{\partial \rv}{\partial x_\alpha}$ \\
+$d \rv = \sum \frac{\partial \rv}{\partial x_\alpha} d x_\alpha$ \\
+$\vv = \dot \rv = \sum \dot x_\alpha \vec e_\alpha$  \\
+Bazni vektorji: \\
+$\hat{i}=\frac{\partial \vec{r}}{\partial x}$
+$\hat{j}=\frac{\partial \vec{r}}{\partial y}$
+$\hat{k}=\frac{\partial \vec{r}}{\partial z}$ \medskip \\
+\textbf{Polarne koordinate za en delec:} \\ 
+$\rv = r \cos \varphi \hat i + r \sin \varphi \hat j$ \\
+$\vec e_r = \cos \varphi \hat i + \sin \varphi \hat j$ \\
+$\vec e_\varphi = - r \sin \varphi \hat i + r \cos \varphi \hat j$ \\
+$|\vec e_r| = 1$ \qquad $|\vec e_\varphi| = r$ \qquad $\vec e_r \cdot \vec e_\varphi = 0$ \\
+$T= \frac{1}{2} m (\dot{r}^2 + r^2 \dot{\varphi}^2)$ \\
+$\av = \vec e_r \left(\ddot r - \dot{\varphi}^2 r\right) + \vec e_\varphi \left(\ddot \varphi + 2 \frac{\dot \varphi \dot r}{r}\right)$  \\
+\textbf{Pozor:} \\
+Radij se lahko spreminja in je funkcija nečesa drugega, primer, točka, v valju. Takrat raje zapiši navadne koordinate.\medskip \\
+\textbf{Sferične koordinate} \\
+$\rv = r \cos \varphi \sin \vartheta \hat i + r \sin \varphi \sin \vartheta \hat j + r \cos \vartheta \hat k$ \\
+$\vec e_r =  \cos \varphi \sin \vartheta \hat i + \sin \varphi \sin \vartheta \hat j + \cos \vartheta \hat k$ \\
+$\vec e_\vartheta =  r \cos \varphi \cos \vartheta \hat i + r \sin \varphi \cos \vartheta \hat j - r \sin \vartheta \hat k$ \\
+$\vec e_\varphi =  -r \sin \varphi \sin \vartheta \hat i + r \cos \varphi \sin \vartheta \hat j$ \\
+$|\vec e_r| = 1$ \qquad $|\vec e_\vartheta| = r$ \qquad $|\vec e_\varphi| = r \sin \vartheta$ \qquad $\vec e_\alpha \cdot \vec e_\beta = 0$ \\
+$T = \frac{1}{2} m (\dot{r}^2 + \dot{\varphi}^2 r^2 \sin^2 \vartheta + \dot{\vartheta}^2 r^2)$ \medskip \\
+
+\textbf{Reševanje nalog:}\\
+V primeru, da naloga ni mišljena za reševanje z Lagrangevim formalizmom, zapiši sile v vseh vektorskih smereh z njihovimi baznimi vektorji. Oz zapiši 2. NZ za sistem. \medskip \\
+\subsection{Neinercialni koordinatni sistemi}
+Lasten sistem je označen z črticamo, medtem ko je celoten sistem označen brez črtic. \medskip \\
+$\frac{d \vec e_\alpha'}{dt} = \vec \omega' \times \vec e_\alpha'$ \\
+$\rv' = \sum x_\alpha' \vec e_\alpha' = \rv - \vec R$ \\
+Relativna hitrost, ki deluje na delec. v celotnem sistemu. \\
+$\vv_\mathrm{rel} = \sum \dot x_\alpha' \vec e_\alpha'$ \\
+Hitrost, ki ga čuti delec v lastnem sistemu. \\
+$\dot \rv' = \vv_\mathrm{rel} + \vec \omega ' \times \rv'$ \\
+Pospešek, ki ga čuti delec v lastnem sistemu. \\
+$\ddot \rv' = \av_\mathrm{rel} + 2 \vec \omega' \times \vv_\mathrm{rel} + \vec \omega' \times (\vec \omega' \times \rv') + \dot{\vec \omega}' \times \rv'$ \\
+Sistemska sila, ki jo občuti delec: \\
+$\F_s = - m \ddot{\vec R} - m \vv_\mathrm{rel} - 2 m \vec \omega' \times \vv_\mathrm{rel} - m \vec \omega' \times (\vec \omega' \times \rv') - m \dot{\vec \omega}' \times \rv'$ \\
+$m \av_\mathrm{rel} = m \sum \ddot x_\alpha \vec e_\alpha = \sum \F + \F_s$ \medskip \\
+
+\textbf{Vrteči sistem:} \\
+Koordinate telesa v lastnem sistemu so:
+$\hat i' = \cos(\Omega t) \hat i + \sin(\Omega t) \hat j$ \\
+$\hat j' = - \sin(\Omega t) \sin \varphi \hat i + \cos(\Omega t) \sin \varphi \hat j + \cos \varphi \hat k$ \\
+$\hat k' = \sin(\Omega t) \cos \varphi \hat i - \cos(\Omega t) \cos \varphi \hat j + \sin \varphi \hat k$ \\
+Kjer je omega hitrost vrtenja celotnega sistema. \medskip \\
+$\vec \Omega = \Omega \cos \varphi \hat j' + \Omega \sin \varphi \hat k'$ \\
+$\vec R = -R \hat k'$ \qquad $\dot{\vec R} = \vec \Omega \times \vec R$ \\
+$\ddot \rv = \dot{\vv}_\mathrm{rel} + \vec \Omega \times \left( \dot \rv' + \dot{\vec R} \right) = \av_\mathrm{rel} + 2 \vec \Omega \times \vv_\mathrm{rel} + \vec \Omega \times \vec \Omega \times \left( \rv' + \vec R \right)$ \\
+$m\av_\mathrm{rel} = \sum \F - 2 m\vec \Omega \times \vv_\mathrm{rel} - m \vec \Omega \times \vec \Omega \times \left( \rv' + \vec R \right)$ \medskip \\
+Uporabna substitucija pri reševanju takih nalog, kjer dobimo gibanje v x in y smeri oz dve diferencialni enačbi. Seštejemo ju in uporabimo substitucijo:
+$\zeta=x+iy$ \medskip \\
+V primeru, da je sistem nagnjen, torej da $\hat{k} \neq \hat{k}'$ z Eulerjevo rotacijo najdi smer med $\omega$ in $\omega'$.
+\subsection{Pomembne količine}
+
+\textbf{1 delec} \\
+
+$\F = m \ddot \rv$ \\
+$\F_{21} = - \F_{12}$ \smallskip \\
+
+$\vec p = m \vec v$ \\
+$\frac{d \vec p}{dt} = \F$ \smallskip \\
+
+$\vec l = \rv \times \vec p = m\rv \times \vv$ \\
+$\frac{d \vec l}{dt} = \vec M = \rv \times \F$ \smallskip \\
+
+$A = \int_\gamma \F \cdot d\rv$ \\
+$T = \frac{1}{2} m \vv \cdot \vv$ \smallskip \\
+
+Sila je konzervativna, če $\F = - \nabla U$. \\
+$\F$ konzervativna $\iff$ $\frac{\partial F_x}{\partial y} = \frac{\partial F_y}{\partial x}$ (v 3D po parih $xy$, $yz$, $xz$). \\ 
+$\F$ konzervativna $\iff$ $A = \int_\gamma \F \cdot \rv = - \Delta U$ neodvisno od poti. \medskip \\
+
+\textbf{Sistem $\mathbf{N}$ delcev} \\
+$\rv_T = \frac{\sum m_i \rv_i}{\sum m_i}$ \\
+$\vec P = \sum \vec p_i = M \rv_T$ \\
+$\frac{d \vec P}{dt} = M \av_T = \F^{(z)}$ \smallskip \\
+
+$\vec L = \sum \vec l_i = \rv_T \times M \vv_T + \sum \rv_i' \times m \vv_i'$ \\
+$\dot{\vec L} = \vec M^{(z)} + \vec M^{(n)} = \sum \rv_i \times \F_i^{(z)} + \sum_{j < i} (\rv_i - \rv_j) \times \F_{ij}$ \\
+Če so sile centralne $\left( \F_{ij} = F_{ij} \frac{\rv_i - \rv_j}{|\rv_i - \rv_j|} \right)$, je $\vec M^{(n)} = 0$.\smallskip \\
+
+$A = A^{(z)} + A^{(n)}$ \\
+$T = \frac{1}{2} M v_T^2 + \sum \frac{1}{2} m_i v_i'^2$ \\
+$V = \sum_i V_i + \frac{1}{2} \sum_{ij, i \neq j} V_{ij}$\medskip \\
+
+\textbf{Virialni teorem} (sistem $N$ delcev) \\
+$2 \avg T = \frac{1}{2} \avg{\sum_{ij, i \neq j} \frac{\partial V_{ij}}{\partial r_{ij}} r_{ij}} - \avg{\sum_i \F_i^{z} \cdot \rv_i}$ \\
+$V(\rv) = \alpha r^n$ \quad $\implies$ \quad $2 \avg{T} = n \avg{V}$ \medskip \\
+\section{Vezi}
+Vezi so zveze med različnimi koordinatami. Npr, da ima naš sistem preveč komponent, ki bi jih lahko vključili, zapišemo vezi, oziroma zveze med dvema koordinatama, da si Lagrangevo funkcijo poenostavimo. 
+\textbf{Generalizirane koordinate:}\\
+So koordinate, ki smo jih izrazili iz vezi in bomo nato gledali njihovo odvisnost v E-L enačbi.
+
+\section{Lagrangev formalizem}
+
+$\sum_{i = 1}^{N} \left(\vec F_i^{(a)} - m_i \vec a_i\right) \delta \vec r_i = 0$ \qquad (D'Alembertov princip) \\
+V primeru, da kakšna sila ni potencialna, uvedemo:
+$Q_j = \sum_{i = 1}^{N} \vec F_i^{(a)} \frac{\partial \vec r_i}{\partial q_j}$ \\
+$\frac{d}{dt} \frac{\partial T}{\partial \dot{q_j}} - \frac{\partial T}{\partial q_j} = Q_j$, \quad $j = 1, 2 \dots N$ \medskip \\
+Če so vse sile potencialne, torej, 
+Če $\vec F_i = - \nabla_i V$, $\forall i$. Dobimo Lagrangev formalizem: \\
+$L = T - V$ \\
+In rešujemo sistem enačbe za vsako koordinato posebej:
+$\frac{d}{dt} \frac{\partial L}{\partial \dot{q_j}} - \frac{\partial L}{\partial q_j} = 0$ \medskip \\
+
+Če $\frac{\partial L}{\partial q_i}$=0, potem $\frac{\partial L}{\partial \dot{q_i}} = konst. = p_i$ (posplošeni impulz, $q_i$ pravimo ciklična koordinata). \medskip \\
+Konstanta gibanja: \\
+Če $\frac{\partial L}{\partial t} = 0$, potem $H = \sum_{j}\dot q_j \frac{\partial L}{\partial \dot q_j} - L = konst.$. \\
+Če $V \neq V(\dot q_1, \dots , \dot q_n, t)$, potem $H = T + V$. \medskip \\
+
+Lagrangeva funkcija je nedoločena do $\frac{d}{dt}F(q_1, \dots, q_n, t)$. \medskip \\
+
+\subsection{Izrek Emmy Noether}
+
+Imejmo enoparametrično preslikavo koordinat $q_i \mapsto Q_i(s, t)$. \\
+Ta ustreza zvezni simetriji  $L$, če $\frac{\partial L(Q_i(s,t), \dot Q_i(s, t), t)}{\partial s} = 0$. \\
+Tedaj obstaja ohranjena količina $\sum_i \frac{\partial L}{\partial q_i} \frac{\partial Q_i}{\partial s}|_{s = 0}$. \medskip \\
+
+\subsection{Hamiltonov princip}
+
+$S(L) = \int_{t_1}^{t_2}L(q_1, \dots, q_n, \dot q_1, \dots, \dot q_n, t) \, dt$ \quad (akcija) \\
+Enačbe gibanja ustrezajo minimumu funkcionala akcije $S$. \\ \medskip 
+
+
+\section{Problem dveh teles}
+
+Imamo $m_1, m_2, \rv_1, \rv_2$. \\
+$M \rv_t = (m_1 + m_2) \rv_t = m_1 \rv_1 + m_2 \rv_2$ \\
+$m = \frac{m_1 m_2}{m_1 + m_2}$  \quad $\vec{r}_t=\frac{1}{m_1+m_2}(m_1\vec{r}_1+m_2\vec{r}_2$\\
+$\rv = \rv_2 - \rv_1$ \quad $\implies$ \quad $\rv_i = \rv_t - \frac{m_i}{M} \rv$ \medskip \\
+
+$L = \frac{1}{2} M v_t^2 + \frac{1}{2} m |\dot \rv|^2 - V(\rv, \dot \rv)$ \\
+$\vec p_t = M \vv_t = konst.$ \\
+
+\subsection{Centralni potencial}
+
+Imamo $V = V(r)$. Za katerega velja, da je:
+$\F = - \nabla V = -\frac{dV}{dr} \frac{\rv}{r}$ \\
+Gibalna količina je konstantna. 
+$\vec L = konst.$ \\
+$\vec L \cdot \rv = 0$ \quad $\implies$ \quad Gibanje je ravninsko. \medskip \\
+
+Definirajmo $\vec L = L \hat e_z$. (gibalna količina) \\
+Lagrangeva funkcija je enaka:$L = \frac{1}{2} m (\dot r^2 + r^2 \dot \varphi^2) - V(r)$ \\
+Ker je odvisnost zgolj od r, je:
+$p_\varphi = m r^2 \dot \varphi = l = konst.$ \\
+$\frac{dS}{dt} = \frac{1}{2}r^2 \dot \varphi = konst.$ (2. Keplerjev zakon) \medskip \\
+Definirajmo efektivni potencial kot:
+$V_\mathrm{ef} = \frac{p_\varphi^2}{2mr^2} + V(r)$ \\
+Celotna energija takega sistema je:
+$H = \frac{1}{2} m \dot r^2 + V_\mathrm{ef}$ \\
+In ker je kinetični del energije večji kot nič, sledi:
+$\frac{1}{2} m \dot r^2 \geq 0 \implies H \geq V_\mathrm{ef}$ $\implies$ kvalitativna določitev orbit. \medskip \\
+
+Pogosto uporabna substitucija $u = \frac{1}{r}$. \\
+Pogosto uporabno $\frac{d}{dt} = \frac{d \varphi}{dt} \frac{d}{d \varphi} = \frac{p_\varphi}{mr^2} \frac{d}{d\varphi}$ \medskip \\
+
+\textbf{Reševanje nalog s potenciali:}\\
+Če rešujemo nalogo s potenciali, najprej zapišemo celotno energojo kot $H=T+V_{\mathrm{eff}}$, kjer je $V_\mathrm{eff}=\frac{p_{phi}^2}{2mr^2}+V(r)$. In nato rešujemo problem za različne množice rešitev. Ne smemo pozabiti, da je: $\frac{d}{dt} = \frac{d \varphi}{dt} \frac{d}{d \varphi} = \frac{p_\varphi}{mr^2} \frac{d}{d\varphi}$. 
+\subsection{Keplerjev problem}
+
+Imamo $V(r) = -\frac{k}{r}$. \\
+$\vec A = \vec p \times \vec L - mk \frac{\rv}{r} = konst.$ (Laplace-Runge-Lenzov vektor) \\
+$\vec A \cdot \vec L = 0$ \\
+$r = \frac{l^2}{mk\left(1 + \frac{A}{mk} \cos \varphi\right)} = \frac{r_0}{1 + \varepsilon \cos \varphi}$ \\
+$\varepsilon = \frac{A}{mk} = \sqrt{1 + \frac{2H l^2}{k^2 m}}$\medskip \\
+
+$\varepsilon = 0$ - krožnica - $H = - \frac{mk^2}{2l^2}$, \qquad $\varepsilon < 1$ - elipsa - $H < 0$ \\
+$\varepsilon = 1$ - parabola - $H = 0$, \qquad  \qquad $\varepsilon > 1$ - hiperbola - $H > 0$ \medskip \\
+
+Uporabna substitucija, v primeru, da je potencial $r^{n}$ ko je $n \in \mathbb{N}$ \quad $\frac{dr}{dt}=r'\dot{\varphi}$.
+
+\subsection{Sipanje delcev}
+Sipalni tok, ki bo prišel iz neke razdalje r do tarče. Curek delcev ima vhodni parameter b.\\
+$dI_\mathrm{vh} = j \, dS = j 2\pi b \, db$ \\
+Sipalni tok, ki se bo sipal na tarči. \\
+$dI_\mathrm{iz} = j \sigma(\Omega) \, d \Omega$ \\
+Sipalni presek v odvisnosti od začetega parametra in kota sipanja, pod katerim odleti delec stran od tarče. \\
+$\sigma(\vartheta) = \frac{b}{\sin \vartheta} |\frac{db}{d \vartheta}|$ \qquad (diferencialni sipalni presek) \\
+Pri taki nalogi moramo ponavadi izraziti b kot funkcijo$\theta$ in jo nato odvajati po $\theta$.\\
+Totalni sipalni presek pa definiramo kot:
+$\sigma_\mathrm{tot} = \int \sigma(\Omega) \, d \Omega = \pi b_\mathrm{max}^2$ \medskip \\
+Kjer je $b_{\mathrm{max}}$ velikost tarče.
+
+\section{Togo telo}
+
+$|\rv_i - \rv_j| = r_{ij} = konst.$ \medskip \\
+
+\subsection{Eulerjevi koti}
+Če se telo vrti okoli določene lege, lahko to opišem z Eulerjevimi koti:  \medskip
+\\
+
+
+Zasuk okoli $\hat{k}$: \medskip\\
+
+
+$T(\varphi) = \begin{bmatrix}
+\cos \varphi & \sin \varphi & 0 \\
+-\sin \varphi & \cos \varphi & 0 \\
+0 & 0 & 1
+\end{bmatrix}$ \qquad (precesija, $\vec r \to \vec r''$) \\
+\medskip
+Zasuk okoli $\hat{i''}$: \medskip\\
+$U(\vartheta) = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos \vartheta & \sin \vartheta \\
+0 & -\sin \vartheta & \cos \vartheta \\
+\end{bmatrix}$ \qquad (nutacija, $\vec r'' \to \vec r'''$) \medskip\\
+
+
+Zasuk okoli $\hat{k''}$:\medskip \\
+$V(\psi) = \begin{bmatrix}
+\cos \psi & \sin \psi & 0 \\
+-\sin \psi & \cos \psi & 0 \\
+0 & 0 & 1
+\end{bmatrix}$ \qquad (rotacija, $\vec r''' \to \vec r'$)\medskip \\
+
+
+$R = V(\psi) U(\vartheta) T(\varphi)$ \qquad (pasivna rotacija) \medskip \\
+
+Za vsako rotacijo $R$ $\exists \vec n \neq 0: R \vec n = \vec n$, torej obstaja os rotacije. \medskip \\
+
+V lastnem sistemu $S'$: \\
+$\vec \omega = \dot \varphi \vec e_3 + \dot \vartheta \vec e_1'' + \dot \psi \vec e_3' = (\sin \vartheta \sin \psi \, \dot\varphi + \cos \psi \, \dot \vartheta) \vec e_1' + (\sin \vartheta \cos \psi \, \dot \varphi - \sin \psi \, \dot \vartheta) \vec e_2' + (\cos \vartheta \, \dot \varphi + \dot \psi) \vec e_3'$ \medskip \\
+Če npr, če se stožec kotali: $\vec{V_p}=0=\dot{\phi}\times \vec{R}+ \dot{\psi}\times \vec{r}$
+\subsection{Kinetična energija iz Eulerjevih kotov}
+$$T=\frac{1}{2}(J_x \omega_x^2+J_y \omega_y^2 +J_z \omega_z^2)$$
+Če je vrtavka osnosimetrična velja (J,J,J'):
+$$T=\frac{1}{2}J(\dot{\phi}^2 \sin (\vartheta)+\dot{\vartheta}^2)+\frac{1}{2}J'(\dot{\phi}\cos (\vartheta)+\dot{\psi})^2$$
+In še:
+$$2J=J'+\int 2z^2 dm$$ \medskip \\
+\subsection{Prosta precesija}
+Zanjo ne potrebujemo računati Eulerjevih enačb ampak jo lahko dobimi iz Eulerjevih kotov. Iz enačbe za $\vec{\omega}$ lahko zapišemo, da je:
+$\vec{\omega}=(\sin \vartheta \sin \psi \, \dot\varphi + \cos \psi \, \dot \vartheta) \vec e_1' + (\sin \vartheta \cos \psi \, \dot \varphi - \sin \psi \, \dot \vartheta) \vec e_2' + (\cos \vartheta \, \dot \varphi + \dot \psi) \vec e_3'$,
+kjer je $\dot{\varphi}$ precesija vrtavke, $\dot{\vartheta}$ pa nutacija vrtavke. To vstavimo v Euler Lagrangevo enačbo, da ugotovimo, zveze med njimi. ($T=\sum \frac{1}{2} J_i \omega_i^2$) 
+\subsection{Togo telo z 1 nepremično točko}
+
+Po Eulerjevem izreku je gibanje takega telesa ob vsakem času rotacija okoli neke osi. \\
+$\frac{d \rv}{dt} = \vec \omega \times \rv$ \medskip \\
+
+$\vec L = \sum_i m_i \left[ (\rv_i \cdot \rv_i) \vec \omega - (\rv_i \cdot \vec \omega) \rv_i \right] = \underline L \vec \omega$ \\
+$\underline L = \int \rho \, dV \begin{bmatrix}
+y^2 + z^2 & -xy & -xz \\
+-yx & x^2 + z^2 & -yz \\
+-zx & -zy & x^2 + y^2 
+\end{bmatrix}$ \\
+$\vec L' = R \vec L$ in $\vec \omega ' = R \vec \omega$ $\implies$ $\underline{J}' = R \underline{L} R^T$ \\
+$T = \frac{1}{2} \sum_i m_i v_i^2 = \frac{1}{2} \vec \omega \underline{J} \vec \omega$ \medskip \\
+
+Delajmo v lastnem sistemu telesa. \\
+$\frac{d \vec L}{dt} = \left( \frac{d \vec L}{dt} \right)_\mathrm{neinerc.} + \vec \omega \times \vec L = \vec M$ \\
+$\left( \frac{d \vec L}{dt} \right)_\mathrm{neinerc.} = \sum_\alpha J_{\alpha \alpha} \dot \omega_\alpha \vec e_\alpha$ \medskip \\
+
+\textbf{Eulerjeve enačbe} \\
+$J_1 \dot \omega_1 - (J_2 - J_3) \omega_2 \omega_3 = M_1$ \\
+$J_2 \dot \omega_2 - (J_3 - J_1) \omega_3 \omega_1 = M_2$ \\
+$J_3 \dot \omega_3 - (J_1 - J_2) \omega_1 \omega_2 = M_3$ \medskip \\
+
+
+\subsection{Vpeta osno simetrična vrtavka}
+
+Uporabljamo Eulerjeve kote. \\
+$J_1 = J_2 \neq J_3$ \medskip \\
+Če zapišemo Lagrangevo funkcijo za tako vrtavko, dobimo, da je: \\
+$L = \frac{1}{2}J_1(\omega_1^2 + \omega_2^2) + \frac{1}{2} J_3 \omega_3^2 - mgz = $\\
+$\ \ \ = \frac{1}{2} J_1(\sin^2 \vartheta \, \dot \varphi^2 + \dot \vartheta^2) + \frac{1}{2}J_3(\dot \psi + \cos \vartheta \, \dot \varphi)^2 - mgl\cos \vartheta$ \medskip\\
+Konstante gibanja so enake: \\
+$p_\psi = J_3(\dot \psi + \cos \vartheta \, \dot \varphi) = J_3 \omega_3 = konst = J_1 a$ \\
+$p_\varphi = (J_1 \sin^2 \vartheta + J_3 \cos^2 \vartheta) \dot \varphi + J_3 \cos \vartheta \, \dot \psi = konst. = J_1 b$ \medskip \\
+Celotna energija pa se glasi: \\
+$E = T + V = konst.$ \medskip \\
+
+Odvisnosti kotov so: \\
+$\dot \varphi = \frac{b - a\cos \vartheta}{\sin^2 \vartheta}$ \\
+$\dot \psi = \frac{J_1}{J_3} a - \frac{b - a\cos \vartheta}{\sin^2 \vartheta} \cos \vartheta$ \medskip \\
+
+\textbf{Osnovna enačba vrtavke} \\
+$\tilde E = \frac{1}{2}J_1 \dot \vartheta^2 + \tilde V(\vartheta) = E - \frac{1}{2} J_3 \omega_3^2 =  konst.$\\
+$\tilde V(\vartheta) = \frac{1}{2}\frac{(b - a \cos \vartheta)^2}{\sin^2 \vartheta} + mgl\cos \vartheta$ \\
+$\implies$ $\dot \vartheta^2 = \frac{2}{J_1}(\tilde{E} - \tilde V(\vartheta))$ \medskip \\
+
+Pogosto uporabna substitucija $u = \cos \vartheta$. \\
+$\alpha = \frac{2 \tilde E}{J_1}$ \quad in \quad $\beta = \frac{2mgl}{J_1}$ \\
+$t = \sqrt{\frac{J_1}{2}} \int_{\vartheta(0)}^{\vartheta(t)} \frac{d \vartheta}{\sqrt{\tilde E - \tilde V(\vartheta)}} = - \int_{u(0)}^{u(t)} \frac{du}{\sqrt{f(u)}}$ \\
+$f(u) = (1 - u^2)(\alpha - \beta u) - (b - au)^2$ \\
+S pogojem $f(u) \geq 0$ kvalitativno določimo obnašanje vrtavke. \medskip \\
+
+
+\section{Hamiltonov formalizem}
+
+Namesto s $q_i$ delamo s $p_i = \frac{\partial L}{\partial \dot q_i}$. \\
+$\dot p_i = \frac{\partial L}{\partial q_i}$ \quad (iz EL enačbe) \medskip \\
+
+\textbf{Hamiltonove enačbe} \\
+$\dot q_i = \frac{\partial H}{\partial p_i}$ \\
+$\dot p_i = - \frac{\partial H}{\partial q_i}$ \\
+$\frac{\partial H}{\partial t} = - \frac{\partial L}{\partial t}$ \medskip \\
+
+
+\section{Nabit delec v magnetnem polju}
+
+V Lagrangevemu formalizmu lahko upoštevamo tudi potenciale $U$ za katere velja $F_i = - \frac{\partial U(q_i, \dot q_i, t)}{\partial q_i} + \frac{d}{dt} \frac{\partial U(q_i, \dot q_i, t)}{\partial \dot q_i}$. \medskip \\
+
+$\vec B = \nabla \times \vec A$, \qquad $\vec E = -\nabla \varphi - \frac{\partial \vec A}{\partial t}$ \\
+$U = e\varphi - e \vec v \cdot \vec A$ \\
+$\vec F = e(\vec E + \vec v \times \vec B) = - \nabla_{\rv} U + \frac{d}{dt} \nabla_{\vv} U$ \medskip \\
+
+$L = \frac{1}{2}mv^2 - U = \frac{1}{2}mv^2 - e\varphi + e \vec v \cdot \vec A$ \\
+$\vec p = \nabla_{\vv} L = m \vec v + e \vec A$ \\
+$H = \vec p \cdot \vec v - L = \frac{1}{2} m v^2 + e \varphi = \frac{|\vec p - e \vec A|^2}{2m} + e \varphi$ \medskip \\
+
+
+\section{Poissonovi oklepaji}
+
+$\{f, g\} = \sum_i \left( \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i} \right)$ \\
+$\{f, \lambda g + \mu h\} = \lambda \{f, g\} + \mu \{f, h\}$, \quad $\lambda, \mu \in \mathbb{C}$ \\
+$\{f, g\} = - \{g, f\}$ \\
+$\{f, gh\} = \{f, g\}h + \{f, h\} g$ \\
+$\{f, \{g, h\}\} + \{g, \{h, f\}\} + \{h, \{f, g\}\} = 0$ \medskip \\
+
+$\frac{df}{dt} = \{f, H\} + \frac{\partial f}{\partial t}$ \\
+$f$ konstanta gibanja $\left( \frac{df}{dt} = 0 \right)$ $\implies$ $\{H, f\} = \frac{\partial f}{\partial t}$ \medskip \\
+
+$\{q_i, q_j\} = 0$ \\
+$\{p_i, p_j\} = 0$ \\
+$\{q_i, p_j\} = \delta_{ij}$ \\
+$\{l_i, l_j\} = \varepsilon_{ijk}l_k$ \medskip \\
+
+\section{Majhna nihanja}
+
+$L = \frac{1}{2} \sum_{ij} w_{ij}(\underline q) \dot q_i \dot q_j - V(\underline q)$ \\
+Naj bo $\underline q^0$ ravnovesne lega sistema in $\underline \eta = \underline q - \underline q^0$. \\
+$\implies$ $V(\underline q) = V(\underline q^0) + \frac{1}{2} \sum_{ij} \frac{\partial^2 V}{\partial q_i \partial q_j}\big|_{\underline{q}^0} \eta_i \eta_j + \cdots$ \\
+$\implies$ $w_{ij}(\underline q) = w_{ij}(\underline q^0) + c\dots$ \medskip \\
+
+Definiramo $T_{ij} = w_{ij}(\underline q_0)$ in $V_{ij} = \frac{1}{2} \sum_{ij} \frac{\partial^2 V}{\partial q_i \partial q_j}\big|_{\underline{q}^0}$. \\
+$\implies$ $\tilde L = T - (V - V_0) = \frac{1}{2}(\underline{\dot \eta}^T \uunderline T \, \underline{\dot \eta} - \underline{\eta}^T \uunderline V \, \underline{\eta})$ \\
+$\implies$ $\sum_j T_{ij} \ddot \eta_j + \sum_j V_j \eta_j = 0$ \medskip \\
+
+Lastna nihanja $\eta_i = C \alpha_i e^{i \omega t}$ \\
+$\implies$ $\uunderline V \, \underline a = \omega^2 \uunderline T \, \underline a$ \\
+$\implies$ Lastne frekvence $\omega_k$ in lastni vektorji $\underline a_k$ ($\underline A$). \medskip \\
+
+Splošno nihanje $\eta_i(t) = \sum_{k = 1}^{n} a_{ki} \alpha_k(t)$ \\
+Izberemo $\underline a_k$ tako, da $\underline a_i^T \uunderline T \, \underline a_j = \delta_{ij}$ \\
+$\implies$ $\uunderline A^T \uunderline T \, \uunderline A = \uunderline I$ in $\uunderline A^T \uunderline V \, \uunderline A = \mathrm{diag}(\lambda_1, \dots, \lambda_n)$ \\
+$\implies$ $\alpha_k = C_k \cos(\omega_k t + \delta_k)$ \medskip \\
+
+
+Reševanje nalog: \\
+Zapišemo matriko za T in V in nato rešujemo enačbo
+\begin{equation}
+	\text{det}(\text{V}-\lamda T)=0
+\end{equation}
+Iz česar dobimo lastne vrednosti $\lambda_k$ in $\vec{a_k}$. Rešitev enačbe, pa je oblike
+\begin{equation}
+	\eta(t)=\sum \alpha_k(t)\vec{a_k}
+\end{equation}
+kjer je $\alpha_k$ rešitev posamezne enačbe $(A_k\sin(\lambda_k t)+B_k\cos(\lambda_k t))$
+
+
+\section{Lagrangev formalizem za zvezno sredstvo}
+
+$\mathcal{L}(u, u_x, u_t, t) = \mathcal{T} - \mathcal{V}$ \quad (lagrangian na volumen) \\
+$\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial u_t} + \frac{d}{dx} \frac{\partial \mathcal{L}}{\partial u_x} - \frac{\partial \mathcal{L}}{\partial u} = 0$ \\
+$\pi = \frac{\partial \mathcal{L}}{\partial u_t}$ \quad (posplošeni impulz) \\
+$H = \int (\pi u_t - \mathcal{L}) \, dV = \int \mathcal{H} \, dV$ \medskip \\
+
+\section{Kanonične transformacije}
+
+Transformacija $q_i \to Q_i(\underline q, \underline p, t)$ in $p_i \to P_i(\underline q, \underline p, t)$ je kanonična, če ohranja Poissonove oklepaje. Tedaj: \\
+$\dot Q_i = \frac{\partial H}{\partial P_i} + \frac{\partial Q_i}{\partial t}$ \\
+$\dot P_i = - \frac{\partial H}{\partial Q_i} + \frac{\partial P_i}{\partial t}$ \medskip \\
+
+\section{Hamilton-Jacobijev formalizem}
+
+$S = \int_{t_1}^{t_2}L(\underline q, \underline{\dot q}, t) \, dt$
+$S(q_2, t_2)$ si predstavljamo kot funkcijo končne točke. Integral teče po klasični poti $q(t)$, ki ustreza gibalnim enačbam. \\
+$\frac{\partial S}{\partial q} = p$ \quad (oziroma $\nabla S(\vec r) = \vec p$) \\
+$H + \frac{\partial S}{\partial t} = 0$ \\
+\section{Vektorski produkti}
+Smer vektorja: $\dot{r}=\frac{\dot{\vec{r}}\vec{r}}{r}$ \\
+
+\section{Diferencialne enačbe}
+\textbf{Enačba dušenega nihanja:} \\
+$$\dot{\dot{\phi}}+2\beta\dot{\phi}+\omega_0^2\phi=0$$
+Nastavek = $\phi=A\cos(\omega t)e^{-\beta t}$ \quad ($\omega_0 $ in $\omega$ sta različni. \\ Nastavek odvajaš in ga vstaviš v enačbo, da ugotoviš $\omega$. A dobiš iz začetnih pogojev. \medskip \\
+\textbf{Enačba z kompleksnim delom:}\\
+$$\ddot{\zeta}+Ai \dot{\zeta}-B\zeta=0$$
+Nastavek = $\zeta=\zeta_0 e^{-iut}$ \\
+Nastavek odvajaš in vstaviš v enačbo, da ugotoviš u. $\zeta_0$ ugotoviš iz začetnih pogojev. \medskip \\
+\textbf{Enačba hiperboličnega nihanja:}
+$$\ddot{x}-\omega^2 x=0$$
+Nastavek : $x=Ae^{\lambda t}$
+\\ Nastavek odvajaš in ga vstaviš v enačbo, da ugotoviš $\lambda$. A dobiš iz začetnih pogojev. \medskip \\
+
+\section{Enačbe ploskev}
+\textbf{Elipsa:}\\
+$x^2(1+b)+y^2(1-b)=a \quad \frac{x^2}{a^2}+\frac{y^2}{b^2}=1$
+\textbf{Hiperbola:}\\
+$x^2(1+b)-y^2(1-b)=a \quad \frac{x^2}{a^2}-\frac{y^2}{b^2}=1$
+\textbf{Parabola:}\\
+$y^2=2px$
+\end{multicols}
+\end{document}

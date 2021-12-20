@@ -1,0 +1,53 @@
+# Postavitev:  foto dioda --- pol2 --- pol1 --- laser (vertkalno polariziran)
+#
+# Merimo toka na foto-diodi preko z Keithey 2000 v I DC nacinu v odvisnosti od
+# zasuka kota na polarizatorja pol1. Polarizator pol2 pa je nastavljen na
+# minimum toka, ki se zgodi pri cca -94 stopinj.
+#
+# Pozor: Sumim, da orientacija polarizatorjev od podjeta Phywe ni dobro precizno
+# določena ali pa je prislo, do zasuka polarizacije laserja.
+
+#
+#
+# Napake:
+#   napaka kota ~ 1 stopinja
+#   napake toka ~ 5%
+
+# kot[stopinja]   I[A DC]
+-90 +3.17987425E-06
+-85 +7.28137582E-06
+-80 +1.48509334E-05
+-75 +2.36968679E-05
+-70 +3.32570326E-05
+-65 +4.32628529E-05
+-60 +5.13182549E-05
+-55 +5.80510632E-05
+-50 +6.14111460E-05
+-45 +5.99063658E-05
+-40 +5.56588547E-05
+-35 +4.73628221E-05
+-30 +3.74043071E-05
+-25 +2.72641711E-05
+-20 +1.72410110E-05
+-15 +9.31376267E-06
+-10 +3.91862104E-06
+-5 +2.02943076E-06
+0 +3.59326516E-06
+5 +9.55889047E-06
+10 +1.79613575E-05
+15 +2.75722147E-05
+20 +3.81797545E-05
+25 +4.76958953E-05
+30 +5.79530420E-05
+35 +6.27375876E-05
+40 +6.42306616E-05
+45 +6.31002704E-05
+50 +5.85135279E-05
+55 +5.01595270E-05
+60 +3.92962573E-05
+65 +2.77544125E-05
+70 +1.77385121E-05
+75 +9.95445071E-06
+80 +4.03673050E-06
+85 +1.99210283E-06
+90 +3.36929975E-06

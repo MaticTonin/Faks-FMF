@@ -1,0 +1,19 @@
+#Meritev induktivnosti v tuljavi z 2000 navoji
+#Odmik Napetost
+#cm   mV
+2	31.6
+4	68
+6	102
+8	130
+10	152
+12	171
+14	186
+16	198
+18	205
+20	212
+22	216
+24	217
+26	219
+28	221
+30	222
+32	223

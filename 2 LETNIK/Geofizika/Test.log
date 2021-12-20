@@ -1,0 +1,809 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.11)  8 JUN 2020 00:36
+entering extended mode
+**./Test.tex
+(Test.tex
+LaTeX2e <2020-02-02> patch level 1
+L3 programming layer <2020-02-08>
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\artic
+le.cls"
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\size1
+1.clo"
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\input
+enc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/bookmark\b
+ookmark.sty"
+Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/hyperref\h
+yperref.sty"
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/ltxcmds\
+ltxcmds.sty"
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/iftex\if
+tex.sty"
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/pdftexcmds
+\pdftexcmds.sty"
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/infwarer
+r\infwarerr.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\k
+eyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/kvsetkey
+s\kvsetkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/kvdefine
+keys\kvdefinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/pdfescap
+e\pdfescape.sty"
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/hycolor\hy
+color.sty"
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/letltxmacr
+o\letltxmacro.sty"
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/auxhook\au
+xhook.sty"
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/kvoptions\
+kvoptions.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen135
+\Hy@linkcounter=\count175
+\Hy@pagecounter=\count176
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/hyperref\p
+d1enc.def"
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/intcalc\
+intcalc.sty"
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/etexcmds
+\etexcmds.sty"
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count177
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count178
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/url\url.st
+y"
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen136
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/bitset\b
+itset.sty"
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/bigintca
+lc\bigintcalc.sty"
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count179
+\Field@Width=\dimen137
+\Fld@charsize=\dimen138
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/atbegshi
+\atbegshi.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count180
+\c@Item=\count181
+\c@Hfootnote=\count182
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/hyperref\h
+pdftex.def"
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/atveryend\
+atveryend.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count183
+\c@bookmark@seq@number=\count184
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/rerunfilec
+heck\rerunfilecheck.sty"
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/uniqueco
+unter\uniquecounter.sty"
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip49
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/bookmark\b
+km-pdftex.def"
+File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
+\BKM@id=\count185
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/geometry\g
+eometry.sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/iftex\if
+vtex.sty"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count186
+\Gm@cntv=\count187
+\c@Gm@tempcnt=\count188
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks17
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/geometry\g
+eometry.cfg"))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+smath.sty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+stext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+sgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen147
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+sbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen148
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsmath\am
+sopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count189
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count190
+\leftroot@=\count191
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count192
+\DOTSCASE@=\count193
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen149
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count194
+\c@MaxMatrixCols=\count195
+\dotsspace@=\muskip17
+\c@parentequation=\count196
+\dspbrk@lvl=\count197
+\tag@help=\toks19
+\row@=\count198
+\column@=\count199
+\maxfields@=\count266
+\andhelp@=\toks20
+\eqnshift@=\dimen150
+\alignsep@=\dimen151
+\tagshift@=\dimen152
+\tagwidth@=\dimen153
+\totwidth@=\dimen154
+\lineht@=\dimen155
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amscls\ams
+thm.sty"
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks28
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsfonts\a
+mssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsfonts\a
+msfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/tools\mult
+icol.sty"
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count267
+\mult@box=\box47
+\multicol@leftmargin=\dimen156
+\c@unbalance=\count268
+\c@collectmore=\count269
+\doublecol@number=\count270
+\multicoltolerance=\count271
+\multicolpretolerance=\count272
+\full@width=\dimen157
+\page@free=\dimen158
+\premulticols=\dimen159
+\postmulticols=\dimen160
+\multicolsep=\skip56
+\multicolbaselineskip=\skip57
+\partial@page=\box48
+\last@line=\box49
+\maxbalancingoverflow=\dimen161
+\mult@rightbox=\box50
+\mult@grightbox=\box51
+\mult@gfirstbox=\box52
+\mult@firstbox=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\c@minrows=\count273
+\c@columnbadness=\count274
+\c@finalcolumnbadness=\count275
+\last@try=\dimen162
+\multicolovershoot=\dimen163
+\multicolundershoot=\dimen164
+\mult@nat@firstbox=\box91
+\colbreak@box=\box92
+\mc@col@check@num=\count276
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/babel\ba
+bel.sty"
+Package: babel 2020/02/03 3.39 The Babel package
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/babel\sw
+itch.def"
+File: switch.def 2020/02/03 3.39 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/arabi\bblo
+pts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/babel-slov
+enian\slovene.ldf"
+Language: slovene 2005/03/31 v1.2m Slovene support from the babel system
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/babel\ba
+bel.def"
+File: babel.def 2020/02/03 3.39 Babel common definitions
+\babel@savecnt=\count277
+\U@D=\dimen165
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/babel\tx
+tbabel.def")
+\bbl@readstream=\read2
+\bbl@dirlevel=\count278
+)
+Package babel Info: Making " an active character on input line 79.
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\c
+olor.sty"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics-c
+fg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics-d
+ef\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\g
+raphicx.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\g
+raphics.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics\t
+rig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/graphics-c
+fg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen166
+\Gin@req@width=\dimen167
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/mathtools\
+mathtools.sty"
+Package: mathtools 2020/01/17 v1.23 mathematical typesetting tools
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/tools\calc
+.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count279
+\calc@Bcount=\count280
+\calc@Adimen=\dimen168
+\calc@Bdimen=\dimen169
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count281
+\calc@Cskip=\skip60
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/mathtools\
+mhsetup.sty"
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count282
+\l_MT_multwidth_dim=\dimen170
+\origjot=\skip61
+\l_MT_shortvdotswithinadjustabove_dim=\dimen171
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen172
+\l_MT_above_intertext_sep=\dimen173
+\l_MT_below_intertext_sep=\dimen174
+\l_MT_above_shortintertext_sep=\dimen175
+\l_MT_below_shortintertext_sep=\dimen176
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/commath\co
+mmath.sty"
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\ifthe
+n.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+))
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/ragged2e\r
+agged2e.sty"
+Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/ms\everyse
+l.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip62
+\RaggedLeftLeftskip=\skip63
+\RaggedRightLeftskip=\skip64
+\CenteringRightskip=\skip65
+\RaggedLeftRightskip=\skip66
+\RaggedRightRightskip=\skip67
+\CenteringParfillskip=\skip68
+\RaggedLeftParfillskip=\skip69
+\RaggedRightParfillskip=\skip70
+\JustifyingParfillskip=\skip71
+\CenteringParindent=\skip72
+\RaggedLeftParindent=\skip73
+\RaggedRightParindent=\skip74
+\JustifyingParindent=\skip75
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/base\fonte
+nc.sty"
+Package: fontenc 2020/01/25 v2.0m Standard LaTeX package
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/ulem\ulem.
+sty"
+\UL@box=\box93
+\UL@hyphenbox=\box94
+\UL@skip=\skip76
+\UL@hook=\toks29
+\UL@height=\dimen177
+\UL@pe=\count283
+\UL@pixel=\dimen178
+\ULC@box=\box95
+Package: ulem 2019/11/18
+\ULdepth=\dimen179
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/esvect\esv
+ect.sty"
+Package: esvect 
+\symesvector=\mathgroup6
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/float\floa
+t.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count284
+\float@exts=\toks30
+\float@box=\box96
+\@float@everytoks=\toks31
+\@floatcapt=\box97
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/calrsfs\ca
+lrsfs.sty"
+\symrsfscript=\mathgroup7
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/tocloft\to
+cloft.sty"
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip77
+\cftbeforetoctitleskip=\skip78
+\cftaftertoctitleskip=\skip79
+\cftbeforepartskip=\skip80
+\cftpartnumwidth=\skip81
+\cftpartindent=\skip82
+\cftbeforesecskip=\skip83
+\cftsecindent=\skip84
+\cftsecnumwidth=\skip85
+\cftbeforesubsecskip=\skip86
+\cftsubsecindent=\skip87
+\cftsubsecnumwidth=\skip88
+\cftbeforesubsubsecskip=\skip89
+\cftsubsubsecindent=\skip90
+\cftsubsubsecnumwidth=\skip91
+\cftbeforeparaskip=\skip92
+\cftparaindent=\skip93
+\cftparanumwidth=\skip94
+\cftbeforesubparaskip=\skip95
+\cftsubparaindent=\skip96
+\cftsubparanumwidth=\skip97
+\cftbeforeloftitleskip=\skip98
+\cftafterloftitleskip=\skip99
+\cftbeforefigskip=\skip100
+\cftfigindent=\skip101
+\cftfignumwidth=\skip102
+\c@lofdepth=\count285
+\c@lotdepth=\count286
+\cftbeforelottitleskip=\skip103
+\cftafterlottitleskip=\skip104
+\cftbeforetabskip=\skip105
+\cfttabindent=\skip106
+\cfttabnumwidth=\skip107
+)
+\c@theorem=\count287
+\c@corollary=\count288
+\c@definition=\count289
+
+
+Package amsthm Warning: Unknown theoremstyle `example' on input line 36.
+
+
+Package amsthm Warning: Unknown theoremstyle `izrek' on input line 38.
+
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/l3backend\
+l3backend-pdfmode.def"
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count290
+\l__pdf_internal_box=\box98
+) (Test.aux)
+\openout1 = `Test.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+\AtBeginShipoutBox=\box99
+Package hyperref Info: Link coloring OFF on input line 40.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/hyperref\n
+ameref.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/refcount\r
+efcount.sty"
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/generic/gettitle
+string\gettitlestring.sty"
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count291
+)
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/context/base/mki
+i\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count292
+\scratchdimen=\dimen180
+\scratchbox=\box100
+\nofMPsegments=\count293
+\nofMParguments=\count294
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count295
+\MPscratchDim=\dimen181
+\MPnumerator=\count296
+\makeMPintoPDFobject=\count297
+\everyMPtoPDFconversion=\toks33
+)
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/epstopdf-p
+kg\epstopdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+) ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 40.
+<Screenshot 1.png, id=3, 593.21625pt x 532.99126pt>
+File: Screenshot 1.png Graphic file (type png)
+<use Screenshot 1.png>
+Package pdftex.def Info: Screenshot 1.png  used on input line 43.
+(pdftex.def)             Requested size: 483.7159pt x 569.10764pt.
+
+Overfull \hbox (30.748pt too wide) in paragraph at lines 43--44
+ [][] 
+ []
+
+[1
+
+{C:/Users/Uporabnik/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}pdfTeX wa
+rning (ext4): destination with the same identifier (name{figure.1}) has been al
+ready used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.47 \begin
+           {figure}[H] <./Screenshot 1.png>]
+<Screenshot 2.png, id=11, 410.2828pt x 231.86626pt>
+File: Screenshot 2.png Graphic file (type png)
+<use Screenshot 2.png>
+Package pdftex.def Info: Screenshot 2.png  used on input line 49.
+(pdftex.def)             Requested size: 483.69128pt x 569.18466pt.
+
+Overfull \hbox (30.72339pt too wide) in paragraph at lines 49--50
+ [][] 
+ []
+
+[2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.54 
+      <./Screenshot 2.png>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsfonts\u
+msa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/amsfonts\u
+msb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 
+56.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/esvect\ues
+vect.fd"
+File: uesvect.fd 
+)
+LaTeX Font Info:    Trying to load font information for OMS+rsfs on input line 
+56.
+
+("C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX 2.9.(1)\tex/latex/calrsfs\om
+srsfs.fd") [3]
+Overfull \hbox (10.90237pt too wide) detected at line 85
+\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 I\OMS/cmsy/m/n/10.95 j[] \OT1/cmr/m/n/
+10.95 = \OML/cmm/m/it/10.95 I \OMS/cmsy/m/n/10.95  \OML/cmm/m/it/10.95 I[] \OT
+1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 I[]e[]e[]\OT1/cmr/m/n/10.95 (1 \OMS/cmsy/
+m/n/10.95   \OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 )(1 \OMS/cmsy/m/n/10.95  
+ \OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 I[]\OT1/cmr/
+m/n/10.95 (1 \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 e[] \OMS/cmsy/m/n/10.95 
+  \OML/cmm/m/it/10.95 e[] \OT1/cmr/m/n/10.95 + 1) = \OML/cmm/m/it/10.95 I[]\OT1
+/cmr/m/n/10.95 (2 \OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 e[] \OMS/cmsy/m/n/1
+0.95   \OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 ) = 2\OML/cmm/m/it/10.95 I[]\O
+T1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10.95   []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/1
+0.95 \OT1/cmr/m/n/10.95 ))
+ []
+
+[4] [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
+ [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+ (Test.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 126.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
+ ) 
+Here is how much of TeX's memory you used:
+ 9267 strings out of 481527
+ 141631 string characters out of 2908530
+ 418406 words of memory out of 3000000
+ 24308 multiletter control sequences out of 15000+200000
+ 538612 words of font info for 50 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,6n,34p,327b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/enc/dvips/cm-
+super/cm-super-t1.enc}<C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)
+/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Uporabnik/AppData/Local/Pr
+ograms/MiKTeX 2.9.(1)/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Upora
+bnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.
+(1)/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Uporabnik/AppData/Local/P
+rograms/MiKTeX 2.9.(1)/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Uporab
+nik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.(1)/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX 2.9.
+(1)/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on Test.pdf (6 pages, 358561 bytes).
+PDF statistics:
+ 74 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+

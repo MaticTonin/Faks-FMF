@@ -1,0 +1,346 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+\usepackage[slovene]{babel}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+\usepackage[normalem]{ulem}
+\usepackage{amsthm}
+\usepackage{esvect}
+\usepackage{float}
+\usepackage{calrsfs}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\newcommand{\Ga}{\mathcal{G}}
+\usepackage{tocloft}
+\usepackage{bookmark}
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+
+\newtheorem{theorem}{Trditev}[section]
+\newtheorem{corollary}{Posledica}[section]
+\newtheorem{lemma}[section]{Lema}
+\theoremstyle{definition}
+\newtheorem{definition}{Definicija}[section]
+\theoremstyle{example}
+\newtheorem{example}[section]{Primer}
+\theoremstyle{izrek}
+\newtheorem{izrek}[section]{Izrek}
+
+\begin{document}
+\begin{center}
+\thispagestyle{empty}
+\parskip=14pt%
+\vspace*{3\parskip}%
+\begin{Huge} 3 domača naloga \end{Huge}
+
+By
+
+Matic Tonin
+
+ID No. (28181098)
+
+Mentor 
+
+(Janez Šter)
+
+\rule{7cm}{0.4pt}
+
+Pod okvirom:
+
+FAKULTETE ZA FIZIKO IN MATEMATIKO, LJUBLJANA
+
+20. 4. 2020
+
+\end{center}
+\pagebreak
+\section{Naloga}
+\textbf{Naj bo $a \in\left(0, \frac{1}{4}\right)$. Poisci vse funkcije $f \in L^{1}(\mathbb{R})$, ki zadoscajo enacbi
+\[
+\int_{-\infty}^{\infty} f(t) e^{t(x-t)} d t=e^{a x^{2}}, \quad x \in \mathbb{R}
+\]
+(Namig: namesto $x$ v enacbo vstavi $2 x$, nato enacbo pomnoziz $e^{-x^{2}}$.)}
+
+Enačbo lahko preuredimo tako, da dobimo na levi strani konvolucijo. To storimo tako, da najprej spremenimo x v 2x in jo pomnožimo z $e^{-x^2}$
+Prikaz:
+$$\int_{-\infty}^{\infty} f(t)e^{xt-t^2}dx = e^{ax^2}$$
+Vstavimo 2x namesto x:
+$$\int_{-\infty}^{\infty} f(t)e^{2xt-t^2}dx = e^{4ax^2}$$
+Pomnožimo z $e^{-x^2}$:
+$$\int_{-\infty}^{\infty} f(t)e^{2xt-t^2-x^2}dx = e^{4ax^2-x^2}$$
+
+Sledi, da je:
+\begin{equation}
+\label{eq:Eq31}
+\int_{-\infty}^{\infty} f(t)e^{-(t-x)^2}dx = e^{-(1-4a)x^2}
+\end{equation}
+Kar je pa v resnici enako kar:
+\begin{equation}
+\label{eq:Eq32}
+\left(f(t)* e^{-t^2}\right)(x)=e^{-(1-4a)x^2}
+\end{equation}
+Če sedaj na obeh straneh enačbe izvedemo Fourierjevo transformacijo, dobimo z preoblikovanjem enačbe, da je:
+
+\begin{equation}
+\label{eq:Eq33}
+\hat{f}(\omega)=\frac{1}{\sqrt{\pi(2-8a)}}e^{-\frac{\omega^2}{2}\frac{4a}{2-8a}}
+\end{equation}
+Če naredimo še eno Fourierjevo transformacijo in ker vemo, da je: $\hat{\hat{f}}(x)=f(-x)$, dobimo, da je:
+
+$$f(-x)=\frac{1}{\sqrt{4\pi a}}e^{-\frac{1-4a}{4a}x^2}$$
+
+Iz česar nam sledi: 
+\begin{equation}
+\label{eq:Eq34}
+f(x)=\frac{1}{\sqrt{4\pi a}}e^{-\frac{1-4a}{4a}x^2}
+\end{equation}
+
+\pagebreak
+
+\section{Naloga}
+\textbf{ Poisci funkcijo $u(x, t):[0,2 \pi] \times[0, \infty) \rightarrow \mathbb{R},$ ki zadosca diferencialni enacbi
+\[
+u_{t t}+2 u_{t}+u=u_{x x}
+\]
+in pogojem $u_{x}(0, t)=u_{x}(2 \pi, t)=0$ ter $u(x, 0)=\cos x$ in $u_{t}(x, 0)=\left|\cos \frac{x}{2}\right|$}
+\medskip
+
+Osnovna enačba je oblike:
+\begin{equation}
+\label{eq:Eq1}
+u_{tt}+2u_{t}+u=u_{xx}
+\end{equation}
+Če definiramo, da je u(x,t) zgrajena kot funkcija spremenljivke x in funkcija spremenljivke t. 
+\begin{equation} 
+\label{eq:Eq2}
+	   u(x,t)=X(x)T(t)\end{equation}
+	   
+Dobimo, da je $u_{t}=XT'$,  $u_{tt}=XT''$ in $u_{xx}=X''T$. Če v enačbo (\ref{eq:Eq1}) sedaj vstavimo izpeljane zveze za u, X in T, dobimo, da je: 
+
+\begin{equation}
+\label{eq:Eq3}
+XT''+2XT'+XT=X''T
+\end{equation}
+Enačbo delimo z T in X, da dobimo:
+\begin{equation}
+\label{eq:Eq4}
+\frac{T''+2T'+T}{T}=\frac{X''}{X}
+\end{equation}
+
+S tem smo dobili, da je rešitev enačbe neodvisna glede na spremenljivke. Tako lahko rečemo, da je (\ref{eq:Eq4}) enak neki konstanti, ki jo imenujemo $\lambda$ \\
+Poglejmo si še robne pogoje. Vemo, da je $u_{x}(0,t==u_{x}(2\pi ,t)=0$ za vsak t. To lahko spremenimo v:
+\begin{equation}
+\label{eq:Eq5}
+X'T(0,t)=X'T(2\pi,t)=0
+\end{equation}
+In ker vemo, da to velja za vsak T in da ne smemo dobiti trivialne rešitve sledi, da je lahko le 
+\begin{equation}
+\label{eq:Eq6}
+X'(0,t)=X'(2 \pi, t)=0
+\end{equation}
+
+S tem smo dobili homogena robna pogoja za enačbo X. Sedaj bomo pa razdelili nalogo na dva dela in sicer na reševanje naloge za enačbo z X in z T.
+\subsection{Reševanje X dela diferencialne enačbe}
+Za X dobimo, da je:
+\begin{equation}
+\label{eq:Eq7}
+X''-\lambda X=0
+\end{equation}
+
+Sedaj pa je rešitev te diferencialne enačba odvisna od tega, kakšen je koeficient $\lambda$:
+\begin{enumerate}
+\item \texttt{$\lambda >0$}\\
+V primeru, da je lamda večji od 0, dobimo, da je: 
+\begin{equation}
+\label{eq:Eq8}
+X(x)=A\cosh (\sqrt{\lambda}x)+B\sinh (\sqrt{\lambda}x)
+\end{equation}
+Če enačbo odvajamo, dobimo, da je:
+
+$$X'(x)=A\sqrt{\lambda}\sinh (\sqrt{\lambda}x) + B\sqrt{\lambda}\cosh( \sqrt{\lambda}x)$$
+
+Če sedaj vstavimo robne pogoje za X, ki smo jih izpeljali v (\ref{eq:Eq6}), dobimo:
+\begin{enumerate}
+\item $X'(0,t)=0$:  \\
+\begin{equation}
+\label{eq:Eq9}
+X'(0)=0=B\sqrt{\lambda}
+\end{equation}
+Iz česar nam sledi, da je B=0.
+\item $X'(2 \pi,t)=0$
+\begin{equation}
+\label{eq:Eq10}
+X'(2 \pi)=0=\sqrt{\lambda}\sinh(\sqrt{\lambda}2\pi)
+\end{equation}
+Iz česar nam sledi, da je A=0, saj $\sinh$ ne more biti enak 0.
+
+Torej ta rešitev za $\lambda$ ni prava.
+\end{enumerate}
+
+\item $\lambda=0$: \\
+V primeru, da je lambda enak 0, dobimo da je: 
+\begin{equation}
+\label{eq:Eq11}
+X(x)=Ax+B
+\end{equation}
+Če sedaj dodamo še robne pogoje:
+e sedaj vstavimo robne pogoje za X, ki smo jih izpeljali v (\ref{eq:Eq6}), dobimo:
+\begin{enumerate}
+\item $X'(0,t)=0$:  \\
+\begin{equation}
+\label{eq:Eq12}
+X'(0)=0=A \cdot 0
+\end{equation}
+Iz česar nam sledi, da ta robni pogoj ne da uporabnih vrednosti.
+\item $X'(2 \pi,t)=0$
+\begin{equation}
+\label{eq:Eq13}
+X'(2 \pi)=0= A
+\end{equation}
+Iz česar nam sledi, da je A=0 in $B \in \mathbb{R}$.
+
+Torej ta rešitev za $\lambda$ ni prava.
+\end{enumerate}
+
+\item $\lambda<0$:
+V primeru, da je lambda manjši od 0, dobimo, da je: 
+\begin{equation}
+\label{eq:Eq14}
+X(x)=B\sin(\sqrt{-\lambda}x)+A\cos(\sqrt{-\lambda}x)
+\end{equation}
+Če to enačbo odvajamo dobimo, da je: 
+$$X'(x)=\sqrt{-\lambda}B\cos(\sqrt{-\lambda}x)-\sqrt{-\lambda}A\sin(\sqrt{-\lambda}x)$$
+
+Če sedaj dodamo še robne pogoje:
+e sedaj vstavimo robne pogoje za X, ki smo jih izpeljali v (\ref{eq:Eq6}), dobimo:
+\begin{enumerate}
+\item $X'(0,t)=0$:  \\
+\begin{equation}
+\label{eq:Eq15}
+X'(0)=0=\sqrt{-\lambda}B
+\end{equation}
+Iz česar nam sledi, da je B=0.
+\item $X'(2 \pi,t)=0$
+\begin{equation}
+\label{eq:Eq16}
+X'(2 \pi)=-\sqrt{-\lambda}A\sin(\sqrt{-\lambda}2 \pi)
+\end{equation}
+
+Ker želimo neničelno rešitev za A, mora biti sinus v enačbi (\ref{eq:Eq16}) enak nič. To bo res, ko bo:
+
+\begin{equation}
+\label{eq:Eq17}
+\sqrt{-\lambda}2 \pi =n \pi \quad n \in \mathbb{Z}
+\end{equation}
+Sledi, da je:
+
+\begin{equation}
+\label{eq:Eq18}
+\lambda_n=-\frac{n^2}{4}
+\end{equation}
+\end{enumerate}
+\end{enumerate}
+
+Tako dobimo, da je rešitev za X del enaka: 
+
+\begin{equation}
+\label{eq:Eq19}
+X(x)=\sum_{n=0}^{\infty} A_n \cos\left(\frac{n x}{2}\right)
+\end{equation}
+\subsection{Reševanje T dela diferencialne enačbe}
+Za T dobimo, da je: 
+\begin{equation}
+\label{eq:Eq20}
+T''+2T'+(1+\frac{n^2}{4})T=0
+\end{equation}
+
+Za tako diferencialno enačbo lahko definiramo karakteristični polinom 
+\begin{equation}
+\label{eq:Eq21}
+k^2+2k+(1+\frac{n^2}{4})=0 \qquad \rightarrow \qquad k_n=-1 \pm \frac{n}{2}i
+\end{equation}
+
+Za te rešitve vemo, da je potem nastavek kar $T(t)=Ae^{kt}$, ampak ker je dvojna ničla, za n=0 dobimo:
+\begin{equation}
+\label{eq:Eq22}
+T_0(t)=A_0 e^{-t}+B_0 e^{-t}t
+\end{equation}
+Če pa vstavimo, da je n neko naravno število, pa lahko razdelimo na imaginarni del in realni del, da je: 
+\begin{equation}
+\label{eq:Eq23}
+T_n(t)=e^{-t}\left(A_n \cos\left(\frac{nt}{2}\right)+B_n\sin\left(\frac{nt}{2}\right)\right)
+\end{equation}
+
+S tem smo sedaj dobili začetne rešitve za X in T, manjkajo pa nam še začetni pogoji. 
+\subsection{Začetni pogoji}
+Iz enačbe vemo, da je (\ref{eq:Eq2}) zato lahko zmonžimo naše pogoje, ki smo jih dobili, da dobimo:
+
+\begin{equation}
+\label{eq:Eq24}
+u(x,t)=A_0e^{-t}+B_0e^{-t}t+ \sum_{n=0}^{\infty} e^{-t} \left(A_n \cos\left(\frac{nt}{2}\right)+B_n\sin\left(\frac{nt}{2}\right)\right)\cos\frac{nx}{2}
+\end{equation}
+
+Če najprej pogledamo začetni pogoj $u(x,0)=\cos(x)$, dobimo, da je: 
+$$\cos(x)=A_0+\sum_{n=0}^{\infty} A_n \cos(\frac{nx}{2})$$
+
+Sledi, da je $A_0=0$ in da je:
+$$A_{n}=\left\{\begin{array}{l}
+1 ; n=2 \\
+0 ; \text { sicer }
+\end{array}\right.$$
+
+Sedaj pa poglejmo še drug pogoj in sicer $u_t(x,0)=|\cos \frac{x}{2}|$
+Če to vstavimo v enačbo, dobimo, da je:
+\begin{equation}
+\label{eq:Eq25}
+u(x,0)=-u(x,0)+B_0+ \sum_{n=1}^{\infty} B_n \frac{n}{2} \cos\left(\frac{nx}{2}\right)=|\cos \frac{x}{2}|
+\end{equation}
+Vidimo, da bi morali $|\cos \frac{x}{2}|$ razviti v Fourierjevo vrsto, da bi dobili na vsaki strani enačbe vrsto ter ju nato primerjali.
+\subsection{Razvoj $|\cos \frac{x}{2}|$ v vrsto}
+Za splošni člen vrste vemo, da je enak: 
+\begin{equation}
+\label{eq:Eq26}
+a_n=\frac{4}{4 \pi}\int_{0}^{2\pi} |\cos\left(\frac{x}{2}\right)|\cos\left(\frac{n\pi}{2}\right) dx
+\end{equation}
+Če vstavimo, da je n=0, dobimo integral:
+$$a_0=\frac{2}{4 \pi}\int_{0}^{2\pi} |\cos\left(\frac{x}{2}\right)| dx$$
+Kar pa lahko izračunamo z uvedbo nove spremenljivke $v=\frac{x}{2}$ in spremembe integrala na intervale:
+\begin{equation}
+\label{eq:Eq27}
+\frac{1}{\pi}\int_{0}^{\frac{\pi}{2}}\cos(v)dv-\frac{1}{\pi}\int_{\frac{\pi}{2}}^{\pi}\cos(v)dv=\frac{2}{\pi}
+\end{equation}
+Za reševanje splošne oblike, $a_n$ uporabimo podobne principe in na koncu, po integraciji dobimo, da je:
+\begin{equation}
+\label{eq:Eq28}
+a_n=\frac{4}{\pi}\frac{\cos\left(\frac{n\pi}{2}\right)}{1-n^2}\end{equation}
+Vidimo še, da moramo posebej obravnavati primer, ko je n=1 in po integraciji ugotovimo, da je $a_1=0$
+
+\subsection{Rešitev koeficienta $B_n$}
+Z primerjavo vrst, ki smo jih dobili, dobimo izraz: 
+\begin{equation}
+\label{eq:Eq29}
+B_0+ \sum_{n=1}^{\infty} B_n \frac{n}{2} \cos\left(\frac{nx}{2}\right)=\frac{2}{\pi}+\sum_{n=2}^{\infty} \frac{4}{\pi}\frac{\cos\left(\frac{n\pi}{2}\right)}{1-n^2}\cos\left(\frac{nx}{2}\right)+\cos(x)
+\end{equation}
+
+In s primerjavo koeficientov kmalu ugotovimo, da je $B_n$ enak kar:
+\begin{equation}
+B_{n}=\left\{\begin{array}{l}
+\frac{2}{\pi} ; n=0 \\
+\frac{4}{3 \pi}+1 ; n=2 \\
+0 ; n=\operatorname{lih} \\
+\frac{8}{n \pi} \frac{\cos \left(\frac{n\pi}{2}\right)}{1-n^{2}} ; \text { sicer }
+\end{array}\right.
+\end{equation}
+
+$$a_n=\frac{2}{L} \int_{0}^{L} f(x)\cos(Cnx) dx$$
+\end{document}

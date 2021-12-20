@@ -1,0 +1,31 @@
+\BOOKMARK [1][-]{section*.1}{Norme matrik}{}% 1
+\BOOKMARK [1][-]{section*.2}{Re\235evanje posebih sistemov Ax=B}{}% 2
+\BOOKMARK [2][-]{section*.3}{Tridiagonalni sistemi}{section*.2}% 3
+\BOOKMARK [1][-]{section*.4}{Sistemi nelinearnih enacb}{}% 4
+\BOOKMARK [2][-]{section*.5}{Iskanje nicel enacbe f\(x\)=0}{section*.4}% 5
+\BOOKMARK [2][-]{section*.6}{Pomembni pojmi pri iteraciji}{section*.4}% 6
+\BOOKMARK [2][-]{section*.7}{Re\235evanje sistema}{section*.4}% 7
+\BOOKMARK [1][-]{section*.8}{Linearni problem najmanj\235ih kvadratov}{}% 8
+\BOOKMARK [2][-]{section*.9}{Householderjevo zrcaljenje\(O\(2mn2 - 23n3\)\)}{section*.8}% 9
+\BOOKMARK [1][-]{section*.10}{Problem lastnih vrednosti}{}% 10
+\BOOKMARK [2][-]{section*.11}{Potencna metoda}{section*.10}% 11
+\BOOKMARK [3][-]{section*.12}{Hotelingova redukcija}{section*.11}% 12
+\BOOKMARK [3][-]{section*.13}{Householderjeva redukcija}{section*.11}% 13
+\BOOKMARK [2][-]{section*.14}{Inverzna iteracija}{section*.10}% 14
+\BOOKMARK [2][-]{section*.15}{QR iteracija}{section*.10}% 15
+\BOOKMARK [2][-]{section*.16}{Simetricne matrike}{section*.10}% 16
+\BOOKMARK [1][-]{section*.17}{Sturmovo zaporedje}{}% 17
+\BOOKMARK [1][-]{section*.18}{Interpolacije}{}% 18
+\BOOKMARK [2][-]{section*.19}{Lagrangeova oblika}{section*.18}% 19
+\BOOKMARK [2][-]{section*.20}{Newtonova oblika}{section*.18}% 20
+\BOOKMARK [1][-]{section*.21}{Numericno re\235evanje dif enacb}{}% 21
+\BOOKMARK [2][-]{section*.22}{Enokoracne metode}{section*.21}% 22
+\BOOKMARK [2][-]{section*.23}{Enokoracne implicitne metode}{section*.21}% 23
+\BOOKMARK [2][-]{section*.24}{Sistemi ODE 1. reda}{section*.21}% 24
+\BOOKMARK [2][-]{section*.25}{ODE vi\235jih redov}{section*.21}% 25
+\BOOKMARK [1][-]{section*.26}{Robni problem 2. reda}{}% 26
+\BOOKMARK [2][-]{section*.27}{Linearni robni problem 2. reda}{section*.26}% 27
+\BOOKMARK [3][-]{section*.28}{Metoda koncnih diferenc}{section*.27}% 28
+\BOOKMARK [2][-]{section*.29}{Nelinearni robni problem 2. reda}{section*.26}% 29
+\BOOKMARK [3][-]{section*.30}{Metoda koncnih diferenc za nelinearen problem}{section*.29}% 30
+\BOOKMARK [3][-]{section*.31}{Strelska metoda}{section*.29}% 31

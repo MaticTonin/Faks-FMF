@@ -1,0 +1,391 @@
+\documentclass[12pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{icomma}
+\usepackage{amsmath}
+\pdfinfo{
+  /Title (Uporabne formule iz klasične mehanike za fizike)
+  /Author (Urban Duh)
+  /Subject (Klasična mehanika)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1 cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\avg}[1]{\langle#1\rangle}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\rv}{\vec{r}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\av}{\vec{a}}
+\newcommand{\F}{\vec{F}}
+\newcommand{\uunderline}[1]{\underline{\underline{#1}}}
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+
+\section{Norme matrik}
+\begin{enumerate}
+\item \texttt{Prva norma:} $||A||_1=max_{1,2,3...}\left(\sum_{i=i}^{m}|a_{i,j}\right)$ \\
+Kar je v resnici seštevek vseh indeksov po stolpcih. 
+\item \texttt{Neskončna norma: } $||A||_{\infty}=max_{1,2,3...}\left(\sum_{i=j}^{m}|a_{i,j}\right)$
+Kar je v resnici seštevek vseh indeksov po vrsticah.
+ \item \texttt{Frobenisova norma: } 
+ $||A||_{F}=\left(\sum_{i=1}^{m}\sum_{j=1}^{m}|a_{i,j}^2\right)^{\frac{1}{2}}$
+ \item \texttt{Druga norma: }
+ $||A||_{2}=max_{1,2,3...}\sqrt{\lambda_i (A^T A}$ \\
+ Po definiciji je za ortogonalne matrike enaka 1. \\
+\item \texttt{Primer:} \\
+$$\begin{bmatrix}
+1 & 2\\
+3 & 4\\
+-5 & 6\\
+\end{bmatrix}$$
+$||A||_1=12 \quad ||A||_{\infty}=11 ||A||_F=\sqrt{91}$
+\end{enumerate}
+\section{Reševanje posebih sistemov Ax=B}
+Če je matrika nesingularna sledi, da je $\det(A) \neq 0 $.
+\begin{enumerate}
+\item \texttt{A je zgornje ali spodnje trikotna= DIREKTNO VSTAVLJANJE:} \\
+Splošna forma je enaka:
+$$x_i=\frac{1}{l_{i,i}}\left(b_i-\sum_{j=1}^{i-1} l_{i,j}x_j \right)$$
+Torej vstavljamo za nazaj elemente.
+ČASOVNA ZAHTEVNOST JE $\sigma(n^2)$
+\item \texttt{A je nesingularna matrika= LU razcep:} \\
+Matriko A spremenimo tako, da velja $$A=LU$$, kjer je L spodnje trikotna (1 po diagonali), U pa zgornje trikotna. 
+V primeru da $A\neq=LU$,velja: $$PA=PLU$$, kjer je P matrika, ki nam spremeni položaj neke vrstice ali stolpca, da se LU in A ujemajo. \\
+IZRAČUN DETERMINANTE:
+$$\det(PA)=\det(L) \det(U)=(-1)^k \Pi_{i=1}^{n}u_{i,i}$$ 
+ČASOVNA ZAHTEVNOST 1 RAZCEPA JE $\sigma(n^3)$.
+
+\end{enumerate}
+\subsection{Tridiagonalni sistemi}
+
+Vse neničelne elemente tridiagonalne $A$ lahko hranimo v treh stolpcih dolžine $n$. Tako dobimo $LU$ razcep brez pivotiranja s prostorsko in časovno zahtevnostjo $\mathcal{O}(n)$. \medskip \\
+
+\section{Sistemi nelinearnih enačb}
+\subsection{Iskanje ničel enačbe f(x)=0}
+\begin{enumerate}
+\item \texttt{Navadna iteracija:}\\
+Je oblike:
+$$x_{r+1}=g(x_r)$$
+Primer: $x^3-5x+1=0 \rightarrow g(x)=\frac{x^3+1}{5}$ ( izrazimo ven x iz enačbe in to vstavljamo v $x_{r+1}=g(x_r)$
+\item \texttt{Tangentna iteracija:}\\
+Je oblike:
+$$x_{r+1}=x_r-\frac{f(x_r)}{f'(x_r)}$$
+Velja, da če je $f'(x)\neq=0$ je konvergenca vsaj kvadratična.
+\item \texttt{Sekantna iteracija:}\\
+Je oblike:
+$$x_{r+1}=x_r-\frac{f(x_r)(x_r-x_{r-1})}{f(x_r)-f(x_{r-1})}$$
+V resnici je to tangentna, kjer nismo naredili limite za odvod. \\
+Konvergenca je p=1.62.
+\end{enumerate}
+\subsection{Pomembni pojmi pri iteraciji}
+\begin{enumerate}
+\item \texttt{Negibna točka:}
+Negibna točka iteracije je definirana kot: 
+$$g(\alpha)=\alpha$$
+\item \texttt{Konvergenca iteracije:}
+Najdemo jo z odvodom g(x) v točki $\alpha$.\\
+KVADRATIČNA KONV: $$g'(\alpha)=0 \quad g''(\alpha)\neq 0$$ 
+LINEARNA KONV: $$g'(\alpha)\neq0$$
+\end{enumerate}
+
+\subsection{Reševanje sistema}
+\begin{enumerate}
+\item \texttt{Newtonova metoda reševanja:} \\
+Zapišemo jo kot:
+$$X^{k+1}=X^{k}-J_F(x^k)^{-1}F(x^k)$$
+Kjer je J jakobijeva matrika na funkciji F.
+\end{enumerate}
+\section{Linearni problem najmanjših kvadratov}
+V splošnem rešujemo enačbo Ax=b. V primeru, da je A matrika, x in b pa stolpca, lahko zapišemo problem kot:
+$$(A^T A) X=A^T B$$
+kjer je  $(A^T A)$ simetrična in poz def. matrika.
+
+To uporabljamo ponavadi, ko želimo narediti iz nekih podatkov funckcijo in nas zanimajo parametri.
+\begin{enumerate}
+\item \texttt{Primer:}
+Podatki naj bodo: \\
+$x \quad 1 \quad 2  \quad 3 \quad $ \\
+$f(x) \quad 3 \quad 4 \quad 5 $ \\
+Zapišemo nato matriko oblike: \\
+$A=\begin{bmatrix}
+1 & 1\\
+2 & 1\\
+3 & 1\\
+\end{bmatrix}$
+$Y=\begin{bmatrix}
+3 \\
+4 \\
+5 \\
+\end{bmatrix}$
+$F=\begin{bmatrix}
+\vec{F(x)}
+\end{bmatrix}$ \\
+ $$(A^T A)F=A^TY$$
+
+\end{enumerate}
+\subsection{Householderjevo zrcaljenje($\mathcal{O}(2mn^2 - \frac{2}{3}n^3)$)}
+
+Želimo si transformacijo iz hiperavnine v $\mathbb{R}^n$ Zato imamo podano formulo, da velja:
+$$x'=Px$$
+kjer je x' željeni vektor preslikave, x vektor, ki ga slikamo, P pa Householderjeva matrika preslikave preko hiperavnine, def kot:
+
+$$P=I-\frac{2}{\omega^T \omega}\omega \omega^T$$
+
+Zanjo velja:
+$$P^TP=P^2=I$$
+Poznamo več primerov zrcaljenja in zato vel primerov $\omega$:
+\begin{enumerate}
+\item \texttt{Želimo, da je vektor enak enotskemu vektorju:}\\
+To lahko naredimo, če def $\omega$ kot 
+$$\vec{\omega} =\vec{x}+\mathrm{sign(x_i)}\vec{e_i}$$, kjer je $e_i$ enotski vec, v katerega želimo preslikati.
+\item \texttt{Želimo da je x'=-x:}\\
+Za to moramo v resnici zgolj definirati, da je:
+$$\vec{\omega}=\vec{x}$$
+\end{enumerate}
+Uporabljamo jo za iskanje lastnih vrednosti matrike:
+\texttt{Primer:} \\
+Imamo mat sistem $Ax=b$. Če sedaj obe str pomnožimo z mat $P^{(1)}Ax=P^{(1)}b$ dobimo tako novo matriko A, ki ima v prvem stolpcu vse elemente 0, razen prvega. Nato isto naredimo na podmatriki, da še tam dobimo 0. (PAZIMO, DA PONOVNO PRERAČUNAMO $\vec{\omega_2}$, SAJ RAZVIJAMO PO 2 ENOTSKEM VEKTORJU.)
+
+Velja tudi, da je.
+$$PAPe_1=\lambda_1 e_1$$
+Na koncu imamo $R = A^{(n)}$, $Q = (\tilde P_n \cdots \tilde P_1)^T = \tilde P_1 \cdots \tilde P_n$ in $A = QR$. \medskip \\
+\section{Problem lastnih vrednosti}
+
+Za $A \in \R^{n \times n}$ iščemo $A \vec x = \lambda \vec x$. \medskip \\
+
+\subsection{Potenčna metoda}
+
+$\vec y_{k+1} = A \vec z_k$, \quad $\vec z_{k+1} = \frac{\vec y_{k+1}}{\norm{\vec y_{k+1}}}$ \medskip \\
+
+Naj bo $\lambda_1$ dominanta lastna vrednost $A$ ($|\lambda_1| > |\lambda_2| \geq \cdots \geq |\lambda_n|$). Če ima vektor $\vec z_0$ neničelno komponento v smeri lastne vektorja, ki pripada $\lambda_1$, potem zaporedje $(\vec z_k)$ po smeri konvergira k temu lastnemu vektorju. \medskip \\
+
+Reyleighov koeficient: $\rho(\vec x, A) = \frac{\vec x^H A \vec x}{\vec x^H \vec x}$. \\
+Iteracijo ustavimo, ko $\norm{A \vec z_k - \rho(\vec z_k, A) \vec z_k} \leq \varepsilon$. \\
+Rayleighjev koeficient je najboljši približek za lastno vrednost pri danem lastnem vektorju. \medskip \\
+
+Hitrost konvergence je linearna in je hitrejša, če je $\frac{|\lambda _2|}{|\lambda_1|}$ majhno. \medskip \\
+
+\subsubsection{Hotelingova redukcija}
+
+Naj bo $A = A^T$ in $(\lambda_1, \vec x_1)$ dominantni lastni par $A$, kjer $\norm{\vec x_1}_2 = 1$. Tedaj za $B = A - \lambda_1 \vec x_1 \vec x_1^T$ velja $B \vec x_1 = 0$ in $B \vec x_k = \lambda_k \vec x_k$ za $k \neq 1$. \\
+Potenčna metoda na $B$ nam torej da drugo dominantno lastno vrednost $A$. \medskip \\
+
+$B$ ne računamo eksplicitno, saj $B \vec z = A \vec z - \lambda_1 (\vec x_1^T \vec z) \vec x_1$. \medskip \\
+
+\subsubsection{Householderjeva redukcija}
+
+Poiščemo ortogonalno matriko $Q$, da je $Q \vec x_1 = k \vec e_1$ (Householderjevo zrcaljenje). Tedaj je $B = QAQ^T = \begin{bmatrix}
+\lambda_1 & \vec b^T \\
+0 & C
+\end{bmatrix}$, kjer se lastne vrednosti $C$ ujemajo s preostalimi lastnimi vrednostmi $A$. \medskip \\
+
+\subsection{Inverzna iteracija}
+
+Če iščemo najmanjšo lastno vrednost $A$ lahko izvajamo potenčno metodo na $A^{-1}$. V praksi raje kot ekspliciten račun $A^{-1}$ rešujemo sistem $A \vec y_{k + 1} = \vec z_k$. \medskip \\
+
+Če je $\sigma$ približek za lastno vrednost, lahko pripadajoč lastni vektor dobimo z inverzno iteracijo na $A - \sigma I$. \medskip \\
+
+\subsection{QR iteracija}
+
+$A_0 = A$, \quad $A_k = Q_k R_k$ (QR razcep), \quad $A_{k + 1} = R_k Q_k$ \\
+Če ima $A$ lastne vrednosti s paroma različnimi absolutnimi vrednostmi, potem zaporedje $(A_k)$ konvergira proti Schurovi formi. \medskip \\
+
+\subsection{Simetrične matrike}
+
+Simetrično matriko lahko ortogonalno podobno pretvorimo na simetrično tridiagonalno matriko (recimo s Householderjevimi zrcaljenmi). \medskip \\
+\section{Sturmovo zaporedje}
+Imamo tridiagonalno simetrično matriko T, za katero lahko zapišemo determinanto kot $f_r(r)=\det(Tr- \lambda I)$ \\
+Veljalo bo:
+
+$$f_{r+1}(\lambda)=(a_{r+1}-\lambda)f_r(\lambda)-b_r^2 f_{r-1}(\lambda) \quad f_0(\lambda)=1$$
+in še 
+$$f_0(\lambda)=1 \quad f_1=(a_1-\lambda)$$
+
+\texttt{Primeri:}\\
+Najprej za matriko zapišemo vse funkcije $f_r(\lambda)$ nato pa vstavimo v njih robove intervala ki sta nam podana ter primerjamo, koliko ujemanj predznakov je v zaporedju. Št ujemanj predznakov na istih mestih v intervalih nam pove št lastnih vrednosti.
+\section{Interpolacije}
+\subsection{Lagrangeova oblika}
+
+$l_{n, i}(x) = \prod_{k = 0, k \neq i}^{n} \frac{x - x_k}{x_i - x_k}$, $i = 0, 1, \dots, n$ \\
+Potem je $p_n(x) = \sum_{j = 0}^{n} f_j l_{n, j}(x)$. \medskip \\
+
+Če definiramo $\omega(x) = (x - x_0)(x-x_1) \cdots (x - x_n)$, potem velja $l_{n, i}(x) = \frac{\omega(x)}{(x - x_i)\omega'(x_i)}$. \medskip \\
+
+Če je $f$ $(n + 1)$-krat zvezno odvedljiva na $[a, b]$, ki vsebuje vse paroma različne $x_i$, potem $\forall x \in [a, b]$ \ $\exists \xi \in (a, b)$, da je $f(x) - p_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!}\omega(x)$. \medskip \\
+\subsection{Newtonova oblika}
+Definiramo, da za deljeno diferenco velja:
+$$p_n(x)=[x_0]f+(x-x_0)[x_0,x_1]f+ $$
+$$... (x-x_0)...(x-x_n)[x_0,x_1...,x_n]f$$
+
+Vrednost deljenih diferenc dobimo kot: 
+$$[x_0,x_1]f=\frac{[x_1]f-[x_0]f}{x_1-x_0}$$
+(Poglej si tabelo deljenih diferenc)\\
+
+Napaka take meritve je definirana kot: 
+$$|f(x)-p_k(x)|=|\frac{f^{(n+1)}(\zeta)}{(n+1)!}||\omega(x)|$$
+kjer je $\omega(x)=(x-x_0)(x-x_1)..(x-x_n)$ enak kar, njeno max vrednost absolutne pa izračunamo preko odvoda $\omega'(x)=0$
+
+$$[x_0, x_1, \dots, x_k] f = \begin{cases}
+\frac{f^{(k)}(x_0)}{k!} &; x_0 = \cdots = x_k \\
+\frac{[x_1, \dots, x_k]f - [x_0, \dots, x_{k - 1}]f}{x_k - x_0} &; \mathrm{sicer}
+\end{cases}$$
+\section{Numerično reševanje dif enačb}
+\subsection{Enokoračne metode}
+\begin{enumerate}
+\item \texttt{Eulerjeva metoda:} \\
+Je oblike:
+$$y_{n+1}=y_n+hf(x_n,y_n)$$
+kjer je h naša vrednost koraka, $f(x_n,y_n)$ pa funkcija, za katero želimo vedeti približek odvoda.
+\item \texttt{Primer:} \\
+$$y''=-xy$$
+Rečeš, da je $y_1=y$ in $y_2=y'$ iz česar sledi, da je $y_1'=y_2$ in $y_2'=y''=-xy$. \\
+Nato zapišeš matrike:  \\
+$Y_{n+1}=\begin{bmatrix}
+y_1=y\\
+y_2=y' \\
+\end{bmatrix}$
+$Y_n=\begin{bmatrix}
+y_1(x_n)=y(x_n)\\
+y_2(x_n)=y'(x_n) \\
+\end{bmatrix}$
+$F(x_n)=\begin{bmatrix}
+y_1'(x_n)=y_2(x_n)\\
+y_2'(x_n)=f(x,y) \\
+\end{bmatrix}$ \\
+Da velja sistem:
+$$Y_{n+1}=Y_{n}+h\cdot F(x_n)$$
+\end{enumerate}
+\textbf{Metoda Runge-Kutta 4. reda}: \\
+$k_1 = h f(x_n, y_n)$ \\
+$k_2 = h f\left(x_n + \frac{h}{2}, y_n + \frac{k_1}{2}\right)$ \\
+$k_3 = h f\left(x_n + \frac{h}{2}, y_n + \frac{k_2}{2}\right)$ \\
+$k_4 = h f\left(x_n + h, y_n + k_3\right)$ \\
+$y_{n +1} = y_n + \frac{1}{6}(k_1 + 2 k_2 + 2 k_3 + k_4)$ \medskip \\
+
+\subsection{Enokoračne implicitne metode}
+
+Splošna oblika je $y_{n + 1} = \Phi(h, x_n, y_n, y_{n + 1}, f)$. \\
+Za izračun $y_{n + 1}$ moramo rešiti (nelinearno) enačbo. Najpogosteje to naredimo kar z iteracijo $y_{n + 1} = \tilde \Phi(y_{n + 1})$, ki konvergira, če $\left| \frac{\partial \Phi}{\partial y}(h, x_n, y_n, y, f) \right| \leq 1$ (vedno za dovolj majhen $h$). Za začetni približek vzamemo $y_{n + 1}$ po neki eksplicitni metodi. \medskip \\
+
+\textbf{Trapezna metoda} (2. red): \\
+$y_{n + 1} = y_n + \frac{h}{2}(f(x_n, y_n) + f(x_{n + 1}, y_{n + 1}))$ \medskip \\
+
+\subsection{Sistemi ODE 1. reda}
+
+Rešujemo \\
+$y_1' = f_1(x, y_1, y_2, \dots, y_d)$ \\
+\quad $\vdots$ \\
+$y_d' = f_d(x, y_1, y_2, \dots, y_d)$ \\
+pri pogojih $y_1(a) = y_{1a}, \dots, y_d(a) = y_{da}$ \medskip \\
+
+Če uvedemo $\vec Y = \begin{bmatrix}
+y_1 & y_2 & \dots & y_d
+\end{bmatrix}^T$ in $\vec F = \begin{bmatrix}
+f_1 & f_2 & \dots & f_d
+\end{bmatrix}^T$, dobimo $\vec Y' = \vec F(x, \vec Y), \vec Y(a) = \vec Y_a$, kar pa lahko rešujemo s katero koli metodo za reševanje ODE 1. reda prepisano v vektorsko obliko. \medskip \\
+
+\subsection{ODE višjih redov}
+
+Rešujemo $z^{(k)} = f(x, y, y', \dots, y^{k - 1})$ pri pogojih $y(a) = y_a, y'(a) = y'(a), \dots, y^{(k - 1)}(a) = y_a^{(k - 1)}$. \medskip \\
+
+S substitucijami $y_1 = y, y_2 = y', \dots, y_k = y^{(k - 1)}$ prevedemo problem na sistem: \\
+$y_1' = y_2$ \\
+\quad $\vdots$ \\
+$y_{k - 1}' = y_k$ \\
+$y_k' = f(x, y_1, \dots, y_k)$ \\
+pri pogojih $y_1(a) = y_a, y_2(a) = y'_a, \dots, y_k(a) = y_a^{(k - 1)}$ \medskip \\
+
+\section{Robni problem 2. reda}
+
+Rešujemo $y'' = f(x, y, y')$ pri pogojih $y(a) = \alpha, y(b) = \beta$
+
+\subsection{Linearni robni problem 2. reda}
+
+Rešujemo $- y'' + py' + qy = r, y(a) = \alpha, y(b) = \beta$, kjer so $p, q, r$ dane zvezne funkcije. \medskip \\ 
+
+Rešimo 2 začetna problema oblike $- y'' + py' + qy = r, y(a) = \alpha, y'(a) = \delta_i$, za neka $\delta_i$ in dobimo rešitvi $y_1, y_2$. \\
+Enačbo reši tudi $y  = \lambda y_1 + (1 - \lambda) y_2, \lambda \in \R$. Avtomatsko velja $y(a) = \alpha$, iz zahteve $y(b) = \beta$ pa dobimo $\lambda = \frac{\beta -y_2(b)}{y_1(b) - y_2(b)}$. \\
+Če je $y_1(b) = y_2(b)$ izberemo drugačne $\delta_i$. \medskip \\
+ 
+\subsubsection{Metoda končnih diferenc}
+
+Izberemo ekvidistante delilne točke $a = x_0 < \dots < x_{n+1} = b$, $h = x_{i + 1} - x_i$ in uporabimo simetrične približke odvodov. \medskip \\
+
+Če označimo $p_i = p(x_i), q_i = q(x_i)$ in $r_i = r(x_i)$ dobimo: \\
+$y_1(2 + h^2 q_1) + y_2 \left(-1 + \frac{h}{2} p_1\right) = h^2 r_1 - \alpha\left(-1 - \frac{h}{2} p_1\right)$ \\
+$ y_{i - 1} \left(-1 - \frac{h}{2} p_i\right) + y_i(2 + h^2 q_i) +  y_{i + 1} \left(-1 + \frac{h}{2} p_i\right) = h^2 r_i$, za $i = 2, 3, \dots n -1$ \\
+$y_{n - 1}\left(-1 - \frac{h}{2} p_n\right) + y_n(2 +  h^2 q_n) = h^2 r_n - \beta \left(-1 + \frac{h}{2} p_n\right)$ \\
+Ta sistem je tridiagonalen in diagonalno dominanten. \medskip \\
+
+\subsection{Nelinearni robni problem 2. reda}
+
+\subsubsection{Metoda končnih diferenc za nelinearen problem}
+
+Izberemo ekvidistante delilne točke $a = x_0 < \dots < x_{n+1} = b$, $h = x_{i + 1} - x_i$ in uporabimo simetrične približke odvodov. \medskip \\
+
+Dobimo $y_{i - 1} - 2y_i + y_{i + 1} = h^2 f\left(x_i, y_i, \frac{y_{i + 1} - y_{i - 1}}{2h}\right)$ , $i = 1, \dots, n$. To je sistem $n$ nelinearnih enačb. \medskip \\
+
+\subsubsection{Strelska metoda}
+
+Začetni problem rešimo z nekim $y'(a) = k_0$ in dobimo rešitev $y(x; k_0)$. Definiramo $F(k) = y(b; k) - \beta$ in iščemo rešitev enačbe $F(k) = 0$. \medskip \\
+
+Ponavadi se to rešuje s sekantno metodo $k_{r + 2} = k_{r + 1} - \frac{F(k_{r + 1}) (k_{r + 1} - k_r)}{F(k_{r + 1}) - F(k_r)}$, kjer na vsakem koraku rešimo ODE 2. reda z $y'(a) = k_r$. \medskip \\
+\end{multicols}
+
+\end{document}

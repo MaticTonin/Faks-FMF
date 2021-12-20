@@ -1,0 +1,7 @@
+#Hitrost zvoka v vodi
+#Jeklo 
+#n	d_v[cm]
+1	0.3
+2	0.9
+3	1.5
+4	2.1

@@ -1,0 +1,7 @@
+#Hitrost zvoka v vodi
+#Aluminij 
+#n	d_v[cm]
+1	0.2
+2	0.8
+3	1.4
+4	2.0
