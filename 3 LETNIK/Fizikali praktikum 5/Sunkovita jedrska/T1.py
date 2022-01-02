@@ -45,17 +45,44 @@ plt.show()
 
 
 tau_rocna=tau1
-tau_rocna=f(tau1,fit[0][0],fit[0][1])*0.001
-f12= lambda x, M0, T1 : M0*(1-np.exp(-x/T1))
+print(tau_rocna)
+tau_rocna=f(tau1,fit[0][0],fit[0][1])
+f12= lambda x, M0, T1,C: M0*(1-np.exp(-(x)/T1))+C
 #f1= lambda x, M0, T1 : M0*np.exp(-2*x/T1)
-args = [1,1]
+args = [7,25,36]
 fit12 = sp.curve_fit(f12, tau_rocna, U1, p0=args)
-fitlabel = r"$U=%.2f(1-exp(\frac{\tau}{%.2f}) $"%(fit12[0][0], fit12[0][1])
+fitlabel = r"$U=%.2f(1-exp(\frac{\tau}{%.2f})$+%.2f"%(fit12[0][0], fit12[0][1],fit12[0][2])
 plt.title("Meritev vodovodne vode")
 plt.plot(tau_rocna,U1,"x-")
 #plt.plot(tau1,U1,"x-")
 #plt.plot(tau_rocna, f1(tau_rocna, 8.1, 3540), label=fitlabel)
-plt.plot(tau_rocna, f12(tau_rocna, fit12[0][0], fit12[0][1]), label=fitlabel)
+TAU=np.linspace(tau_rocna[0],tau_rocna[len(tau_rocna)-1],1000)
+plt.plot(TAU, f12(TAU, fit12[0][0], fit12[0][1],fit12[0][2]), label=fitlabel)
+plt.plot(TAU, f12(TAU, fit12[0][0], 23,fit12[0][2]), label=fitlabel)
+plt.legend()
+plt.xlabel(r"$\tau[ms]$")
+plt.ylabel(r"$U[V]$")
+plt.show()
+
+
+
+data_file = THIS_FOLDER + "\Spin.txt"
+data2= np.loadtxt(data_file)
+print(data2)
+tau1, U1=data2.T
+tau_rocna=tau1
+tau_rocna=f(tau1,fit[0][0],fit[0][1])
+f12= lambda x, M0, T1 : M0*np.exp(-x/T1)
+#f1= lambda x, M0, T1 : M0*np.exp(-2*x/T1)
+args = [1200,1.2]
+fit12 = sp.curve_fit(f12, tau_rocna, U1, p0=args)
+fitlabel = r"$U=%.2f\cdot \exp(\frac{\tau}{%.2f})$"%(fit12[0][0], fit12[0][1])
+plt.title("Meritev spina")
+plt.plot(tau_rocna,U1,"x-")
+#plt.plot(tau1,U1,"x-")
+#plt.plot(tau_rocna, f1(tau_rocna, 8.1, 3540), label=fitlabel)
+TAU=np.linspace(tau_rocna[0],tau_rocna[len(tau1)-1],1000)
+plt.plot(TAU, f12(TAU, fit12[0][0], fit12[0][1]), label=fitlabel)
 plt.legend()
 plt.xlabel(r"$\tau[ms]$")
 plt.ylabel(r"$U[V]$")
