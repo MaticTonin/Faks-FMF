@@ -1,0 +1,176 @@
+\documentclass[slovene,11pt,a4paper]{article}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png}
+
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[margin=1cm,bottom=2cm,foot=1cm]{geometry}
+\usepackage{fullpage}
+\usepackage{a4wide}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5ex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{caption}
+
+\DeclareCaptionType{equ}[][]
+\def\phi{\varphi}
+\def\eps{\varepsilon}
+\def\theta{\vartheta}
+
+\newcommand{\thisyear}{2020/21}
+
+\renewcommand{\Re}{\mathop{\rm Re}\nolimits}
+\renewcommand{\Im}{\mathop{\rm Im}\nolimits}
+\newcommand{\Tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\diag}{\mathop{\rm diag}\nolimits}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ddd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\lag}{\mathcal{L}\!}
+\newcommand{\ham}{\mathcal{H}\!}
+\newcommand{\four}[1]{\mathcal{F}\!\left(#1\right)}
+\newcommand{\bigO}[1]{\mathcal{O}\!\left(#1\right)}
+\newcommand{\sh}{\mathop{\rm sinh}\nolimits}
+\newcommand{\ch}{\mathop{\rm cosh}\nolimits}
+\renewcommand{\th}{\mathop{\rm tanh}\nolimits}
+\newcommand{\erf}{\mathop{\rm erf}\nolimits}
+\newcommand{\erfc}{\mathop{\rm erfc}\nolimits}
+\newcommand{\sinc}{\mathop{\rm sinc}\nolimits}
+\newcommand{\rect}{\mathop{\rm rect}\nolimits}
+\newcommand{\ee}[1]{\cdot 10^{#1}}
+\newcommand{\inv}[1]{\left(#1\right)^{-1}}
+\newcommand{\invf}[1]{\frac{1}{#1}}
+\newcommand{\sqr}[1]{\left(#1\right)^2}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\thalf}{\tfrac{1}{2}}
+\newcommand{\pd}{\partial}
+\newcommand{\Dd}[3][{}]{\frac{\ddd^{#1} #2}{\ddd #3^{#1}}}
+\newcommand{\Pd}[3][{}]{\frac{\pd^{#1} #2}{\pd #3^{#1}}}
+\newcommand{\avg}[1]{\left\langle#1\right\rangle}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\braket}[2]{\left\langle #1 \vert#2 \right\rangle}
+\newcommand{\obraket}[3]{\left\langle #1 \vert #2 \vert #3 \right \rangle}
+\newcommand{\hex}[1]{\texttt{0x#1}}
+
+\renewcommand{\iint}{\mathop{\int\mkern-13mu\int}}
+\renewcommand{\iiint}{\mathop{\int\mkern-13mu\int\mkern-13mu\int}}
+\newcommand{\oiint}{\mathop{{\int\mkern-15mu\int}\mkern-21mu\raisebox{0.3ex}{$\bigcirc$}}}
+
+\newcommand{\wunderbrace}[2]{\vphantom{#1}\smash{\underbrace{#1}_{#2}}}
+
+\renewcommand{\vec}[1]{\overset{\smash{\hbox{\raise -0.42ex\hbox{$\scriptscriptstyle\rightharpoonup$}}}}{#1}}
+\newcommand{\bec}[1]{\mathbf{#1}}
+
+
+
+
+\newcommand{\Ai}{\mathrm{Ai}}
+\newcommand{\Bi}{\mathrm{Bi}}
+\newcommand{\bi}[1]{\hbox{\boldmath{$#1$}}}
+\newcommand{\bm}[1]{\hbox{\underline{$#1$}}}
+
+\title{1. Izračun Airyjevih funkcij}
+\author{Matic Tonin - 28181098 }
+\date{Oktober 2020}
+
+\begin{document}
+
+\begin{center}
+\thispagestyle{empty}
+\parskip=14pt%
+\vspace*{3\parskip}%
+\begin{Huge}Širjenje nevtronov v prostoru\end{Huge}
+
+
+3. domača naloga v sklopu predmeta \\
+Fizike jedrskih nevtronskih naprav
+
+Avtor:
+
+Matic Tonin
+
+Vpisna številka: 28181098
+
+Profesor: prof. dr. Luka Snoj
+
+Asistent: doc. dr. Andrej Zohar
+
+
+\rule{7cm}{0.4pt}
+
+Pod okvirom:
+
+FAKULTETE ZA FIZIKO IN MATEMATIKO, LJUBLJANA
+
+Akademsko leto 2021/2022
+
+
+\end{center}
+\pagebreak
+\section*{Naloga}
+V velikem bazenu z vodo je krogla iz polietilena s polmerom 50 cm. V središču krogle je točkast izotropen izvor nevtronov. Kakšno je razmerje med fluksom na površini in na polovici radija krogle? Uporabi enogrupni difuzijski približek in podatke
+\begin{equation}
+\begin{array}{lll} 
+& \Sigma_{a}\left(\mathrm{~cm}^{-1}\right) & D(\mathrm{~cm}) \\
+\text { polietilen } & 0.010 & 4.0 \\
+\text { voda } & 0.020 & 2.0
+\end{array}
+\end{equation}
+\section{Reševanje}
+Če uporabimpo našo difuzijsko enačbo, bo veljalo, da je 
+\begin{equation}
+    \nabla \psi=\frac{\sum_a}{D}\psi
+\end{equation}
+kar v sferičnih kooridnatah rešimo kot 
+\begin{equation}
+     \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\psi\right)=-\frac{\sum_a}{D}\upsilon
+\end{equation}
+Ker pa je reševanje take enačbe zelo zahtevno, si raje vzamemo pogoj, da je 
+\begin{equation}
+    \psi=\psi_1 \quad \text{if } 0<r<R \qquad \psi=\psi_2 \quad \text{if } r>R
+\end{equation}
+kjer sta
+\begin{equation}
+    \psi_1=\frac{Ae^{-\frac{r}{L_1}}+Be^{\frac{r}{L_1}}}{r} \qquad \psi_1=\frac{Ce^{-\frac{r}{L_2}}+De^{\frac{r}{L_2}}}{r}
+\end{equation}
+Sedaj pa si poglejmo robne in začetne pogoje našega nastavka
+\begin{enumerate}
+    \item $\lim_{r \rightarrow \infty} \psi < \infty$ iz česar sledi, da je $D=0$ \\
+    \item $\lim_{r \rightarrow 0} \psi =S$ iz česar sledi, da je $S=D_1 4\pi(A+B)$ \\
+    \item Zveznost fluska na meji $\psi_1(R)=\psi_2(R)$ \\
+    \item $j_1(R)=j_2(R)$ iz česar je $D_1\frac{\partial \psi_1}{\partial r}=D_2\frac{\partial \psi_2}{\partial r}$
+\end{enumerate}
+Če uporabimo pogoj 3. in 4. dobimo, da je 
+\begin{equation}
+    \text{3.}\qquad Ae^{-\frac{R}{L_1}}+Be^{\frac{R}{L_1}}=Ce^{-\frac{R}{L_2}} 
+\end{equation}
+\begin{equation}
+    \text{4.}\qquad -A\frac{e^{-\frac{R}{L_1}}}{R^2}-A\frac{e^{-\frac{R}{L_1}}}{RL_1}-B\frac{e^{\frac{R}{L_2}}}{R^2}+B\frac{e^{\frac{R}{L_1}}}{RL_1}=-C\frac{e^{-\frac{R}{L_2}}}{R^2}-C\frac{e^{-\frac{R}{L_2}}}{RL_2}
+\end{equation}
+Z reševanjem sistema teh dve enačb pa bi dobili rešitev ki je oblike
+\begin{equation}
+    A=\frac{S}{4\pi D_1} \qquad B=-\frac{S}{4\pi D_1}\left(\frac{\frac{1}{RL_1\sinh(\frac{R}{L_1}}+\left(\frac{D_2}{D_1}\left(\frac{1}{R^2}+\frac{1}{RL_2}-\frac{1}{R^2}\right)\cosh\left(\frac{R}{L_1}\right)\right)}{\frac{1}{RL_1\cosh(\frac{R}{L_1}}+\left(\frac{D_2}{D_1}\left(\frac{1}{R^2}+\frac{1}{RL_2}-\frac{1}{R^2}\right)\sinh\left(\frac{R}{L_1}\right)\right)}\right)
+\end{equation}
+in 
+\begin{equation}
+    C=\frac{e^{-\frac{R}{L_2}}}{A\cosh\left(\frac{R}{L_1}\right)+B\sinh\left(\frac{R}{L_1}\right)}
+\end{equation}
+V resnici pa nas bosta zanimala le koeficienta A in B.
+V primeru, ko računamo fluks na polovici krogle in na površini, bi lahko definirali, da je iskana količina kar
+\begin{equation}
+    \nu=\frac{\psi_1(R)}{\psi_1(R/2)}
+\end{equation}
+Z vstavljanjem znanja o razdaljah in koeficientih $D_1$ in $D_2$ pa bi dobili, da je 
+\begin{equation}
+    \nu=\frac{\psi_1(R)}{\psi_1(R/2)}=0.158
+\end{equation}
+
+
+\end{document}
+

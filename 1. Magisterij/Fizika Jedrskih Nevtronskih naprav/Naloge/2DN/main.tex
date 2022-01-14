@@ -1,0 +1,207 @@
+\documentclass[slovene,11pt,a4paper]{article}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png}
+
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[margin=1cm,bottom=2cm,foot=1cm]{geometry}
+\usepackage{fullpage}
+\usepackage{a4wide}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5ex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{caption}
+
+\DeclareCaptionType{equ}[][]
+\def\phi{\varphi}
+\def\eps{\varepsilon}
+\def\theta{\vartheta}
+
+\newcommand{\thisyear}{2020/21}
+
+\renewcommand{\Re}{\mathop{\rm Re}\nolimits}
+\renewcommand{\Im}{\mathop{\rm Im}\nolimits}
+\newcommand{\Tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\diag}{\mathop{\rm diag}\nolimits}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ddd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\lag}{\mathcal{L}\!}
+\newcommand{\ham}{\mathcal{H}\!}
+\newcommand{\four}[1]{\mathcal{F}\!\left(#1\right)}
+\newcommand{\bigO}[1]{\mathcal{O}\!\left(#1\right)}
+\newcommand{\sh}{\mathop{\rm sinh}\nolimits}
+\newcommand{\ch}{\mathop{\rm cosh}\nolimits}
+\renewcommand{\th}{\mathop{\rm tanh}\nolimits}
+\newcommand{\erf}{\mathop{\rm erf}\nolimits}
+\newcommand{\erfc}{\mathop{\rm erfc}\nolimits}
+\newcommand{\sinc}{\mathop{\rm sinc}\nolimits}
+\newcommand{\rect}{\mathop{\rm rect}\nolimits}
+\newcommand{\ee}[1]{\cdot 10^{#1}}
+\newcommand{\inv}[1]{\left(#1\right)^{-1}}
+\newcommand{\invf}[1]{\frac{1}{#1}}
+\newcommand{\sqr}[1]{\left(#1\right)^2}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\thalf}{\tfrac{1}{2}}
+\newcommand{\pd}{\partial}
+\newcommand{\Dd}[3][{}]{\frac{\ddd^{#1} #2}{\ddd #3^{#1}}}
+\newcommand{\Pd}[3][{}]{\frac{\pd^{#1} #2}{\pd #3^{#1}}}
+\newcommand{\avg}[1]{\left\langle#1\right\rangle}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\braket}[2]{\left\langle #1 \vert#2 \right\rangle}
+\newcommand{\obraket}[3]{\left\langle #1 \vert #2 \vert #3 \right \rangle}
+\newcommand{\hex}[1]{\texttt{0x#1}}
+
+\renewcommand{\iint}{\mathop{\int\mkern-13mu\int}}
+\renewcommand{\iiint}{\mathop{\int\mkern-13mu\int\mkern-13mu\int}}
+\newcommand{\oiint}{\mathop{{\int\mkern-15mu\int}\mkern-21mu\raisebox{0.3ex}{$\bigcirc$}}}
+
+\newcommand{\wunderbrace}[2]{\vphantom{#1}\smash{\underbrace{#1}_{#2}}}
+
+\renewcommand{\vec}[1]{\overset{\smash{\hbox{\raise -0.42ex\hbox{$\scriptscriptstyle\rightharpoonup$}}}}{#1}}
+\newcommand{\bec}[1]{\mathbf{#1}}
+
+
+
+
+\newcommand{\Ai}{\mathrm{Ai}}
+\newcommand{\Bi}{\mathrm{Bi}}
+\newcommand{\bi}[1]{\hbox{\boldmath{$#1$}}}
+\newcommand{\bm}[1]{\hbox{\underline{$#1$}}}
+
+\title{1. Izračun Airyjevih funkcij}
+\author{Matic Tonin - 28181098 }
+\date{Oktober 2020}
+
+\begin{document}
+
+\begin{center}
+\thispagestyle{empty}
+\parskip=14pt%
+\vspace*{3\parskip}%
+\begin{Huge}Ocena količine nečistoč v grafitu\end{Huge}
+
+
+2. domača naloga v sklopu predmeta \\
+Fizike jedrskih nevtronskih naprav
+
+Avtor:
+
+Matic Tonin
+
+Vpisna številka: 28181098
+
+Profesor: prof. dr. Luka Snoj
+
+Asistent: doc. dr. Andrej Zohar
+
+
+\rule{7cm}{0.4pt}
+
+Pod okvirom:
+
+FAKULTETE ZA FIZIKO IN MATEMATIKO, LJUBLJANA
+
+Akademsko leto 2021/2022
+
+
+\end{center}
+\pagebreak
+\section*{Naloga}
+Nekateri jedrski reaktorji uporabljajo za moderacijo (upočasnjevanje) nevtronov grafit. Primesi
+v grafitu z velikimi absorpcijskimi preseki lahko pomembno vplivajo na delovanje reaktorja s
+preveliko absorpcijo nevtronov. Določite največje dovoljene mase nečistoč v grafitu, tako da
+absorpcijski presek nečistoč ne bo večji od absorpcijskega preseka grafita za naslednje nečistoče:
+a) Bor
+b) Voda
+c) Dušik
+
+\subsection*{Rešitev}
+Najprej se bomo naloge lotili reševati splošno, kjer bomo predpostavili, da mora bit makroskopski sipalni presek za grafit $\sum_G$ večji od preseka za nečistoče $\sum_N$.
+\begin{equation}
+     \sum_G>\sum_N
+\end{equation}
+Po definiciji makroskopskega preseka pa velja, da ustreza $\sum=N\sigma$ kjer je $\sigma$ absorbcijski presek snovi. Število delcev pa lahko razpišemo kot $N=\frac{m}{\overline{M}}N_a$. Če bi sedaj to vstavili v našo enačbo in obrnili vrednost tako da dobimo zgolj razmerje mas nečistoč in grafita, dobimo
+\begin{equation}
+    \frac{m_G}{m_N}\geq \frac{\sigma_N}{\sigma_G}\frac{\overline{M_G}}{\overline{M_N}}
+    \label{razmerje}
+\end{equation}
+Vemo pa, da je sipalni presek v resnici funkcija $\sigma(E-E')$ in je različen, glede na energijo, s katero pridemo blizu našega absorberja. Zato ga lahko defniramo kot 
+\begin{equation}
+    \sigma(E-E')=P(E-E')\sigma(E)
+    \label{sipalni}
+\end{equation}
+kjer je $P(E-E')$ verjetnost za sipanje na jedru z masnim številom A. Da pa bi vedeli, kolikšna je verjetnost za sipanje na jedrih, pa lahko vzamemo formulo, ki smo jo izpeljali na predavanjih.
+\begin{equation}
+    P(E)=\frac{1}{(1-\alpha)E} \qquad \alpha=\left(\frac{A-1}{A+1}\right)^2
+    \label{verjetnost}
+\end{equation}
+
+Če sedaj sestavimo podane enačbe \eqref{verjetnost}, \eqref{sipalni} in \eqref{razmerje}, dobimo
+\begin{equation}
+    \frac{m_G}{m_N}\geq \frac{\sigma_N(E)}{\sigma_G(E)}\frac{(1-\alpha_G)}{(1-\alpha_N)}\frac{\overline{M_G}}{\overline{M_N}}
+\end{equation}
+Tako vidimo, da energija sploh ne bo nastopala v izrazu odvisnosti absorbcije na jedrih. Pojavila pa se bo kot odvisnost absorbcijskega preseka na nečistoči in čistoči. V našem primeru bomo vzelio za obravnavo termične nevtrine, ki imajo hitrosti manjše od 0.25 eV. \\
+Sedaj, ko smo uspeli napraviti celoten teoretičen del naloge, pa se lahko posvetimo iskanju podatkov. Kot prvo bomo morali poiskati vse $M_i$ in $A_i$ za posamezne elemente, kar lahko preberemo iz periodega sistema. Večji problem pa se bo pojavil pri iskanju sipalni presekov. 
+Vidimo, da v bazi podatkov za jedrske reakcije v resnici nimamo podanega sipalnega preseka za vse materiale, vendar so podani po elementih, zato bomo v našem primeru aproksimirali, da je naprimer sipalni presek vode enak seštevku sipalnega preseka vodikov in kisika. Hkrati pa iz podni podatkov opazimo, da so tabelirane vrednosti zgolj za totalni, elastični in neelastični sipalni presek, zato bomo absorbcijo dobili tako, da bomo za vsak element totalnemu preseku odšteli elastičnega in neelastičnega. Podatke lahko tako uredimo v tabelo
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c | c | c | c | c|c|} 
+ \hline
+ Element & $M_i \left[\frac{\text{kg}}{\text{mol}}\right]$ & $\sigma_{\text{tot}}$ b& $\sigma_{\text{el}}$ b &  $\sigma_{\text{nonel}}$ b& $\sigma_{\text{abs}}$ barn  \\
+ \hline
+ Grafit (C) & 12& 4.750 & 4.748 & / & 1.9418 $\cdot 10^{-3}$ \\
+ \hline
+ Vodik (2H) & 2 &  20.603&  20.436 & 0.0416 & 0.1558 \\
+ \hline
+ Kisik (O) & 16 & 3.794 & 3.794 & $9.54\cdot 10^{-5}$ & 1.747 $\cdot 10^{-4}$&
+ \hline
+ Bor (B) & 10 & 193.5903 & 0.2088499 & 193.3815 & 0.0088 \\
+ \hline
+ Dušik (N) & 14 & 10.86800 & 9.911401 & 1.70489 & -0.74829 \\
+ \hline
+ \end{tabular}
+ \caption{Podatki za naše elemente. Energija je enaka 0.1 eV Vir: \url{https://www-nds.iaea.org/exfor/endf.htm}.}
+\end{table}
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c | c | c | c | c|} 
+ \hline
+ Element & $M_i \left[\frac{\text{kg}}{\text{mol}}\right]$ &  $\alpha $ & $ P(E)$ &$\frac{m_G}{m_n}$ \\
+ \hline
+ Grafit (C) & 12&  0.716 &3.5208/E & 1 \\
+ \hline
+ Vodik (2H) & 2 &  0.111& 1.25/E & 170.92\\
+ \hline
+ Kisik (O) & 16 &  0.7785 & 4.516/E  & 0.0865\\
+ \hline 
+ Bor (B) & 10 & 0.67& 3.025/E & 6.33\\
+ \hline
+ Dušik (N) & 14 & 0.7511 & 4.019/E & 289.4 \\
+ \hline
+  Voda (H2O) & 18 & 0.80055 & & 76.252 \\
+  \hline
+ \end{tabular}
+\caption{Podatki za naše elemente. Energija je enaka 0.1 eV Vir: \url{https://www-nds.iaea.org/exfor/endf.htm}.}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

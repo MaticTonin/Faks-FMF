@@ -1,0 +1,177 @@
+\documentclass[slovene,11pt,a4paper]{article}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png}
+
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[margin=1cm,bottom=2cm,foot=1cm]{geometry}
+\usepackage{fullpage}
+\usepackage{a4wide}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5ex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{caption}
+
+\DeclareCaptionType{equ}[][]
+\def\phi{\varphi}
+\def\eps{\varepsilon}
+\def\theta{\vartheta}
+
+\newcommand{\thisyear}{2020/21}
+
+\renewcommand{\Re}{\mathop{\rm Re}\nolimits}
+\renewcommand{\Im}{\mathop{\rm Im}\nolimits}
+\newcommand{\Tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\diag}{\mathop{\rm diag}\nolimits}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ddd}{\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\lag}{\mathcal{L}\!}
+\newcommand{\ham}{\mathcal{H}\!}
+\newcommand{\four}[1]{\mathcal{F}\!\left(#1\right)}
+\newcommand{\bigO}[1]{\mathcal{O}\!\left(#1\right)}
+\newcommand{\sh}{\mathop{\rm sinh}\nolimits}
+\newcommand{\ch}{\mathop{\rm cosh}\nolimits}
+\renewcommand{\th}{\mathop{\rm tanh}\nolimits}
+\newcommand{\erf}{\mathop{\rm erf}\nolimits}
+\newcommand{\erfc}{\mathop{\rm erfc}\nolimits}
+\newcommand{\sinc}{\mathop{\rm sinc}\nolimits}
+\newcommand{\rect}{\mathop{\rm rect}\nolimits}
+\newcommand{\ee}[1]{\cdot 10^{#1}}
+\newcommand{\inv}[1]{\left(#1\right)^{-1}}
+\newcommand{\invf}[1]{\frac{1}{#1}}
+\newcommand{\sqr}[1]{\left(#1\right)^2}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\thalf}{\tfrac{1}{2}}
+\newcommand{\pd}{\partial}
+\newcommand{\Dd}[3][{}]{\frac{\ddd^{#1} #2}{\ddd #3^{#1}}}
+\newcommand{\Pd}[3][{}]{\frac{\pd^{#1} #2}{\pd #3^{#1}}}
+\newcommand{\avg}[1]{\left\langle#1\right\rangle}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\braket}[2]{\left\langle #1 \vert#2 \right\rangle}
+\newcommand{\obraket}[3]{\left\langle #1 \vert #2 \vert #3 \right \rangle}
+\newcommand{\hex}[1]{\texttt{0x#1}}
+
+\renewcommand{\iint}{\mathop{\int\mkern-13mu\int}}
+\renewcommand{\iiint}{\mathop{\int\mkern-13mu\int\mkern-13mu\int}}
+\newcommand{\oiint}{\mathop{{\int\mkern-15mu\int}\mkern-21mu\raisebox{0.3ex}{$\bigcirc$}}}
+
+\newcommand{\wunderbrace}[2]{\vphantom{#1}\smash{\underbrace{#1}_{#2}}}
+
+\renewcommand{\vec}[1]{\overset{\smash{\hbox{\raise -0.42ex\hbox{$\scriptscriptstyle\rightharpoonup$}}}}{#1}}
+\newcommand{\bec}[1]{\mathbf{#1}}
+
+
+
+
+\newcommand{\Ai}{\mathrm{Ai}}
+\newcommand{\Bi}{\mathrm{Bi}}
+\newcommand{\bi}[1]{\hbox{\boldmath{$#1$}}}
+\newcommand{\bm}[1]{\hbox{\underline{$#1$}}}
+
+\title{1. Izračun Airyjevih funkcij}
+\author{Matic Tonin - 28181098 }
+\date{Oktober 2020}
+
+\begin{document}
+
+\begin{center}
+\thispagestyle{empty}
+\parskip=14pt%
+\vspace*{3\parskip}%
+\begin{Huge}Ocena sproščenih nevtrinov na časovno enoto\end{Huge}
+
+
+1. domača naloga v sklopu predmeta \\
+Fizike jedrskih nevtronskih naprav
+
+Avtor:
+
+Matic Tonin
+
+Vpisna številka: 28181098
+
+Profesor: prof. dr. 
+
+Asistent: doc. dr. 
+
+
+\rule{7cm}{0.4pt}
+
+Pod okvirom:
+
+FAKULTETE ZA FIZIKO IN MATEMATIKO, LJUBLJANA
+
+Akademsko leto 2021/2022
+
+
+\end{center}
+\pagebreak
+\section*{Naloga}
+Oceni število sproščei nevtronov na časovno enoto na gram za vzorce s čistimi nuklidi: U-235,U-238,Pu-240,Cm-242 in Cf-252.
+\subsection*{Rešitev}
+Iz vaj vemo, da je število nastali nevtrinov odvisno od verjetnosti za razpad $\eta$, število razpadlih delcev pri enem razpadu $\nu$ in aktivnosti $A$ z dano formulo.
+\begin{equation}
+    N_{n,i}=A_i\nu_i \eta_i
+    \label{nukleon}
+\end{equation}
+Samo aktivnost pa lahko izračunnamo kot 
+\begin{equation*}
+    A_i=\frac{m}{M_i}N_A\omega_i \lambda_i
+\end{equation*}
+kjer sta $\omega_i$ masni delež in $\lambda_i=\frac{\ln(2)}{t_{\frac{1}{2}}}$, kjer je $t_{\frac{1}{2}}$ razpolovi čas. Ker pa se soočamo pri zej nalogi z nuklidi, to pomeni, da je njihov masni delež kar enak ena, saj je celotna masa zgrajea zgolj iz enega elementa in ne vsebuje ostalih izotopov.
+Tako bi lahko to vstavili v našo enačbo \eqref{nukleon} in dobili
+\begin{equation}
+    N_{n,i}=\frac{m}{M_i}N_A \frac{\ln(2)}{t_{\frac{1}{2}}}
+\end{equation}
+Če sedaj delimo naše število sporščenih nevtronov z maso, dobimo ravno tisto, kar smo želeli.
+\begin{equation}
+        \frac{N_{n,i}}{m}=\frac{N_A}{M_i} \frac{\ln(2)}{t_{\frac{1}{2}}}
+\end{equation}
+Vidimo pa, da izraz vsebuje veliko konstant, ki bi ji lahko združili v nek parameter $\alpha=\ln(2)N_A$, da velja
+\begin{equation}
+    A_i=\frac{\alpha}{M_i t_{\frac{1}{2},i}} \quad \alpha=4.174 \cdot 10^{23} \text{mol}^{-1}
+\end{equation}
+
+Če bi si pogledali sedaj, kolikšne so vrednosti za naše elemente, bi dobili spodnjo tabelo
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c | c | c | c | c| c |c|} 
+ \hline
+ Element & $M_i \left[\frac{\text{kg}}{\text{mol}}\right]$  & $t_{1/2} $ [s] & $A_i$ & $\nu_i$ &  $\eta_i$& $\frac{N_{n,i}}{m}$ $\left[\frac{1}{\text{gs}}\right]$ \\
+ \hline
+ U-235 & 235 & $7.04 \cdot 10^8$ let & 80002.82& 1.87 & $7  \cdot 10^{-9}$ \% &0.001   \\
+ \hline
+ U-238 & 238 & $4.4 \cdot 10^9$ let & 12639.10 & 2 & $5.4 \cdot 10^{-5}$ \% & 1.365\\
+ \hline
+  Pu-239 & 239 & 6561 let & 8.405 $\cdot 10^{9}$  & 2.32 & $5.6 \cdot 10^{-6}$ \% & 101.234 \\
+ \hline
+ Pu-240 & 240 & 2.4110 let &  $2.29\cdot 10^{13}$  & 2.151 & $3 \cdot 10^{-10}$ \% & 14777.37 \\
+ \hline
+ Cm-242 & 242 & 162.8 dni & 2.97 $\cdot 10^{16}$& 2.528 & $6.2 \cdot 10^{-6}$ \% & $4.65 \cdot 10^{8}$\\
+ \hline
+  Cm-244 & 244 & 18.1 let & 3.00 $\cdot 10^{12}$& 2.6875 & $1.4 \cdot 10^{-4}$ \% & $1.127 \cdot 10^{9}$\\
+ \hline
+ Cf-252 & 252 & 2.645 let & 1.9857 $\cdot 10^{10}$ & 3.767 &  3.09 \% &$2.31 \cdot 10^{10}$ \\
+ \hline
+ \end{tabular}
+ \caption{Podatki za naše elemente. Vir: \url{https://www.nndc.bnl.gov/nudat2/chartNuc.jsp}.}
+\end{table}
+
+
+Sedaj pa moramo malo povedati tudi o tem, kako smo našli določene podatke.
+Za vrednost razpolovnega časa lahko pogledamo v podatkovno bazo Nudat 
+
+(link: \url{https://www.nndc.bnl.gov/nudat2/chartNuc.jsp}), kjer v stransko okece vtipkamo izbrani element in nam nato baza izpiše vrednost razpolovnega časa. Tu pa dobimo tudi vrednost za verjetnost za razpad, ki ustreza vrednosti SF, ki je podana v tabeli. \\
+Za vrednosti nevtronov, ki razpadejo pri posameznem razpadu pa se obrnemo na knjižnjico IAEA ENDF 
+(link \url{https://www-nds.iaea.org/exfor/endf.htm}), kjer najprej v okence target zapišemo izotop, ki nas zanima, nato pa v okence reaction 0,nu\_tot, kar predstavlja Average total (prompt plus delayed) number of neutrons released per fission even. Rezultat iskanja nam poda več knjižnjic, najbolj uporabna pa je ENDF/B. Da pa dobimo specifično vrednost, kliknemo gumb interperter, ki nam nato izpiše vrednost razpadli elektronov. 
+
+
+
+\end{document}
