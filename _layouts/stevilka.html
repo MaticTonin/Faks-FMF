@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+      <div class="row">
+
+        <div class="col-sm-12 matrika-main matrika-article-list">
+            <a class="title title_{{ page.letnik }}_{{ page.stevilka }}_stevilke" href="naslovnica.pdf"></a>
+            <h2 class="matrika-first-title">{{ page.title }}</h2>
+            <h4>{{ page.date | date: '%-d. %-m. %Y' }}</h4>
+            <p><a href="../">Vse številke tega letnika</a></p>
+
+            {{ content }}
+
+            {% assign clanki = site.clanki | sort: "order" %}
+            {% for article in clanki %}
+            	{% if article.letnik == page.letnik and article.stevilka == page.stevilka %}
+			    	<h3><a href="{{ article.filename }}.html">{{ article.title }}</a></h3>
+			    	<h4>{{ article.author }}</h4>
+			    	<p class="links"><a class="abstract" href="{{ article.filename }}.html"><span class="icon"></span>Povzetek</a> <a class="pdf" href="{{ article.filename }}.pdf"><span class="icon"></span>PDF ({{ article.size }})</a></p>
+			    	<p class="last">&nbsp;</p>
+            	{% endif %}
+			{% endfor %}
+
+        </div><!-- /.matrika-main -->
+
+      </div><!-- /.row -->
