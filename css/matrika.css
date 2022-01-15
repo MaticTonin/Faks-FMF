@@ -1,0 +1,341 @@
+/*
+ * Globals
+ */
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #555;
+}
+
+a {
+  color: #324964;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #426F80;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  /*margin-top: 0;*/
+  /*font-weight: normal;*/
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+
+/*
+ * Masthead for nav
+ */
+
+.matrika-mastnav {
+  background-color: #324964;
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+  box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+
+/* Nav links */
+
+.matrika-nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 500;
+  color: #DBEEF1;
+  text-decoration: none;
+}
+
+.matrika-nav-item:hover, .matrika-nav-item:focus {
+  color: #eee;
+  text-decoration: none;
+}
+
+
+/* Active state gets a caret at the bottom */
+
+.matrika-nav .active {
+  color: #eee;
+}
+
+.matrika-nav .active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  vertical-align: middle;
+  content: " ";
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  border-left: 5px solid transparent;
+}
+
+
+/*
+ * matrika name and description
+ */
+
+.matrika-header {
+  background-color: #DBEEF1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.matrika-header-line {
+  background-color: #426F80;
+  height: 8px;
+}
+
+.matrika-title {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  width: 175px;
+  height: 40px;
+  background: url(../img/matrika.png) no-repeat center;
+  background-size: 175px 40px;
+}
+
+.matrika-description {
+  font-size: 20px;
+  color: #324964;
+}
+
+
+/*
+ * Main column and sidebar layout
+ */
+
+.matrika-main {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+
+/* Sidebar modules for boxing content */
+
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+
+.sidebar-module-inset {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.sidebar-module-inset p:last-child, .sidebar-module-inset ul:last-child, .sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+
+.matrika-first-title {
+  margin-top: 0;
+}
+
+h3 a {
+  text-decoration: none;
+}
+
+.matrika-article-list p {
+  line-height: 24px;
+}
+
+.matrika-article-list p.last {
+  margin-bottom: 25px;
+}
+
+.matrika-article-list .links a {
+  margin-right: 15px;
+  float: left;
+}
+
+.matrika-article-list .links .icon {
+  float: left;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 17px 24px;
+}
+
+.matrika-article-list .abstract .icon {
+  background-image: url(../img/icon_doc.png);
+}
+
+.matrika-article-list .pdf .icon {
+  background-image: url(../img/icon_pdf.png);
+}
+
+.matrika-article p, p.full {
+  text-align: justify;
+}
+
+.matrika-article-sidebar .info {
+  font-size: 16px;
+}
+
+.matrika-article-sidebar .pdf a {
+  margin: 20px 0;
+  padding-top: 54px;
+  width: 100%;
+  background: url(../img/icon_pdf_large.png) no-repeat top center;
+  background-size: 35px 48px;
+  text-align: center;
+  display: block;
+}
+/* dodatek
+*/
+.row-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 0px ;
+    width: 100%;
+    
+}
+.col-2 {
+    flex-basis: 50%;
+    min-width: 0px;
+    float: inline-start;
+}
+
+
+/*
+ * Vsi članki v arhivu
+ */
+ #myInput {
+  background-image: url(../img/search_icon.png); 
+  background-position: 10px 12px; /* Position the search icon */
+  background-size: 2% 60%;
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#myUL li a {
+  margin-top: -10px; /* Prevent double borders */
+  padding: 6px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  display: block;
+}
+
+/*
+ * Footer
+ */
+
+.matrika-footer {
+  margin-top: 30px;
+  padding: 10px 0;
+  color: #999;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.matrika-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.matrika-copyright {
+  font-size: 11px;
+}
+
+
+/*
+ * Title
+ */
+
+.title {
+  float: right;
+  width: 297px;
+  height: 420px;
+  margin-left: 18px;
+  margin-bottom: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title-inline {
+  display: block;
+  width: 230px;
+  height: 290px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 297px 420px;
+}
+
+.title-inline-label {
+  display: block;
+  width: 297px;
+  height: 420px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 297px 420px;
+}
+
+
+
+/* Retina support */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
+  
+  .row-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 0px ;
+    margin-right: 0px ;
+    width: 70%;
+  }
+  .col-2 {
+    flex-basis: 50%;
+    float: inline-start;
+    margin: 0px;
+    padding: 0px;
+  }
+  .title-inline {
+    display: block;
+    width: 230px;
+    height: 290px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 297px 420px;
+  }
+
+  .title-inline-label {
+    display: block;
+    width: 157px;
+    height: 200px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 157px 200px;
+  }
+  
+/* Size of pictures in arhiv.html and letnik.html */
+  
+}
