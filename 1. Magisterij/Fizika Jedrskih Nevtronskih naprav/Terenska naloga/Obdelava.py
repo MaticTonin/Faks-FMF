@@ -26,7 +26,19 @@ plt.legend()
 plt.xlabel(r"$\log(U_{LOWER})[V]$")
 plt.ylabel(r"$A[1/s]$")
 plt.show()
+lower_abs=[]
+A_abs=[]
+for i in range(len(LOWER)):
+    if i!=0:
+        lower_abs.append(LOWER[i])
+        A_abs.append(abs(A[i]-A[i-1]))
 
+plt.title("Prikaz odvisnosti detekcij z večanjem spodnje meje")
+plt.plot(lower_abs,A_abs,"x-")
+plt.legend()
+plt.xlabel(r"$\log(U_{LOWER})[V]$")
+plt.ylabel(r"$A[1/s]$")
+plt.show()
 
 #Drugi del vaje
 """
