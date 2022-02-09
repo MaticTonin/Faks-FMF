@@ -1,0 +1,245 @@
+body {
+    background-image: url(Milkyway.jpg);
+    height: 300px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    margin:0;
+    padding:0;
+    color:white;
+    font-family:Georgia;
+    font-size: 14px;
+}
+.lang {
+    text-align: right;
+    font-size: 14px;
+    margin-left:5px;
+    padding: 15px 20px 0px 0px;
+}
+.search {
+    display: table;
+    text-align: right;
+    padding: 15px;
+    background-color:none;
+    vertical-align:bottom;
+    float:right;
+    padding: 25px 20px 0px 0px;
+}
+.directory-link {
+    font-size: 16px;
+    text-align:left;
+}
+.directory-link a:link {
+        color: white;
+    }
+.directory-link a:hover {
+    color: blue;
+}
+.directory-link a:visited {
+    color: gray;
+}
+#iskanje {
+    text-align:left;
+    font-size: 16px;
+}
+.logo {
+    padding-left: 20px;
+    font-size: 50px;
+    font-family: 'Felix Titling';
+}
+.menu-header {
+    background-color: rgb(31, 32, 32);
+    height: 2%;
+}
+.menu {
+    height: 20%;
+    background-color: rgb(9, 28, 44);
+}
+.menu-all {
+    width: 80%;
+}
+ul.slo-menu-all {
+    position:relative;
+    width:780px;
+
+
+}
+ul.lang-menu-all {
+    position:right;
+    width:780px;
+
+
+}
+ul.lang-menu-all {
+    padding: 0;
+    margin:0;
+    list-style-type: none;
+    text-align: left;
+
+}
+ul.lang-menu-all li {
+    display: inline;
+    padding: 15px;
+    vertical-align: middle;
+    text-align:right;
+}
+
+ul.lang-menu-all a {
+    text-decoration: none;
+    padding: 8px 8px 8px 8px;
+    color: rgb(255, 255, 255);
+    vertical-align: middle;
+}
+
+ul.lang-menu-all a:hover{
+    color: orange;
+    background-color: gray;
+}
+ul.slo-menu-all {
+        padding: 0;
+        margin:0;
+        list-style-type: none;
+        text-align: left;
+
+}
+    ul.slo-menu-all li {
+        display: inline;
+        padding: 15px;
+        vertical-align: middle;
+        text-align:right;
+    }
+
+    ul.slo-menu-all a {
+        text-decoration: none;
+        padding: 8px 8px 8px 8px;
+        color: rgb(255, 255, 255);
+        vertical-align: middle;
+    }
+
+ul.slo-menu-all a:hover{
+    color: orange;
+    background-color: gray;
+}
+.path {
+    background-color: deepskyblue;
+    border: solid 1px white;
+    height: 8px;
+}
+.content-right-up {
+    float: right;
+    width: 500px;
+    padding-top:10px;
+    
+}
+.news-box {
+    background-color: darkgrey;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: solid 1px white;
+    margin: 20px;
+}
+.news-head {
+    font-size: 22px;
+    font-family: 'Felix Titling';
+}
+.news-list {
+    margin-left: 20px;
+}
+.news-title {
+    margin: 5px;
+    font-size: 16px;
+    color: dimgray;
+}
+.news-title a:link {
+    color: white;
+}
+
+.news-title a:hover {
+    color: blue;
+}
+
+.news-title a:visited {
+    color: lavender;
+}
+.news-date {
+    font-size: 14px;
+    color: black;
+}
+.news-story {
+    font-size: 12px;
+    color: black;
+}
+.content-left {
+    width: 800px;
+    padding-top: 10px;
+}
+.main-intel {
+    display: block;
+    border: solid 1px white;
+    background-color: darkgray;
+    margin: 20px;
+}
+.main-intel-headline {
+    margin: 10px;
+    font-size: 22px;
+    font-family: 'Felix Titling';
+}
+.main-intel-text {
+    margin: 5px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline
+}
+.intro-video {
+    float: right;
+    display: inline;
+    margin: 20px;
+}
+.store{
+    background-color: darkgrey;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: solid 1px white;
+    margin: 20px;
+}
+
+.store-head {
+    font-size: 22px;
+    font-family: 'Felix Titling';
+}
+
+.store-list {
+    margin-left: 20px;
+}
+
+.store-title {
+    text-align:center;
+    margin: 5px;
+    font-size: 16px;
+    color: dimgray;
+    height: 15px;
+}
+
+    .store-title a:link {
+        color: white;
+    }
+
+    .store-title a:hover {
+        color: blue;
+    }
+
+    .store-title a:visited {
+        color: lavender;
+    }
+
+.store-date {
+    font-size: 14px;
+    color: black;
+}
+
+.store-story {
+    font-size: 12px;
+    color: black;
+}
