@@ -8,7 +8,7 @@ import scipy.ndimage.filters as filters
 import scipy.optimize as opt
 import os
 from tqdm import tqdm
-from numba import jit,njit
+#from numba import jit,njit
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 def zero_padding(im, N):
@@ -36,7 +36,7 @@ def gauss(N, sigma):
 def welch(N):
     arr = np.array([[(1 - ((i - N/2) / N * 2)**2) * (1 - ((j - N/2) / N * 2)**2) for i in range(N)] for j in range(N)])
     return arr
-@jit(nopython=True)
+#@jit(nopython=True)
 def notch_filter(data, x0, y0, sigma):
     for i in range(len(data)):
         for j in range(len(data[0])):
@@ -82,6 +82,11 @@ def creator(kernel, picture,index,gs1,RMS, kernel_num,only_pictures, gauss_yes, 
     data = np.array([data[512*i:512*(i+1)] for i in range(512)])
     if only_pictures!="Yes":
         data *= gauss(512, 0.5)
+        if gauss_yes=="Yes":
+            norm = "ortho"
+            DATA = fft.fft2(data, norm=norm)
+            DATA = fft.fftshift(DATA)
+            data = np.real(fft.ifft2(DATA , norm=norm))
         if gauss_yes!="Yes":
             zeros = 30
 
@@ -167,8 +172,8 @@ gs1.update(wspace=0.525, hspace=0.05)
 index=0
 axes=[]
 only_pictures="No"
-gauss_yes="No"
-filter_yes="Yes"
+gauss_yes="Yes"
+filter_yes="No"
 for i in tqdm(kernel_list):
     for j in picture_list:
         RMS = j
@@ -184,6 +189,10 @@ if only_pictures=="Yes":
     plt.suptitle("Prikaz slik")
 if only_pictures!="Yes" and gauss_yes=="No" and filter_yes=="No":
     plt.suptitle("Prikaz obdelave slik: samo obdelava")
+if only_pictures=="No" and gauss_yes=="Yes" and filter_yes=="No":
+    plt.suptitle("Prikaz obdelave slik: Gauss")
+if only_pictures=="No" and gauss_yes=="No" and filter_yes=="No":
+    plt.suptitle("Prikaz obdelave slik: Gauss + kernel")
 if only_pictures!="Yes" and gauss_yes=="No" and filter_yes=="Yes":
-    plt.suptitle("Prikaz obdelave slik: Gauss + rezanje singularnosti")
+    plt.suptitle("Prikaz obdelave slik: Gauss + kernel + singularnosti")
 plt.show()

@@ -37,6 +37,7 @@ kT_list = np.linspace(0.1,5,10)
 Hlist = [0, 0.1, 0.5, 1]
 no = 0
 Hst = -1
+H=0
 for kT in tqdm(kT_list):
     Hst = Hst + 1
     #začetna energija
