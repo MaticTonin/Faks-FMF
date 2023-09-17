@@ -1,0 +1,319 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from numpy.core.function_base import linspace
+from numpy.core.numeric import identity
+import scipy
+from scipy import special
+import matplotlib.pyplot as plt
+from matplotlib.collections import LineCollection
+import matplotlib.animation as animation
+from tqdm import tqdm
+import os
+L=10
+h=0.10
+tau=2*np.pi*h**2*0.1
+x=np.arange(-L, L, h)
+T=tau*len(x)*10
+print(T)
+t=np.linspace(0,T,len(x))
+N=len(x)
+M=N
+print(N)
+tau=t[1]-t[0]
+alpha=1
+lam=0
+stanje=0
+gamma=5
+
+
+
+####### PLOTS TO SHOW #######
+plot_3D=True
+plot_Matrix=None
+plot_animation=True
+plot_lambda=None
+
+def Potencial(x,lambd):
+    return 1/2*x**2+lambd*x**4
+
+def A(M,tau,h,lambd):
+    A=np.zeros((int(M),int(N)), dtype=complex)
+    A[0,0]=-5/2
+    A[1,1]=-5/2
+    A[0,1]=4/3
+    A[1,0]=4/3
+    for m in range(2,M):
+        A[m,m]=-5/2-2*h**2*(Potencial(x[m],lambd))
+        A[m,m-1]=4/3
+        A[m-1,m]=4/3
+        A[m,m-2]=-1/12
+        A[m-2,m]=-1/12
+    A_plus=np.identity(M)-(1j*tau)/(4*h**2)*A
+    A_minus=np.identity(M)+(1j*tau)/(4*h**2)*A
+    return A_plus, A_minus
+def H_tri(M,tau,h,lambd):
+    H=np.zeros((int(M),int(N)))
+    H[0,0]=1
+    for m in range(1,M):
+        H[m,m]=1+h**2*(Potencial(x[m],lambd))
+        H[m,m-1]=-1/2
+        H[m-1,m]=-1/2
+    H=1/(h**2)*H
+    return H
+def H_pet(M,tau,h,lambd):
+    H=np.zeros((int(M),int(N)), dtype=complex)
+    H[0,0]=-5/2
+    H[1,1]=-5/2
+    H[0,1]=4/3
+    H[1,0]=4/3
+    for m in range(2,M):
+        H[m,m]=-5/2-2*h**2*(Potencial(x[m],lambd))
+        H[m,m-1]=4/3
+        H[m-1,m]=4/3
+        H[m,m-2]=-1/12
+        H[m-2,m]=-1/12
+    H=1/(h**2)*H
+    return H
+
+def propagator(H_matrix,psi_0):
+    N=len(A_plus[0,:])
+    Wawe=[]
+    solution=np.array(psi_0, dtype=complex)
+    for i in tqdm(range(N)):
+        Wawe.append(solution.copy())
+        #solution=scipy.linalg.solve_banded()
+        H_k=np.identity(N)
+        for k in range(2):
+            k+=1
+            H_k=np.dot(H_k,H_matrix)
+            solution+=(-1j*tau)**k/np.math.factorial(k)*np.dot(H_k,psi_0)
+        psi_0=solution
+    return np.asarray(Wawe, dtype=complex)
+
+A_plus, A_minus=A(M,tau,h,lam)
+def lastne_f(x, stanje):
+    funkcija_m=[]
+    for i in range(len(x)):
+        funkcija_m.append((alpha/(np.pi)**(1/2))**(1/2)*np.exp(-alpha**2*(x[i]-gamma)**2/2)) 
+        #funkcija_m.append(alpha**(1/2)*(2. ** stanje  * np.math.factorial(stanje) * np.pi ** 0.5) ** (-0.5) *np.exp(-alpha**2*(x[i])**(2)/2) * special.hermite(stanje,0)(x[i]))
+    return funkcija_m
+
+def main(A_plus, A_minus,psi_0):
+    N=len(A_plus[0,:])
+    Wawe=[]
+    solution=np.array(psi_0, dtype=complex)
+    for i in range(N):
+        Wawe.append(solution)
+        #solution=scipy.linalg.solve_banded()
+        solution=np.linalg.solve(A_plus,np.dot(A_minus,psi_0))
+        psi_0=solution
+    return np.asarray(Wawe, dtype=complex)
+
+H_matrix=H_pet(M,tau,h,lam)
+#A_plus, A_minus=A(M,tau,h,lam)
+Wawe0=main(A_plus, A_minus,lastne_f(x,0))
+Wawe2=propagator(H_matrix,lastne_f(x,0))
+lambda_N=N
+list_lambda=np.linspace(0,0.02,lambda_N)
+psi_lambda=[]
+j=0
+for i in tqdm(list_lambda):
+    A_plus, A_minus=A(M,tau,h,i)
+    psi_lambda.append(main(A_plus, A_minus,lastne_f(x,0))[2])
+    j+=1
+psi_lambda=np.array(psi_lambda)
+if plot_lambda==True:
+    X,Y=np.meshgrid(x,list_lambda)
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+    ax.set_title(r"Real($\Psi(x,0)), \tau=%.4f, h=%.4f$" %(tau,h))
+    im=ax.plot_surface(X, Y, psi_lambda.real, rstride=1, cstride=1,
+                    cmap='seismic', edgecolor='none')
+    cbar = ax.figure.colorbar(im, label="Amplituda")
+    ax.set_xlabel("x")
+    ax.set_ylabel(r"$\lambda$")
+    ax.legend()
+    plt.show()
+
+    X,Y=np.meshgrid(x,list_lambda)
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+    ax.set_title(r" Imag($\Psi(x,0)), \tau=%.4f, h=%.4f$" %(tau,h))
+    im=ax.plot_surface(X, Y, psi_lambda.imag,
+                    cmap='seismic', edgecolor='none')
+    cbar = ax.figure.colorbar(im, label="Amplituda")
+    ax.set_xlabel("x")
+    ax.set_ylabel(r"$\lambda$")
+    ax.legend()
+
+
+    X,Y=np.meshgrid(x,list_lambda)
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+    ax.set_title(r" Abs($\Psi(x,0)), \tau=%.4f, h=%.4f$" %(tau,h))
+    im=ax.plot_surface(X, Y, abs(psi_lambda)**2,
+                    cmap='seismic', edgecolor='none')
+    cbar = ax.figure.colorbar(im, label="Amplituda")
+    ax.set_xlabel("x")
+    ax.set_ylabel(r"$\lambda$")
+    ax.legend()
+    
+
+    plt.show()
+    vmin1=0
+    vmax1=0.75
+    plt.subplot(2,2,1)
+    plt.suptitle(r"Real($\Psi(x,\lambda))[t_0], \tau=%.4f, h=%.4f$" %(tau,h))
+    plt.title(r"$t_0=%.4f$" %t[1])
+    psi_lambda_1=[]
+    for i in tqdm(list_lambda):
+        A_plus, A_minus=A(M,tau,h,i)
+        psi_lambda_1.append(main(A_plus, A_minus,lastne_f(x,0))[1])
+
+    psi_lambda_1=np.array(psi_lambda_1)
+    plt.imshow(psi_lambda_1.real,interpolation='nearest', vmin=vmin1, vmax=vmax1)
+    plt.xlabel("x")
+    plt.ylabel(r"$\lambda$")
+    plt.xticks([0, M/2, M-1], [-L,0,L])
+    plt.yticks([0,lambda_N/2, lambda_N], [0,max(list_lambda)/2, max(list_lambda)])
+
+    plt.subplot(2,2,2)
+    plt.title(r"$t_0=%.4f$" %t[2])
+    psi_lambda_1=[]
+    for i in tqdm(list_lambda):
+        A_plus, A_minus=A(M,tau,h,i)
+        psi_lambda_1.append(main(A_plus, A_minus,lastne_f(x,0))[2])
+    psi_lambda_1=np.array(psi_lambda_1)
+    plt.imshow(psi_lambda_1.real, interpolation='nearest', vmin=vmin1, vmax=vmax1)
+    plt.xlabel("x")
+    plt.ylabel(r"$\lambda$")
+    plt.xticks([0, M/2, M-1], [-L,0,L])
+    plt.yticks([0,lambda_N/2, lambda_N], [0,max(list_lambda)/2, max(list_lambda)])
+
+    plt.subplot(2,2,3)
+    plt.title(r"$t_0=%.4f$" %t[5])
+    psi_lambda_1=[]
+    for i in tqdm(list_lambda):
+        A_plus, A_minus=A(M,tau,h,i)
+        psi_lambda_1.append(main(A_plus, A_minus,lastne_f(x,0))[5])
+    psi_lambda_1=np.array(psi_lambda_1)
+
+    plt.imshow(psi_lambda_1.real, interpolation='nearest', vmin=vmin1, vmax=vmax1)
+    plt.xlabel("x")
+    plt.ylabel(r"$\lambda$")
+    plt.xticks([0, M/2, M-1], [-L,0,L])
+    plt.yticks([0,lambda_N/2, lambda_N], [0,max(list_lambda)/2, max(list_lambda)])
+
+    plt.subplot(2,2,4)
+    plt.title(r"$t_0=%.4f$" %t[10])
+    psi_lambda_1=[]
+    for i in tqdm(list_lambda):
+        A_plus, A_minus=A(M,tau,h,i)
+        psi_lambda_1.append(main(A_plus, A_minus,lastne_f(x,0))[10])
+    psi_lambda_1=np.array(psi_lambda_1)
+    plt.imshow(psi_lambda_1.real, interpolation='nearest', vmin=vmin1, vmax=vmax1)
+    plt.xlabel("x")
+    plt.ylabel(r"$\lambda$")
+    plt.xticks([0, M/2, M-1], [-L,0,L])
+    plt.yticks([0,lambda_N/2, lambda_N], [0,max(list_lambda)/2, max(list_lambda)])
+    plt.show()
+
+if plot_Matrix==True:
+    plt.subplot(2,1,1)
+    plt.suptitle(r"Časovni razvoj z odmikom $\gamma=%.2f$, $\lambda=%.2f, \tau=%.4f, h=%.3f$" %(gamma,lam,tau,h))
+    plt.title(r"$|\Psi(x)|^2$")
+    plt.xlabel("x")
+    plt.ylabel("t")
+    plt.xticks([0, M/2, M-1], [-L,0,L])
+    plt.yticks([0, M/2, M-1], [0,"$%.2f$"%(max(t)/2), "$%.2f$"%(max(t))])
+    plt.imshow(abs(Wawe0))
+    plt.subplot(2,2,3)
+    plt.title(r"Real($\Psi(x)$)")
+    plt.xlabel("x")
+    plt.ylabel("t")
+    plt.xticks([0, M/2, M-1], [-L,0,L])
+    plt.yticks([0, M/2, M-1], [0,"$%.2f$"%(max(t)/2), "$%.2f$"%(max(t))])
+    plt.imshow(Wawe0.real)
+    plt.subplot(2,2,4)
+    plt.title(r"Imag($\Psi(x)$)")
+    plt.xlabel("x")
+    plt.ylabel("t")
+    plt.xticks([0, M/2, M-1], [-L,0,L])
+    plt.yticks([0, M/2, M-1], [0,"$%.2f$"%(max(t)/2), "$%.2f$"%(max(t))])
+    plt.imshow(Wawe0.imag)
+    plt.show()
+
+
+if plot_3D==True:
+    X,Y=np.meshgrid(x,t)
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+    ax.set_title(r" Real($\Psi(x,t)), \lambda=%.2f, \tau=%.4f, h=%.4f, \gamma=%.2f$" %(lam,tau,h, gamma))
+    im=ax.plot_surface(X, Y, Wawe0.real, rstride=1, cstride=1,
+                    cmap='seismic', edgecolor='none')
+    cbar = ax.figure.colorbar(im, label="Amplituda")
+    ax.set_xlabel("x")
+    ax.set_ylabel("t")
+    ax.legend()
+    plt.show()
+
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+    ax.set_title(r" Imag($\Psi(x,t)), \lambda=%.2f \tau=%.4f, h=%.4f, \gamma=%.2f$" %(lam,tau,h, gamma))
+    im=ax.plot_surface(X, Y, Wawe0.imag, rstride=1, cstride=1,
+                    cmap='seismic', edgecolor='none')
+    cbar = ax.figure.colorbar(im, label="Amplituda")
+    ax.set_xlabel("x")
+    ax.set_ylabel("t")
+    ax.legend()
+    plt.show()
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+if plot_animation==True:
+    #Wawe1=main(A_plus, A_minus,lastne_f(x,1))
+
+    fig, ax = plt.subplots()
+
+    #line2, = ax.plot(x, x/40, color="white")
+    room, =ax.plot([-10,10], [-1.6,1.6], color="white")
+    line1, = ax.plot(x, Wawe0[0,:N].real, color="red", label=r"Real($\Psi(x))$")
+    line2, = ax.plot(x, Wawe0[0,:N].imag, color="green", label=r"Imag($\Psi(x))$")
+    line3, = ax.plot(x, abs(Wawe0[0,:N]), color="blue", label=r"$|\Psi(x)|^2$")
+    #line2, = ax.plot(x, Wawe0[0,:N].imag, color="black", label="Lastno stanje 0, imag")
+    #line3, = ax.plot(x, abs(Wawe0[0,:N]), color="green", label="Lastno stanje 0, abs")
+    #line3, = ax.plot(x, Wawe1[0,:N].real, color="blue", label="Lastno stanje 1")
+
+
+
+
+
+    def animate(i):
+        room.set_data([-10,10], [1.6,-1.6])
+        line1.set_ydata(Wawe0[i,:N].real)
+        line2.set_ydata(Wawe0[i,:N].imag)
+        line3.set_ydata(abs(Wawe0[i,:N]))
+        legend = plt.legend(loc='lower right')
+        plt.title(r"$\gamma=%.2f$ za $\lambda=%.2f, \tau=%.4f, h=%.4f$" %(gamma,lam,tau,h))
+        #line3.set_ydata(abs(Wawe0[i,:N]))
+        #line3.set_ydata(Wawe1[i,:N].imag)  # update the data.
+        return  room, line1, line2, line3
+
+
+    ani = animation.FuncAnimation(
+        fig, animate, interval=20, frames=N, blit=True, save_count=50)
+
+    # To save the animation, use e.g.
+    #
+    ani.save(THIS_FOLDER +"\\Prikaz razvoja lam="+str(lam)+"z odmikom gam="+str(gamma)+".gif")
+    #
+    # or
+    #
+    # writer = animation.FFMpegWriter(
+    #     fps=15, metadata=dict(artist='Me'), bitrate=1800)
+    # ani.save("movie.mp4", writer=writer)
+    #ani.save("N=1000,Gauss.mp4")
+    h_t="{:.4f}".format(tau)
+    plt.xlabel(r"x")
+    plt.ylabel(r"$\psi$ (x)")
+    plt.title(r"Prikaz časovnega razvoja Gaussovega paketa za $\tau= %.3f$ in $h=%.4f$" %(tau,h))
+    plt.legend()
+    plt.show()

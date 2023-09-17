@@ -1,0 +1,43 @@
+
+https://www.nature.com/articles/s41467-020-15972-9
+
+https://www.laserfocusworld.com/optics/article/14203496/making-metalenses-practical
+
+Uvod:
+https://www.osapublishing.org/optica/fulltext.cfm?uri=optica-6-6-805#articleCitations
+Metaleče:
+https://www.nature.com/articles/s41467-020-17015-9
+
+https://www.tandfonline.com/doi/full/10.1080/23746149.2020.1742584
+
+https://opg.optica.org/oe/fulltext.cfm?uri=oe-25-25-31471&id=379232#e1
+
+https://onlinelibrary.wiley.com/doi/full/10.1002/adma.201706368?casa_token=Qk9mXb0xBqIAAAAA%3A4QkKt1GrJzQLNuU9esPvpIBluh1xGjHHC3cyKhsp5IUTRZPJx0xG1gDMppPcJrGR1qtODFJ-qqmYlJDA
+
+https://www.tandfonline.com/doi/full/10.1080/23746149.2020.1742584#f0001
+
+https://www.iue.tuwien.ac.at/phd/kirchauer/node51.html#fig::AIthickness
+
+https://www.tandfonline.com/doi/full/10.1080/23746149.2020.1742584#
+
+Gorošče:
+https://www.science.org/doi/10.1126/sciadv.aap9957
+
+https://www.degruyter.com/document/doi/10.1515/nanoph-2021-0583/html?lang=en
+
+
+https://www.frontiersin.org/articles/10.3389/fphy.2020.586087/full
+Opis izdelave:
+https://www.dropbox.com/sh/wfc9vwbm6uza9gr/AABmnUQJ-1oA0hThY6z8sSYva?dl=0&preview=2020+acsphotonics.9b01809++large+scale+metasurface.pdf
+Svenšek:
+https://www.dropbox.com/sh/wfc9vwbm6uza9gr/AABmnUQJ-1oA0hThY6z8sSYva?dl=0
+
+Formula:
+https://www.iue.tuwien.ac.at/phd/kirchauer/node51.html#fig::AIthickness
+
+
+
+\section{Prednosti in slabosti metaleč}
+Sedaj, ko razumemo delovanje metaleče, pa se lahko bolj posvetimo opisovanju primerjave metaleč z navadnimi lečami ter opisu njuni slabosti in prednosti. O nekateri posebnostih metaleč smo že govorili, zato ji bomo v tem poglavju le našteli ter poskušali matematično opisati, dodali pa bomo tudi nove lastnosti, ki razlikujejo med metalečami in konveksnimi lečami.
+\subsection{Debelina leče}
+\subsection{}

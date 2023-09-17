@@ -25,6 +25,7 @@ def matrix_A(h_x,h_t, x, N):
         A[i,i]=complex(d.real,d.imag)
         A[i,i-1]=complex(a.real,a.imag)
         A[i-1,i]=complex(a.real,a.imag)
+    print(A)
     return A
 
 def Wawe_func(A,psi_0):
@@ -58,13 +59,13 @@ def main_func(x,t):
             d=-1/2*cos-1j*sin
             Psi[i,j]=(alpha/(np.pi)**(1/2))**(1/2)*np.exp(d)
     return Psi
-omega=0.2
+omega=0.7
 k=omega**2
 alpha=k**(1/4)
-lambd=10
-N=1000
+lambd=0
+N=500
 period=2*np.pi/omega
-x=np.linspace(-40,40,N)
+x=np.linspace(-10,10,N)
 t=np.linspace(0,period/2,N)
 h_x=x[1]-x[0]
 h_t=t[1]-t[0]
@@ -121,13 +122,17 @@ fig, ax = plt.subplots()
 
 line1, = ax.plot(x, Wawe[0,:N].real, color="blue", label="Moja")
 line2, = ax.plot(x, x/80, color="red", label="Analitična")
+line3, = ax.plot(x, Wawe[0,:N].imag, color="black", label="Imag")
+line4, = ax.plot(x, abs(Wawe[0,:N]), color="green", label="ABS")
 
 
 
 def animate(i):
     line1.set_ydata(Wawe[i,:N].real)  # update the data.
     line2.set_ydata(PSI[:N,i].real)  # update the data.
-    return line1, line2
+    line3.set_ydata(PSI[:N,i].imag)
+    line4.set_ydata(abs(PSI[:N,i])) 
+    return line1, line2, line3, line4
 
 
 ani = animation.FuncAnimation(

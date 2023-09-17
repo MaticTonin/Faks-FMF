@@ -1,0 +1,160 @@
+from codecs import BOM_UTF32
+import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+from matplotlib import cm
+import scipy.integrate as intg
+
+alpha_1 = 1.5 #ratajo kužni
+alpha_2 = 1 #ratajo izorlirani
+beta_1 = 0.7 #ratajo inkubirani
+beta_2 = 0.5 #ratajo extrakužni
+beta_3 = 0.1 #ratajo preboleli
+t0 = 20
+p=[alpha_1,alpha_2, beta_1, beta_2, beta_3]
+init_B = 0.001
+y0 = np.array([1-init_B, init_B, 0,0,0])
+#alpha = 10**(-5)
+#y0 = np.array([200000, 1, 0])
+
+def Epidemija(state, alpha_1,alpha_2, beta_1, beta_2, beta_3,t):
+    D, B_1, B_2,B_3,I = state
+    dD = -alpha_1*D*B_2-alpha_2*D*B_3
+    dB_1=alpha_1*D*B_2+alpha_2*D*B_3-beta_1*B_1
+    dB_2=beta_1*B_1-beta_2*B_2
+    dB_3=beta_2*B_2-beta_3*B_3
+    dI = B_3*beta_3
+    return [dD, dB_1,dB_2,dB_3, dI]
+
+t_max=40.0
+t = np.arange(0.0, t_max, 0.01)
+
+D, B_1, B_2,B_3,I = odeint(Epidemija, y0, t, args=(alpha_1,alpha_2, beta_1, beta_2, beta_3)).T
+plt.title(r"Prikaz obnašanja epidemije pri parametrih $\alpha_1=%.6f$,$\beta_1=%.2f$, $\alpha_2=%.6f$, $\beta_2=%.2f$, $\beta_=%.2f$" %(alpha_1, beta_1,alpha_2, beta_2, beta_3))
+D, B_1, B_2,B_3,I= intg.solve_ivp(lambda t, x: Epidemija(x, alpha_1,alpha_2, beta_1, beta_2, beta_3, t), t_span=(0,t_max),y0=y0,t_eval=t).y
+plt.plot(t,D, label="Dovzetni")
+plt.plot(t,B_1, label="Bolni 1")
+plt.plot(t,B_2, label="Bolni 2")
+plt.plot(t,B_3, label="Bolni 3")
+plt.plot(t,I, label="Imuni")
+plt.xlabel("t")
+plt.ylabel("Delež")
+plt.legend()
+plt.show()
+ALPHA=[1,0.5,0.3]
+N=len(ALPHA)
+cm_d=cm.winter(np.linspace(0,1,N))
+cm_b=cm.autumn(np.linspace(0,1,N))
+cm_i=cm.spring(np.linspace(0,1,N+1))
+index=0
+fig, (ax1,ax2,ax3,ax4,ax5) = plt.subplots(5)
+fig.suptitle(r"Prikaz obnašanja epidemije pri parametrih $\alpha>0$ $\beta=%.2f$" %(beta_1))
+for alpha_2 in ALPHA:
+    D, B_1, B_2,B_3,I= intg.solve_ivp(lambda t, x: Epidemija(x, alpha_1,alpha_2, beta_1, beta_2, beta_3, t), t_span=(0,t_max),y0=y0,t_eval=t).y
+    ax1.plot(t,D, label=r"Dovzetni pri $\alpha_1=%.3f$" %(alpha_1), color=cm_d[index])
+    ax2.plot(t,B_1, label=r"Inkubacija pri $\alpha_1=%.3f$" %(alpha_1), color=cm_b[index])
+    ax3.plot(t,B_2, label=r"Kužnost pri $\alpha_1=%.3f$" %(alpha_1), color=cm_b[index])
+    ax4.plot(t,B_3, label=r"Izolacija pri $\alpha_1=%.3f$" %(alpha_1), color=cm_b[index])
+    ax5.plot(t,I, label=r"Imuni pri $\alpha_1=%.3f$" %(alpha_1), color=cm_i[index])
+    ax1.set_ylim(-0.05,1.05)
+    ax2.set_ylim(-0.05,1.05)
+    ax3.set_ylim(-0.05,1.05)
+    ax4.set_ylim(-0.05,1.05)
+    index+=1
+for ax in fig.get_axes():
+    ax.set_xlabel("t")
+    ax.set_ylabel("Delež")
+    ax.legend()
+plt.show()
+
+ALPHA=[1,0.5,0.3]
+N=len(ALPHA)
+cm_d=cm.winter(np.linspace(0,1,N))
+cm_b=cm.autumn(np.linspace(0,1,N))
+cm_i=cm.spring(np.linspace(0,1,N+1))
+index=0
+fig, (ax1,ax2,ax3,ax4,ax5) = plt.subplots(5)
+fig.suptitle(r"Prikaz obnašanja epidemije pri parametrih $\alpha>0$ $\beta=%.2f$" %(beta_1))
+for beta_3 in ALPHA:
+    D, B_1, B_2,B_3,I= intg.solve_ivp(lambda t, x: Epidemija(x, alpha_1,alpha_2, beta_1, beta_2, beta_3, t), t_span=(0,t_max),y0=y0,t_eval=t).y
+    ax1.plot(t,D, label=r"Dovzetni pri $\alpha_2=%.3f$" %(alpha_1), color=cm_d[index])
+    ax2.plot(t,B_1, label=r"Inkubacija pri $\alpha_2=%.3f$" %(alpha_1), color=cm_b[index])
+    ax3.plot(t,B_2, label=r"Kužnost pri $\alpha_2=%.3f$" %(alpha_1), color=cm_b[index])
+    ax4.plot(t,B_3, label=r"Izolacija pri $\alpha_2=%.3f$" %(alpha_1), color=cm_b[index])
+    ax5.plot(t,I, label=r"Imuni pri $\alpha_2=%.3f$" %(alpha_1), color=cm_i[index])
+    ax1.set_ylim(-0.05,1.05)
+    ax2.set_ylim(-0.05,1.05)
+    ax3.set_ylim(-0.05,1.05)
+    ax4.set_ylim(-0.05,1.05)
+    index+=1
+for ax in fig.get_axes():
+    ax.set_xlabel("t")
+    ax.set_ylabel("Delež")
+    ax.legend()
+plt.show()
+
+ALPHA=[1,0.5,0.3]
+N=len(ALPHA)
+cm_d=cm.winter(np.linspace(0,1,N))
+cm_b=cm.autumn(np.linspace(0,1,N))
+cm_i=cm.spring(np.linspace(0,1,N+1))
+index=0
+fig, (ax) = plt.subplots(1)
+fig.suptitle(r"Prikaz obnašanja epidemije pri parametrih $\alpha>0$ $\beta=%.2f$" %(beta))
+for alpha in ALPHA:
+    D,B,I= intg.solve_ivp(lambda t, x: Epidemija(x, alpha, beta, t), t_span=(0,t_max),y0=y0,t_eval=t).y
+    ax.plot(t,D,"-", label=r"Dovzetni pri $\alpha=%.3f$" %(alpha),color=cm_d[index])
+    ax.plot(t,B,"-.", label=r"Bolni pri $\alpha=%.3f$" %(alpha),color=cm_b[index])
+    ax.plot(t,I,"--", label=r"Immuni pri $\alpha=%.3f$" %(alpha), color=cm_i[index])
+    index+=1
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+for ax in fig.get_axes():
+    ax.set_xlabel("t")
+    ax.set_ylabel("Delež")
+plt.show()
+
+
+BETA=[0.1,0.01,0.001]
+alpha=1
+N=len(BETA)
+cm_d=cm.winter(np.linspace(0,1,N))
+cm_b=cm.autumn(np.linspace(0,1,N))
+cm_i=cm.spring(np.linspace(0,1,N+1))
+index=0
+fig, (ax1,ax2,ax3) = plt.subplots(3)
+fig.suptitle(r"Prikaz obnašanja epidemije pri parametrih $\alpha=%.3f$ $\beta>0$" %(alpha))
+for beta in BETA:
+    D,B,I= intg.solve_ivp(lambda t, x: Epidemija(x, alpha, beta, t), t_span=(0,t_max),y0=y0,t_eval=t).y
+    ax1.plot(t,D, label=r"Dovzetni pri $\beta=%.4f$" %(beta), color=cm_d[index])
+    ax2.plot(t,B, label=r"Bolni pri $\beta=%.4f$" %(beta), color=cm_b[index])
+    ax3.plot(t,I, label=r"Imuni pri $\beta=%.4f$" %(beta), color=cm_i[index])
+    ax1.set_ylim(-0.05,1.05)
+    ax2.set_ylim(-0.05,1.05)
+    ax3.set_ylim(-0.05,1.05)
+    index+=1
+for ax in fig.get_axes():
+    ax.set_xlabel("t")
+    ax.set_ylabel("Delež")
+    ax.legend()
+plt.show()
+
+BETA=[0.1,0.01,0.001]
+alpha=1
+N=len(BETA)
+cm_d=cm.winter(np.linspace(0,1,N))
+cm_b=cm.autumn(np.linspace(0,1,N))
+cm_i=cm.spring(np.linspace(0,1,N+1))
+index=0
+fig, (ax) = plt.subplots(1)
+fig.suptitle(r"Prikaz obnašanja epidemije pri parametrih $\alpha=%.3f$ $\beta>0$" %(alpha))
+for alpha in ALPHA:
+    D,B,I= intg.solve_ivp(lambda t, x: Epidemija(x, alpha, beta, t), t_span=(0,t_max),y0=y0,t_eval=t).y
+    ax.plot(t,D,"-", label=r"Dovzetni pri $\beta=%.4f$" %(beta),color=cm_d[index])
+    ax.plot(t,B,"-.", label=r"Bolni pri $\beta=%.4f$" %(beta),color=cm_b[index])
+    ax.plot(t,I,"--", label=r"Immuni pri $\beta=%.4f$" %(beta), color=cm_i[index])
+    index+=1
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+for ax in fig.get_axes():
+    ax.set_xlabel("t")
+    ax.set_ylabel("Delež")
+plt.show()
